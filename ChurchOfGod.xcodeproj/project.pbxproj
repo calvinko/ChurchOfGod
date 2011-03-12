@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CBA3B928132B5724007ED9FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B927132B5724007ED9FD /* UIKit.framework */; };
+		CBA3B92A132B5724007ED9FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B929132B5724007ED9FD /* Foundation.framework */; };
+		CBA3B92C132B5724007ED9FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */; };
+		CBA3B932132B5724007ED9FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B930132B5724007ED9FD /* InfoPlist.strings */; };
+		CBA3B935132B5724007ED9FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B934132B5724007ED9FD /* main.m */; };
+		CBA3B938132B5724007ED9FD /* ChurchOfGodAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B937132B5724007ED9FD /* ChurchOfGodAppDelegate.m */; };
+		CBA3B93B132B5724007ED9FD /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B939132B5724007ED9FD /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CBA3B923132B5724007ED9FD /* ChurchOfGod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChurchOfGod.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBA3B927132B5724007ED9FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CBA3B929132B5724007ED9FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CBA3B92F132B5724007ED9FD /* ChurchOfGod-Info.plist */ = {isa = PBXFileReference; path = "ChurchOfGod-Info.plist"; sourceTree = "<group>"; };
+		CBA3B931132B5724007ED9FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */ = {isa = PBXFileReference; path = "ChurchOfGod-Prefix.pch"; sourceTree = "<group>"; };
+		CBA3B934132B5724007ED9FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CBA3B936132B5724007ED9FD /* ChurchOfGodAppDelegate.h */ = {isa = PBXFileReference; path = ChurchOfGodAppDelegate.h; sourceTree = "<group>"; };
+		CBA3B937132B5724007ED9FD /* ChurchOfGodAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChurchOfGodAppDelegate.m; sourceTree = "<group>"; };
+		CBA3B93A132B5724007ED9FD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBA3B920132B5724007ED9FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA3B928132B5724007ED9FD /* UIKit.framework in Frameworks */,
+				CBA3B92A132B5724007ED9FD /* Foundation.framework in Frameworks */,
+				CBA3B92C132B5724007ED9FD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CBA3B918132B5724007ED9FD = {
+			isa = PBXGroup;
+			children = (
+				CBA3B92D132B5724007ED9FD /* ChurchOfGod */,
+				CBA3B926132B5724007ED9FD /* Frameworks */,
+				CBA3B924132B5724007ED9FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBA3B924132B5724007ED9FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBA3B923132B5724007ED9FD /* ChurchOfGod.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBA3B926132B5724007ED9FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBA3B927132B5724007ED9FD /* UIKit.framework */,
+				CBA3B929132B5724007ED9FD /* Foundation.framework */,
+				CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBA3B92D132B5724007ED9FD /* ChurchOfGod */ = {
+			isa = PBXGroup;
+			children = (
+				CBA3B936132B5724007ED9FD /* ChurchOfGodAppDelegate.h */,
+				CBA3B937132B5724007ED9FD /* ChurchOfGodAppDelegate.m */,
+				CBA3B939132B5724007ED9FD /* MainWindow.xib */,
+				CBA3B92E132B5724007ED9FD /* Supporting Files */,
+			);
+			path = ChurchOfGod;
+			sourceTree = "<group>";
+		};
+		CBA3B92E132B5724007ED9FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBA3B92F132B5724007ED9FD /* ChurchOfGod-Info.plist */,
+				CBA3B930132B5724007ED9FD /* InfoPlist.strings */,
+				CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */,
+				CBA3B934132B5724007ED9FD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBA3B922132B5724007ED9FD /* ChurchOfGod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBA3B93E132B5724007ED9FD /* Build configuration list for PBXNativeTarget "ChurchOfGod" */;
+			buildPhases = (
+				CBA3B91F132B5724007ED9FD /* Sources */,
+				CBA3B920132B5724007ED9FD /* Frameworks */,
+				CBA3B921132B5724007ED9FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChurchOfGod;
+			productName = ChurchOfGod;
+			productReference = CBA3B923132B5724007ED9FD /* ChurchOfGod.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBA3B91A132B5724007ED9FD /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = CBA3B91D132B5724007ED9FD /* Build configuration list for PBXProject "ChurchOfGod" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CBA3B918132B5724007ED9FD;
+			productRefGroup = CBA3B924132B5724007ED9FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBA3B922132B5724007ED9FD /* ChurchOfGod */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CBA3B921132B5724007ED9FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA3B932132B5724007ED9FD /* InfoPlist.strings in Resources */,
+				CBA3B93B132B5724007ED9FD /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBA3B91F132B5724007ED9FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBA3B935132B5724007ED9FD /* main.m in Sources */,
+				CBA3B938132B5724007ED9FD /* ChurchOfGodAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CBA3B930132B5724007ED9FD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBA3B931132B5724007ED9FD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CBA3B939132B5724007ED9FD /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBA3B93A132B5724007ED9FD /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CBA3B93C132B5724007ED9FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CBA3B93D132B5724007ED9FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		CBA3B93F132B5724007ED9FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
+				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CBA3B940132B5724007ED9FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
+				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBA3B91D132B5724007ED9FD /* Build configuration list for PBXProject "ChurchOfGod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBA3B93C132B5724007ED9FD /* Debug */,
+				CBA3B93D132B5724007ED9FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBA3B93E132B5724007ED9FD /* Build configuration list for PBXNativeTarget "ChurchOfGod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBA3B93F132B5724007ED9FD /* Debug */,
+				CBA3B940132B5724007ED9FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBA3B91A132B5724007ED9FD /* Project object */;
+}
