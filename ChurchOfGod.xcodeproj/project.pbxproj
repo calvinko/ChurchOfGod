@@ -33,14 +33,26 @@
 		CBA3B97D132B59FC007ED9FD /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B976132B59FC007ED9FD /* MainWindow.xib */; };
 		CBA3B97E132B59FC007ED9FD /* MediaDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B977132B59FC007ED9FD /* MediaDetail.xib */; };
 		CBA3B97F132B59FC007ED9FD /* MediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B978132B59FC007ED9FD /* MediaViewController.xib */; };
-		CBA3B980132B59FC007ED9FD /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B979132B59FC007ED9FD /* NewsDetailController.xib */; };
-		CBA3B981132B59FC007ED9FD /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B97A132B59FC007ED9FD /* NewsViewController.xib */; };
 		CBA3B982132B59FC007ED9FD /* SermonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B97B132B59FC007ED9FD /* SermonsViewController.xib */; };
 		CBA3B985132B5A40007ED9FD /* ParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B984132B5A40007ED9FD /* ParseOperation.m */; };
 		CBA3B988132B5A67007ED9FD /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B987132B5A67007ED9FD /* IconDownloader.m */; };
 		CBA3B98A132B5B27007ED9FD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B989132B5B27007ED9FD /* SystemConfiguration.framework */; };
 		CBA3B992132B5BD3007ED9FD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B991132B5BD3007ED9FD /* MediaPlayer.framework */; };
 		CBA3B994132B5BD9007ED9FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B993132B5BD9007ED9FD /* AVFoundation.framework */; };
+		CBA3B999132C8D93007ED9FD /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B998132C8D93007ED9FD /* Placeholder.png */; };
+		CBA3B9A5132C8DF1007ED9FD /* gray_texture_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99B132C8DF1007ED9FD /* gray_texture_bg.png */; };
+		CBA3B9A6132C8DF1007ED9FD /* main_left_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99C132C8DF1007ED9FD /* main_left_button_selected.png */; };
+		CBA3B9A7132C8DF1007ED9FD /* main_right_button_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99D132C8DF1007ED9FD /* main_right_button_default.png */; };
+		CBA3B9A8132C8DF1007ED9FD /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99E132C8DF1007ED9FD /* microphone.png */; };
+		CBA3B9A9132C8DF1007ED9FD /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99F132C8DF1007ED9FD /* newspaper.png */; };
+		CBA3B9AA132C8DF1007ED9FD /* play_screen_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9A0132C8DF1007ED9FD /* play_screen_bg.png */; };
+		CBA3B9AB132C8DF1007ED9FD /* play_screen-audio.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9A1132C8DF1007ED9FD /* play_screen-audio.png */; };
+		CBA3B9AC132C8DF1007ED9FD /* play_screen-video.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9A2132C8DF1007ED9FD /* play_screen-video.png */; };
+		CBA3B9AD132C8DF1007ED9FD /* sliders.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9A3132C8DF1007ED9FD /* sliders.png */; };
+		CBA3B9AE132C8DF1007ED9FD /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9A4132C8DF1007ED9FD /* wrench.png */; };
+		CBA3B9B1132C90EC007ED9FD /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */; };
+		CBA3B9B5132C9151007ED9FD /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */; };
+		CBA3B9B7132C9163007ED9FD /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,8 +99,6 @@
 		CBA3B976132B59FC007ED9FD /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		CBA3B977132B59FC007ED9FD /* MediaDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaDetail.xib; sourceTree = "<group>"; };
 		CBA3B978132B59FC007ED9FD /* MediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaViewController.xib; sourceTree = "<group>"; };
-		CBA3B979132B59FC007ED9FD /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
-		CBA3B97A132B59FC007ED9FD /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		CBA3B97B132B59FC007ED9FD /* SermonsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SermonsViewController.xib; sourceTree = "<group>"; };
 		CBA3B983132B5A40007ED9FD /* ParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseOperation.h; sourceTree = "<group>"; };
 		CBA3B984132B5A40007ED9FD /* ParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseOperation.m; sourceTree = "<group>"; };
@@ -97,6 +107,21 @@
 		CBA3B989132B5B27007ED9FD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CBA3B991132B5BD3007ED9FD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CBA3B993132B5BD9007ED9FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CBA3B998132C8D93007ED9FD /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = ../../../Placeholder.png; sourceTree = "<group>"; };
+		CBA3B99B132C8DF1007ED9FD /* gray_texture_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gray_texture_bg.png; path = "../../ChurchofGod-old/gray_texture_bg.png"; sourceTree = "<group>"; };
+		CBA3B99C132C8DF1007ED9FD /* main_left_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_left_button_selected.png; path = "../../ChurchofGod-old/main_left_button_selected.png"; sourceTree = "<group>"; };
+		CBA3B99D132C8DF1007ED9FD /* main_right_button_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_right_button_default.png; path = "../../ChurchofGod-old/main_right_button_default.png"; sourceTree = "<group>"; };
+		CBA3B99E132C8DF1007ED9FD /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microphone.png; path = "../../ChurchofGod-old/microphone.png"; sourceTree = "<group>"; };
+		CBA3B99F132C8DF1007ED9FD /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = newspaper.png; path = "../../ChurchofGod-old/newspaper.png"; sourceTree = "<group>"; };
+		CBA3B9A0132C8DF1007ED9FD /* play_screen_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play_screen_bg.png; path = "../../ChurchofGod-old/play_screen_bg.png"; sourceTree = "<group>"; };
+		CBA3B9A1132C8DF1007ED9FD /* play_screen-audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_screen-audio.png"; path = "../../ChurchofGod-old/play_screen-audio.png"; sourceTree = "<group>"; };
+		CBA3B9A2132C8DF1007ED9FD /* play_screen-video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_screen-video.png"; path = "../../ChurchofGod-old/play_screen-video.png"; sourceTree = "<group>"; };
+		CBA3B9A3132C8DF1007ED9FD /* sliders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliders.png; path = "../../ChurchofGod-old/sliders.png"; sourceTree = "<group>"; };
+		CBA3B9A4132C8DF1007ED9FD /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wrench.png; path = "../../ChurchofGod-old/wrench.png"; sourceTree = "<group>"; };
+		CBA3B9AF132C90EC007ED9FD /* NewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailController.h; sourceTree = "<group>"; };
+		CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
+		CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
+		CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,16 +174,12 @@
 		CBA3B92D132B5724007ED9FD /* ChurchOfGod */ = {
 			isa = PBXGroup;
 			children = (
+				CBA3B99A132C8DA4007ED9FD /* Images */,
 				CBA3B974132B591E007ED9FD /* MainWindow */,
 				CBA3B997132BF0A3007ED9FD /* Sermon & News */,
 				CBA3B995132BF037007ED9FD /* Settings */,
 				CBA3B996132BF06B007ED9FD /* Misc */,
 				CBA3B975132B59FC007ED9FD /* BrowserViewController.xib */,
-				CBA3B977132B59FC007ED9FD /* MediaDetail.xib */,
-				CBA3B978132B59FC007ED9FD /* MediaViewController.xib */,
-				CBA3B979132B59FC007ED9FD /* NewsDetailController.xib */,
-				CBA3B97A132B59FC007ED9FD /* NewsViewController.xib */,
-				CBA3B97B132B59FC007ED9FD /* SermonsViewController.xib */,
 				CBA3B943132B5918007ED9FD /* BrowserViewController.h */,
 				CBA3B944132B5918007ED9FD /* BrowserViewController.m */,
 				CBA3B948132B5918007ED9FD /* ChurchInfo.h */,
@@ -227,16 +248,41 @@
 		CBA3B997132BF0A3007ED9FD /* Sermon & News */ = {
 			isa = PBXGroup;
 			children = (
+				CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */,
+				CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */,
+				CBA3B9AF132C90EC007ED9FD /* NewsDetailController.h */,
+				CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */,
 				CBA3B955132B5918007ED9FD /* MediaDetailViewController.h */,
 				CBA3B956132B5918007ED9FD /* MediaDetailViewController.m */,
+				CBA3B977132B59FC007ED9FD /* MediaDetail.xib */,
 				CBA3B957132B5918007ED9FD /* MediaViewController.h */,
 				CBA3B958132B5918007ED9FD /* MediaViewController.m */,
+				CBA3B978132B59FC007ED9FD /* MediaViewController.xib */,
 				CBA3B959132B5918007ED9FD /* NewsViewController.h */,
 				CBA3B95A132B5918007ED9FD /* NewsViewController.m */,
 				CBA3B95D132B5918007ED9FD /* SermonsViewController.h */,
 				CBA3B95E132B5918007ED9FD /* SermonsViewController.m */,
+				CBA3B97B132B59FC007ED9FD /* SermonsViewController.xib */,
 			);
 			name = "Sermon & News";
+			sourceTree = "<group>";
+		};
+		CBA3B99A132C8DA4007ED9FD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CBA3B99B132C8DF1007ED9FD /* gray_texture_bg.png */,
+				CBA3B99C132C8DF1007ED9FD /* main_left_button_selected.png */,
+				CBA3B99D132C8DF1007ED9FD /* main_right_button_default.png */,
+				CBA3B99E132C8DF1007ED9FD /* microphone.png */,
+				CBA3B99F132C8DF1007ED9FD /* newspaper.png */,
+				CBA3B9A0132C8DF1007ED9FD /* play_screen_bg.png */,
+				CBA3B9A1132C8DF1007ED9FD /* play_screen-audio.png */,
+				CBA3B9A2132C8DF1007ED9FD /* play_screen-video.png */,
+				CBA3B9A3132C8DF1007ED9FD /* sliders.png */,
+				CBA3B9A4132C8DF1007ED9FD /* wrench.png */,
+				CBA3B998132C8D93007ED9FD /* Placeholder.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,9 +340,20 @@
 				CBA3B97D132B59FC007ED9FD /* MainWindow.xib in Resources */,
 				CBA3B97E132B59FC007ED9FD /* MediaDetail.xib in Resources */,
 				CBA3B97F132B59FC007ED9FD /* MediaViewController.xib in Resources */,
-				CBA3B980132B59FC007ED9FD /* NewsDetailController.xib in Resources */,
-				CBA3B981132B59FC007ED9FD /* NewsViewController.xib in Resources */,
 				CBA3B982132B59FC007ED9FD /* SermonsViewController.xib in Resources */,
+				CBA3B999132C8D93007ED9FD /* Placeholder.png in Resources */,
+				CBA3B9A5132C8DF1007ED9FD /* gray_texture_bg.png in Resources */,
+				CBA3B9A6132C8DF1007ED9FD /* main_left_button_selected.png in Resources */,
+				CBA3B9A7132C8DF1007ED9FD /* main_right_button_default.png in Resources */,
+				CBA3B9A8132C8DF1007ED9FD /* microphone.png in Resources */,
+				CBA3B9A9132C8DF1007ED9FD /* newspaper.png in Resources */,
+				CBA3B9AA132C8DF1007ED9FD /* play_screen_bg.png in Resources */,
+				CBA3B9AB132C8DF1007ED9FD /* play_screen-audio.png in Resources */,
+				CBA3B9AC132C8DF1007ED9FD /* play_screen-video.png in Resources */,
+				CBA3B9AD132C8DF1007ED9FD /* sliders.png in Resources */,
+				CBA3B9AE132C8DF1007ED9FD /* wrench.png in Resources */,
+				CBA3B9B5132C9151007ED9FD /* NewsDetailController.xib in Resources */,
+				CBA3B9B7132C9163007ED9FD /* NewsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +381,7 @@
 				CBA3B972132B5918007ED9FD /* SettingViewController.m in Sources */,
 				CBA3B985132B5A40007ED9FD /* ParseOperation.m in Sources */,
 				CBA3B988132B5A67007ED9FD /* IconDownloader.m in Sources */,
+				CBA3B9B1132C90EC007ED9FD /* NewsDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
