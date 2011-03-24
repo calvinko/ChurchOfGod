@@ -22,7 +22,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "AppRecord.h"
+#import "MediaRecord.h"
 #import "ParseOperation.h"
 
 @protocol FeedLoaderDelegate;
@@ -44,8 +44,6 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *records;
-
-
 @property (nonatomic, retain) NSOperationQueue *queue;
 
 @property (nonatomic, retain) NSURLConnection *listFeedConnection;

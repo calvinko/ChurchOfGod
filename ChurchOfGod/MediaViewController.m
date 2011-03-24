@@ -23,7 +23,7 @@
 
 
 #import "MediaViewController.h"
-#import "AppRecord.h"
+#import "MediaRecord.h"
 
 #define kCustomRowHeight    48.0
 #define kCustomRowCount     7
@@ -32,7 +32,7 @@
 
 @interface MediaViewController ()
 
-- (void)startIconDownload:(AppRecord *)appRecord forIndexPath:(NSIndexPath *)indexPath;
+- (void)startIconDownload:(MediaRecord *)mediaRecord forIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -146,24 +146,24 @@
     if (nodeCount > 0)
 	{
         // Set up the cell...
-        AppRecord *appRecord = [self.entries objectAtIndex:indexPath.row];
+        MediaRecord *mediaRecord = [self.entries objectAtIndex:indexPath.row];
         
-		cell.textLabel.text = appRecord.itemTitle;
-        cell.detailTextLabel.text = appRecord.itemSummary;
+		cell.textLabel.text = mediaRecord.itemTitle;
+        cell.detailTextLabel.text = mediaRecord.itemDescription;
 		
         // Only load cached images; defer new downloads until scrolling ends
-        if (!appRecord.itemThumbIcon)
+        if (!mediaRecord.itemThumbIcon)
         {
             if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
             {
-                [self startIconDownload:appRecord forIndexPath:indexPath];
+                [self startIconDownload:mediaRecord forIndexPath:indexPath];
             }
             // if a download is deferred or in progress, return a placeholder image
             cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];                
         }
         else
         {
-           cell.imageView.image = appRecord.itemThumbIcon;
+           cell.imageView.image = mediaRecord.itemThumbIcon;
         }
 
     }
@@ -175,13 +175,13 @@
 #pragma mark -
 #pragma mark Table cell image support
 
-- (void)startIconDownload:(AppRecord *)appRecord forIndexPath:(NSIndexPath *)indexPath
+- (void)startIconDownload:(MediaRecord *)mediaRecord forIndexPath:(NSIndexPath *)indexPath
 {
     IconDownloader *iconDownloader = [imageDownloadsInProgress objectForKey:indexPath];
     if (iconDownloader == nil) 
     {
         iconDownloader = [[IconDownloader alloc] init];
-        iconDownloader.appRecord = appRecord;
+        iconDownloader.mediaRecord = mediaRecord;
         iconDownloader.indexPathInTableView = indexPath;
         iconDownloader.delegate = self;
         [imageDownloadsInProgress setObject:iconDownloader forKey:indexPath];
@@ -198,11 +198,11 @@
         NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
         for (NSIndexPath *indexPath in visiblePaths)
         {
-            AppRecord *appRecord = [self.entries objectAtIndex:indexPath.row];
+            MediaRecord *mediaRecord = [self.entries objectAtIndex:indexPath.row];
             
-            if (!appRecord.itemThumbIcon) // avoid the app icon download if the app already has an icon
+            if (!mediaRecord.itemThumbIcon) // avoid the app icon download if the app already has an icon
             {
-                [self startIconDownload:appRecord forIndexPath:indexPath];
+                [self startIconDownload:mediaRecord forIndexPath:indexPath];
             }
         }
     }
@@ -217,7 +217,7 @@
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:iconDownloader.indexPathInTableView];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         // Display the newly loaded image
-        cell.imageView.image = iconDownloader.appRecord.itemThumbIcon;
+        cell.imageView.image = iconDownloader.mediaRecord.itemThumbIcon;
     }
 }
 
@@ -230,7 +230,7 @@
 	// Do we have any records yet?
 	if ([entries count] > 0) {
 	
-		AppRecord * entry = [entries objectAtIndex: storyIndex];
+		MediaRecord * entry = [entries objectAtIndex: storyIndex];
 		
 		NSString * storyLink = entry.itemURLString;
 		

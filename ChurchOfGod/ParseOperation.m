@@ -21,24 +21,28 @@
  */
 
 #import "ParseOperation.h"
-#import "AppRecord.h"
+#import "MediaRecord.h"
 #import "ChurchOfGodAppDelegate.h"
 
 // string contants found in the RSS feed
-static NSString *kLink     = @"link";
-static NSString *kTitle   = @"title";
+static NSString *kLink      = @"link";
+static NSString *kTitle     = @"title";
 static NSString *kImageStr  = @"thumbnail";
-static NSString *kDate = @"pubDate";
-static NSString *kSummary = @"description";
-static NSString *kItem = @"item";
+static NSString *kDate      = @"pubDate";
+static NSString *kDescription = @"description";
+static NSString *kItem      = @"item";
 static NSString *kAudioLink = @"audioLink";
+static NSString *kVideoLink = @"videoLink";
+static NSString *kChannelLink = @"channelLink";
+static NSString *kContent     = @"content:encoded";
+static NSString *kContentURL  = @"contenturl";
 
 
 @interface ParseOperation ()
 @property (nonatomic, assign) id <ParseOperationDelegate> delegate;
 @property (nonatomic, retain) NSData *dataToParse;
 @property (nonatomic, retain) NSMutableArray *workingArray;
-@property (nonatomic, retain) AppRecord *workingEntry;
+@property (nonatomic, retain) MediaRecord *workingEntry;
 @property (nonatomic, retain) NSMutableString *workingPropertyString;
 @property (nonatomic, retain) NSArray *elementsToParse;
 @property (nonatomic, assign) BOOL storingCharacterData;
@@ -55,7 +59,7 @@ static NSString *kAudioLink = @"audioLink";
     {
         self.dataToParse = data;
         self.delegate = theDelegate;
-        self.elementsToParse = [NSArray arrayWithObjects:kLink, kTitle, kImageStr, kDate, kSummary, kAudioLink, nil];
+        self.elementsToParse = [NSArray arrayWithObjects:kContent, kContentURL, kLink, kTitle, kImageStr, kDate, kDescription, kAudioLink, nil];
     }
     return self;
 }
@@ -121,7 +125,7 @@ static NSString *kAudioLink = @"audioLink";
     //
     if ([elementName isEqualToString:kItem])
 	{
-        self.workingEntry = [[[AppRecord alloc] init] autorelease];
+        self.workingEntry = [[[MediaRecord alloc] init] autorelease];
     }
     storingCharacterData = [elementsToParse containsObject:elementName];
 }
@@ -132,41 +136,51 @@ static NSString *kAudioLink = @"audioLink";
 {
     if (self.workingEntry)
 	{
-        if (storingCharacterData)
-        {
-            NSString *trimmedString = [workingPropertyString stringByTrimmingCharactersInSet:
-                                       [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            [workingPropertyString setString:@""];  // clear the string for next time
-            if ([elementName isEqualToString:kLink])
-            {
-                self.workingEntry.itemURLString = trimmedString;
-            }
-            else if ([elementName isEqualToString:kTitle])
-            {        
-                self.workingEntry.itemTitle = trimmedString;
-            }
-            else if ([elementName isEqualToString:kImageStr])
-            {
-                self.workingEntry.imageURLString = trimmedString;
-            }
-            else if ([elementName isEqualToString:kDate])
-            {
-                self.workingEntry.itemDate = trimmedString;
-            }
-			else if ([elementName isEqualToString:kSummary])
-			{
-				self.workingEntry.itemSummary = trimmedString;
-			}
-			else if ([elementName isEqualToString:kAudioLink])
-			{
-				self.workingEntry.itemAudioURLString = trimmedString;
-			}
-			
-        }
-        else if ([elementName isEqualToString:kItem])
+        if ([elementName isEqualToString:kItem])
         {
             [self.workingArray addObject:self.workingEntry];  
             self.workingEntry = nil;
+        } else {
+
+            if (storingCharacterData)
+            {
+                NSString *trimmedString = [workingPropertyString stringByTrimmingCharactersInSet:
+                                           [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                [workingPropertyString setString:@""];  // clear the string for next time
+                if ([elementName isEqualToString:kLink])
+                {
+                    self.workingEntry.itemURLString = trimmedString;
+                }
+                else if ([elementName isEqualToString:kTitle])
+                {        
+                    self.workingEntry.itemTitle = trimmedString;
+                }
+                else if ([elementName isEqualToString:kImageStr])
+                {
+                    self.workingEntry.imageURLString = trimmedString;
+                }
+                else if ([elementName isEqualToString:kDate])
+                {
+                    self.workingEntry.itemDate = trimmedString;
+                }
+                else if ([elementName isEqualToString:kDescription])
+                {
+                    self.workingEntry.itemDescription = trimmedString;
+                }
+                else if ([elementName isEqualToString:kAudioLink])
+                {
+                    self.workingEntry.itemAudioURLString = trimmedString;
+                }
+                else if ([elementName isEqualToString:kContent])
+                {
+                    self.workingEntry.itemContent = trimmedString;
+                }
+                else if ([elementName isEqualToString:kContentURL])
+                {
+                    self.workingEntry.itemContentURL = trimmedString;
+                }
+                
+            }
         }
     }
     

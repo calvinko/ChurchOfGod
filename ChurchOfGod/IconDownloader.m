@@ -21,7 +21,7 @@
  */
 
 #import "IconDownloader.h"
-#import "AppRecord.h"
+#import "MediaRecord.h"
 
 #define kIconHeight 180
 #define kIconWidth 320
@@ -33,7 +33,7 @@
 
 @implementation IconDownloader
 
-@synthesize appRecord;
+@synthesize mediaRecord;
 @synthesize indexPathInTableView;
 @synthesize delegate;
 @synthesize activeDownload;
@@ -43,7 +43,7 @@
 
 - (void)dealloc
 {
-    [appRecord release];
+    [mediaRecord release];
     [indexPathInTableView release];
     
     [activeDownload release];
@@ -58,11 +58,11 @@
 {
     self.activeDownload = [NSMutableData data];
     // alloc+init and start an NSURLConnection; release on completion/failure
-	if(appRecord.imageURLString != nil)
+	if(mediaRecord.imageURLString != nil)
 	{
 		NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:
                              [NSURLRequest requestWithURL:
-                              [NSURL URLWithString:appRecord.imageURLString]] delegate:self];
+                              [NSURL URLWithString:mediaRecord.imageURLString]] delegate:self];
 		self.imageConnection = conn;
 		[conn release];
 	}
@@ -104,12 +104,12 @@
 		UIGraphicsBeginImageContext(itemSize);
 		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
 		[image drawInRect:imageRect];
-		self.appRecord.itemIcon = UIGraphicsGetImageFromCurrentImageContext();
+		self.mediaRecord.itemIcon = UIGraphicsGetImageFromCurrentImageContext();
 		UIGraphicsEndImageContext();
     }
     else
     {
-        self.appRecord.itemIcon = image;
+        self.mediaRecord.itemIcon = image;
     }
     
 	
@@ -119,12 +119,12 @@
 		UIGraphicsBeginImageContext(itemSize);
 		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
 		[image drawInRect:imageRect];
-		self.appRecord.itemThumbIcon = UIGraphicsGetImageFromCurrentImageContext();
+		self.mediaRecord.itemThumbIcon = UIGraphicsGetImageFromCurrentImageContext();
 		UIGraphicsEndImageContext();
     }
     else
     {
-        self.appRecord.itemThumbIcon = image;
+        self.mediaRecord.itemThumbIcon = image;
     }
 	
     self.activeDownload = nil;

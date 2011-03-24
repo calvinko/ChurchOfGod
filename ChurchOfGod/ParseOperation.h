@@ -20,7 +20,7 @@
  
  */
 
-@class AppRecord;
+@class MediaRecord;
 
 @protocol ParseOperationDelegate;
 
@@ -32,7 +32,7 @@
     NSData          *dataToParse;
     
     NSMutableArray  *workingArray;
-    AppRecord       *workingEntry;
+    MediaRecord     *workingEntry;
     NSMutableString *workingPropertyString;
     NSArray         *elementsToParse;
     BOOL            storingCharacterData;

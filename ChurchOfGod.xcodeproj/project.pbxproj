@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB012B871339BC880071168E /* blue-download.png in Resources */ = {isa = PBXBuildFile; fileRef = CB012B861339BC880071168E /* blue-download.png */; };
+		CB012B8B1339C7FE0071168E /* MediaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CB012B8A1339C7FE0071168E /* MediaRecord.m */; };
+		CB012B8E133AAEC70071168E /* oaksign.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB012B8C133AAEC70071168E /* oaksign.jpg */; };
+		CB012B8F133AAEC70071168E /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CB012B8D133AAEC70071168E /* Placeholder.png */; };
+		CB012B93133BEAC60071168E /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB012B91133BEAB60071168E /* ItemViewController.m */; };
+		CB012B94133BEAC60071168E /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB012B92133BEABC0071168E /* ItemViewController.xib */; };
+		CB777738132EC040001EA20B /* ChurchConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CB777737132EC040001EA20B /* ChurchConfigLoader.m */; };
+		CB777743132FC7A7001EA20B /* ChurchConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB777742132FC7A5001EA20B /* ChurchConfig.m */; };
+		CB777745132FDB6F001EA20B /* churchlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB777744132FDB6F001EA20B /* churchlist.plist */; };
+		CB777747132FDBE9001EA20B /* church.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB777746132FDBE9001EA20B /* church.xml */; };
+		CB7777801331DFFE001EA20B /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB77777F1331DFF6001EA20B /* ConfigManager.m */; };
+		CB7777AB1339AC76001EA20B /* download.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7777A71339AC76001EA20B /* download.png */; };
+		CB7777AC1339AC76001EA20B /* headphones.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7777A81339AC76001EA20B /* headphones.png */; };
+		CB7777AD1339AC76001EA20B /* LearnLead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB7777A91339AC76001EA20B /* LearnLead.jpg */; };
+		CB7777AE1339AC76001EA20B /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7777AA1339AC76001EA20B /* refresh.png */; };
+		CB7777B01339B102001EA20B /* download1.gif in Resources */ = {isa = PBXBuildFile; fileRef = CB7777AF1339B101001EA20B /* download1.gif */; };
 		CBA3B928132B5724007ED9FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B927132B5724007ED9FD /* UIKit.framework */; };
 		CBA3B92A132B5724007ED9FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B929132B5724007ED9FD /* Foundation.framework */; };
 		CBA3B92C132B5724007ED9FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */; };
 		CBA3B932132B5724007ED9FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B930132B5724007ED9FD /* InfoPlist.strings */; };
 		CBA3B935132B5724007ED9FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B934132B5724007ED9FD /* main.m */; };
-		CBA3B962132B5918007ED9FD /* AppRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B942132B5918007ED9FD /* AppRecord.m */; };
 		CBA3B963132B5918007ED9FD /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B944132B5918007ED9FD /* BrowserViewController.m */; };
 		CBA3B964132B5918007ED9FD /* ChurchDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B946132B5918007ED9FD /* ChurchDetailController.m */; };
 		CBA3B965132B5918007ED9FD /* ChurchDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B947132B5918007ED9FD /* ChurchDetailController.xib */; };
-		CBA3B966132B5918007ED9FD /* ChurchInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B949132B5918007ED9FD /* ChurchInfo.m */; };
 		CBA3B967132B5918007ED9FD /* ChurchofGodAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B94B132B5918007ED9FD /* ChurchofGodAppDelegate.m */; };
 		CBA3B968132B5918007ED9FD /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B94D132B5918007ED9FD /* ConnectViewController.m */; };
 		CBA3B969132B5918007ED9FD /* FeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B94F132B5918007ED9FD /* FeedLoader.m */; };
@@ -39,7 +53,6 @@
 		CBA3B98A132B5B27007ED9FD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B989132B5B27007ED9FD /* SystemConfiguration.framework */; };
 		CBA3B992132B5BD3007ED9FD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B991132B5BD3007ED9FD /* MediaPlayer.framework */; };
 		CBA3B994132B5BD9007ED9FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B993132B5BD9007ED9FD /* AVFoundation.framework */; };
-		CBA3B999132C8D93007ED9FD /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B998132C8D93007ED9FD /* Placeholder.png */; };
 		CBA3B9A5132C8DF1007ED9FD /* gray_texture_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99B132C8DF1007ED9FD /* gray_texture_bg.png */; };
 		CBA3B9A6132C8DF1007ED9FD /* main_left_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99C132C8DF1007ED9FD /* main_left_button_selected.png */; };
 		CBA3B9A7132C8DF1007ED9FD /* main_right_button_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B99D132C8DF1007ED9FD /* main_right_button_default.png */; };
@@ -53,9 +66,31 @@
 		CBA3B9B1132C90EC007ED9FD /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */; };
 		CBA3B9B5132C9151007ED9FD /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */; };
 		CBA3B9B7132C9163007ED9FD /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */; };
+		CBE5C597132C96470091B26F /* oakchurch.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE5C596132C96470091B26F /* oakchurch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB012B861339BC880071168E /* blue-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-download.png"; sourceTree = "<group>"; };
+		CB012B891339C7FE0071168E /* MediaRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaRecord.h; sourceTree = "<group>"; };
+		CB012B8A1339C7FE0071168E /* MediaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaRecord.m; sourceTree = "<group>"; };
+		CB012B8C133AAEC70071168E /* oaksign.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oaksign.jpg; sourceTree = "<group>"; };
+		CB012B8D133AAEC70071168E /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		CB012B90133BEAAF0071168E /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
+		CB012B91133BEAB60071168E /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
+		CB012B92133BEABC0071168E /* ItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
+		CB777736132EC040001EA20B /* ChurchConfigLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChurchConfigLoader.h; sourceTree = "<group>"; };
+		CB777737132EC040001EA20B /* ChurchConfigLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChurchConfigLoader.m; sourceTree = "<group>"; };
+		CB777741132FC7A4001EA20B /* ChurchConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChurchConfig.h; sourceTree = "<group>"; };
+		CB777742132FC7A5001EA20B /* ChurchConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChurchConfig.m; sourceTree = "<group>"; };
+		CB777744132FDB6F001EA20B /* churchlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = churchlist.plist; sourceTree = "<group>"; };
+		CB777746132FDBE9001EA20B /* church.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = church.xml; sourceTree = "<group>"; };
+		CB77777E1331DFF2001EA20B /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigManager.h; sourceTree = "<group>"; };
+		CB77777F1331DFF6001EA20B /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigManager.m; sourceTree = "<group>"; };
+		CB7777A71339AC76001EA20B /* download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download.png; sourceTree = "<group>"; };
+		CB7777A81339AC76001EA20B /* headphones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headphones.png; sourceTree = "<group>"; };
+		CB7777A91339AC76001EA20B /* LearnLead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LearnLead.jpg; sourceTree = "<group>"; };
+		CB7777AA1339AC76001EA20B /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		CB7777AF1339B101001EA20B /* download1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = download1.gif; sourceTree = "<group>"; };
 		CBA3B923132B5724007ED9FD /* ChurchOfGod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChurchOfGod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA3B927132B5724007ED9FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBA3B929132B5724007ED9FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,15 +99,11 @@
 		CBA3B931132B5724007ED9FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChurchOfGod-Prefix.pch"; sourceTree = "<group>"; };
 		CBA3B934132B5724007ED9FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CBA3B941132B5918007ED9FD /* AppRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRecord.h; sourceTree = "<group>"; };
-		CBA3B942132B5918007ED9FD /* AppRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppRecord.m; sourceTree = "<group>"; };
 		CBA3B943132B5918007ED9FD /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
 		CBA3B944132B5918007ED9FD /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		CBA3B945132B5918007ED9FD /* ChurchDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChurchDetailController.h; sourceTree = "<group>"; };
 		CBA3B946132B5918007ED9FD /* ChurchDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChurchDetailController.m; sourceTree = "<group>"; };
 		CBA3B947132B5918007ED9FD /* ChurchDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChurchDetailController.xib; sourceTree = "<group>"; };
-		CBA3B948132B5918007ED9FD /* ChurchInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChurchInfo.h; sourceTree = "<group>"; };
-		CBA3B949132B5918007ED9FD /* ChurchInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChurchInfo.m; sourceTree = "<group>"; };
 		CBA3B94A132B5918007ED9FD /* ChurchofGodAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChurchofGodAppDelegate.h; sourceTree = "<group>"; };
 		CBA3B94B132B5918007ED9FD /* ChurchofGodAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChurchofGodAppDelegate.m; sourceTree = "<group>"; };
 		CBA3B94C132B5918007ED9FD /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
@@ -107,7 +138,6 @@
 		CBA3B989132B5B27007ED9FD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CBA3B991132B5BD3007ED9FD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CBA3B993132B5BD9007ED9FD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		CBA3B998132C8D93007ED9FD /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = ../../../Placeholder.png; sourceTree = "<group>"; };
 		CBA3B99B132C8DF1007ED9FD /* gray_texture_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gray_texture_bg.png; path = "../../ChurchofGod-old/gray_texture_bg.png"; sourceTree = "<group>"; };
 		CBA3B99C132C8DF1007ED9FD /* main_left_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_left_button_selected.png; path = "../../ChurchofGod-old/main_left_button_selected.png"; sourceTree = "<group>"; };
 		CBA3B99D132C8DF1007ED9FD /* main_right_button_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_right_button_default.png; path = "../../ChurchofGod-old/main_right_button_default.png"; sourceTree = "<group>"; };
@@ -122,6 +152,7 @@
 		CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
 		CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
 		CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		CBE5C596132C96470091B26F /* oakchurch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oakchurch.png; path = "../../ChurchofGod-old/oakchurch.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,9 +175,6 @@
 		CBA3B918132B5724007ED9FD = {
 			isa = PBXGroup;
 			children = (
-				CBA3B993132B5BD9007ED9FD /* AVFoundation.framework */,
-				CBA3B991132B5BD3007ED9FD /* MediaPlayer.framework */,
-				CBA3B989132B5B27007ED9FD /* SystemConfiguration.framework */,
 				CBA3B92D132B5724007ED9FD /* ChurchOfGod */,
 				CBA3B926132B5724007ED9FD /* Frameworks */,
 				CBA3B924132B5724007ED9FD /* Products */,
@@ -164,6 +192,9 @@
 		CBA3B926132B5724007ED9FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBA3B993132B5BD9007ED9FD /* AVFoundation.framework */,
+				CBA3B991132B5BD3007ED9FD /* MediaPlayer.framework */,
+				CBA3B989132B5B27007ED9FD /* SystemConfiguration.framework */,
 				CBA3B927132B5724007ED9FD /* UIKit.framework */,
 				CBA3B929132B5724007ED9FD /* Foundation.framework */,
 				CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */,
@@ -182,12 +213,8 @@
 				CBA3B975132B59FC007ED9FD /* BrowserViewController.xib */,
 				CBA3B943132B5918007ED9FD /* BrowserViewController.h */,
 				CBA3B944132B5918007ED9FD /* BrowserViewController.m */,
-				CBA3B948132B5918007ED9FD /* ChurchInfo.h */,
-				CBA3B949132B5918007ED9FD /* ChurchInfo.m */,
 				CBA3B94C132B5918007ED9FD /* ConnectViewController.h */,
 				CBA3B94D132B5918007ED9FD /* ConnectViewController.m */,
-				CBA3B94E132B5918007ED9FD /* FeedLoader.h */,
-				CBA3B94F132B5918007ED9FD /* FeedLoader.m */,
 				CBA3B952132B5918007ED9FD /* kotablecell.h */,
 				CBA3B953132B5918007ED9FD /* kotablecell.m */,
 				CBA3B954132B5918007ED9FD /* kotablecell.xib */,
@@ -203,6 +230,8 @@
 				CBA3B930132B5724007ED9FD /* InfoPlist.strings */,
 				CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */,
 				CBA3B934132B5724007ED9FD /* main.m */,
+				CB777744132FDB6F001EA20B /* churchlist.plist */,
+				CB777746132FDBE9001EA20B /* church.xml */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -235,12 +264,20 @@
 		CBA3B996132BF06B007ED9FD /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				CBA3B941132B5918007ED9FD /* AppRecord.h */,
-				CBA3B942132B5918007ED9FD /* AppRecord.m */,
 				CBA3B986132B5A67007ED9FD /* IconDownloader.h */,
 				CBA3B987132B5A67007ED9FD /* IconDownloader.m */,
 				CBA3B983132B5A40007ED9FD /* ParseOperation.h */,
 				CBA3B984132B5A40007ED9FD /* ParseOperation.m */,
+				CBA3B94E132B5918007ED9FD /* FeedLoader.h */,
+				CBA3B94F132B5918007ED9FD /* FeedLoader.m */,
+				CB777736132EC040001EA20B /* ChurchConfigLoader.h */,
+				CB777737132EC040001EA20B /* ChurchConfigLoader.m */,
+				CB777741132FC7A4001EA20B /* ChurchConfig.h */,
+				CB777742132FC7A5001EA20B /* ChurchConfig.m */,
+				CB77777E1331DFF2001EA20B /* ConfigManager.h */,
+				CB77777F1331DFF6001EA20B /* ConfigManager.m */,
+				CB012B891339C7FE0071168E /* MediaRecord.h */,
+				CB012B8A1339C7FE0071168E /* MediaRecord.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -248,7 +285,6 @@
 		CBA3B997132BF0A3007ED9FD /* Sermon & News */ = {
 			isa = PBXGroup;
 			children = (
-				CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */,
 				CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */,
 				CBA3B9AF132C90EC007ED9FD /* NewsDetailController.h */,
 				CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */,
@@ -260,9 +296,13 @@
 				CBA3B978132B59FC007ED9FD /* MediaViewController.xib */,
 				CBA3B959132B5918007ED9FD /* NewsViewController.h */,
 				CBA3B95A132B5918007ED9FD /* NewsViewController.m */,
+				CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */,
 				CBA3B95D132B5918007ED9FD /* SermonsViewController.h */,
 				CBA3B95E132B5918007ED9FD /* SermonsViewController.m */,
 				CBA3B97B132B59FC007ED9FD /* SermonsViewController.xib */,
+				CB012B90133BEAAF0071168E /* ItemViewController.h */,
+				CB012B91133BEAB60071168E /* ItemViewController.m */,
+				CB012B92133BEABC0071168E /* ItemViewController.xib */,
 			);
 			name = "Sermon & News";
 			sourceTree = "<group>";
@@ -270,6 +310,15 @@
 		CBA3B99A132C8DA4007ED9FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB012B8C133AAEC70071168E /* oaksign.jpg */,
+				CB012B8D133AAEC70071168E /* Placeholder.png */,
+				CB012B861339BC880071168E /* blue-download.png */,
+				CB7777AF1339B101001EA20B /* download1.gif */,
+				CB7777A71339AC76001EA20B /* download.png */,
+				CB7777A81339AC76001EA20B /* headphones.png */,
+				CB7777A91339AC76001EA20B /* LearnLead.jpg */,
+				CB7777AA1339AC76001EA20B /* refresh.png */,
+				CBE5C596132C96470091B26F /* oakchurch.png */,
 				CBA3B99B132C8DF1007ED9FD /* gray_texture_bg.png */,
 				CBA3B99C132C8DF1007ED9FD /* main_left_button_selected.png */,
 				CBA3B99D132C8DF1007ED9FD /* main_right_button_default.png */,
@@ -280,7 +329,6 @@
 				CBA3B9A2132C8DF1007ED9FD /* play_screen-video.png */,
 				CBA3B9A3132C8DF1007ED9FD /* sliders.png */,
 				CBA3B9A4132C8DF1007ED9FD /* wrench.png */,
-				CBA3B998132C8D93007ED9FD /* Placeholder.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -341,7 +389,6 @@
 				CBA3B97E132B59FC007ED9FD /* MediaDetail.xib in Resources */,
 				CBA3B97F132B59FC007ED9FD /* MediaViewController.xib in Resources */,
 				CBA3B982132B59FC007ED9FD /* SermonsViewController.xib in Resources */,
-				CBA3B999132C8D93007ED9FD /* Placeholder.png in Resources */,
 				CBA3B9A5132C8DF1007ED9FD /* gray_texture_bg.png in Resources */,
 				CBA3B9A6132C8DF1007ED9FD /* main_left_button_selected.png in Resources */,
 				CBA3B9A7132C8DF1007ED9FD /* main_right_button_default.png in Resources */,
@@ -354,6 +401,18 @@
 				CBA3B9AE132C8DF1007ED9FD /* wrench.png in Resources */,
 				CBA3B9B5132C9151007ED9FD /* NewsDetailController.xib in Resources */,
 				CBA3B9B7132C9163007ED9FD /* NewsViewController.xib in Resources */,
+				CBE5C597132C96470091B26F /* oakchurch.png in Resources */,
+				CB777745132FDB6F001EA20B /* churchlist.plist in Resources */,
+				CB777747132FDBE9001EA20B /* church.xml in Resources */,
+				CB7777AB1339AC76001EA20B /* download.png in Resources */,
+				CB7777AC1339AC76001EA20B /* headphones.png in Resources */,
+				CB7777AD1339AC76001EA20B /* LearnLead.jpg in Resources */,
+				CB7777AE1339AC76001EA20B /* refresh.png in Resources */,
+				CB7777B01339B102001EA20B /* download1.gif in Resources */,
+				CB012B871339BC880071168E /* blue-download.png in Resources */,
+				CB012B8E133AAEC70071168E /* oaksign.jpg in Resources */,
+				CB012B8F133AAEC70071168E /* Placeholder.png in Resources */,
+				CB012B94133BEAC60071168E /* ItemViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,10 +424,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBA3B935132B5724007ED9FD /* main.m in Sources */,
-				CBA3B962132B5918007ED9FD /* AppRecord.m in Sources */,
 				CBA3B963132B5918007ED9FD /* BrowserViewController.m in Sources */,
 				CBA3B964132B5918007ED9FD /* ChurchDetailController.m in Sources */,
-				CBA3B966132B5918007ED9FD /* ChurchInfo.m in Sources */,
 				CBA3B967132B5918007ED9FD /* ChurchofGodAppDelegate.m in Sources */,
 				CBA3B968132B5918007ED9FD /* ConnectViewController.m in Sources */,
 				CBA3B969132B5918007ED9FD /* FeedLoader.m in Sources */,
@@ -382,6 +439,11 @@
 				CBA3B985132B5A40007ED9FD /* ParseOperation.m in Sources */,
 				CBA3B988132B5A67007ED9FD /* IconDownloader.m in Sources */,
 				CBA3B9B1132C90EC007ED9FD /* NewsDetailController.m in Sources */,
+				CB777738132EC040001EA20B /* ChurchConfigLoader.m in Sources */,
+				CB777743132FC7A7001EA20B /* ChurchConfig.m in Sources */,
+				CB7777801331DFFE001EA20B /* ConfigManager.m in Sources */,
+				CB012B8B1339C7FE0071168E /* MediaRecord.m in Sources */,
+				CB012B93133BEAC60071168E /* ItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cheuk Ko (BGG475DN26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -412,6 +475,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "4939E04B-92FC-4F5A-A1A0-781BDC0CBA0D";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -420,6 +484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Cheuk Ko (BGG475DN26)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -427,6 +492,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "4939E04B-92FC-4F5A-A1A0-781BDC0CBA0D";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -440,6 +506,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +520,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -478,6 +546,7 @@
 				CBA3B940132B5724007ED9FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

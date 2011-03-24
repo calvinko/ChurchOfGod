@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<churchlist>
+    <church name="Church of God in Oakland">
+        <website>www.bachurch.org</website>
+        <cert>iphone/cert.crt</cert>
+        <sermon>iphone/psermonlist.xml</sermon>
+        <news>iphone/pnews.xml</news>
+        <tool>iphone/tools.xml</tool>
+        <msermon>iphone/sermonlist.xml</msermon>
+        <mtool>iphone/tools.xml</mtool>
+        <mnews>iphone/newslist.xml</mnews>
+        <user>oakbs</user>
+        <user>oakadmin</user>    
+        <login>iphone/checkuser.php</login>
+    </church>
+    <church name="Church of God in San Francisco">
+        <website>sf.bachurch.org</website>
+        <baseurl>sf.bachurch.org</baseurl>
+        <cert>iphone/cert.crt</cert>
+        <sermon>iphone/sermonlist.xml</sermon>
+        <news>iphone/newslist.xml</news>
+        <login>iphone/checkuser.php</login>
+    </church>
+    <church name="Church of God in Sacramento">
+        <website>bachurch.org</website>
+        <baseurl>bachurch.org</baseurl>
+        <thumbnail></thumbnail>
+        <cert>iphone/cert.crt</cert>
+        <sermon>iphone/sermonlist.xml</sermon>
+        <news>iphone/newslist.xml</news>
+        <login>iphone/checkuser.php</login>
+    </church>
+</churchlist>

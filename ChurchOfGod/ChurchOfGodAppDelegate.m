@@ -12,11 +12,12 @@
 #import "NewsViewController.h"
 #import "ParseOperation.h"
 #import "FeedLoader.h"
+#import "ChurchConfigLoader.h"
+#import "ConfigManager.h"
 #import <CFNetwork/CFNetwork.h>
 
 static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";
-static NSString *const SermonMediaFeed = @"http://www.bachurch.org/store/sermonlist.xml";
-static NSString *const NewsFeed = @"http://www.bachurch.org/category/news/feed/";
+
 
 
 @implementation ChurchofGodAppDelegate
@@ -41,25 +42,12 @@ static NSString *const NewsFeed = @"http://www.bachurch.org/category/news/feed/"
 
 	if([self hasNetworkConnection])
 	{
-		
-		mediaFeedLoader = [[FeedLoader alloc] init];
-		mediaFeedLoader.delegate = mediaViewController;
-		
-		NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:CreativeMediaFeed]];
-		mediaFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:mediaFeedLoader] autorelease];
-		
-		
-		// Test the validity of the connection object. The most likely reason for the connection object
-		// to be nil is a malformed URL, which is a programmatic error easily detected during development
-		// If the URL is more dynamic, then you should implement a more flexible validation technique, and
-		// be able to both recover from errors and communicate problems to the user in an unobtrusive manner.
-		//
-		NSAssert(mediaFeedLoader.listFeedConnection != nil, @"Failure to create URL connection.");
-		
-		sermonsFeedLoader = [[FeedLoader alloc] init];
+        
+		NSURLRequest *urlRequest;
+        sermonsFeedLoader = [[FeedLoader alloc] init];
 		sermonsFeedLoader.delegate = sermonsViewController;
 		
-		urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:SermonMediaFeed]];
+		urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[ConfigManager getSermonURL]]];
 		sermonsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonsFeedLoader] autorelease];
 		
 		// Test the validity of the connection object. The most likely reason for the connection object
@@ -72,7 +60,7 @@ static NSString *const NewsFeed = @"http://www.bachurch.org/category/news/feed/"
 		newsFeedLoader = [[FeedLoader alloc] init];
 		newsFeedLoader.delegate = newsViewController;
 		
-		urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:NewsFeed]];
+		urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[ConfigManager getNewsURL]]];
 		newsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:newsFeedLoader] autorelease];
 		
 		// Test the validity of the connection object. The most likely reason for the connection object
@@ -134,7 +122,7 @@ static NSString *const NewsFeed = @"http://www.bachurch.org/category/news/feed/"
 {
 	Boolean retVal = NO;
 	
-	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, [@"www.sugarcreek.net" UTF8String]);
+	SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, [@"www.bachurch.org" UTF8String]);
 	
 	if(reachability!= NULL)
 	{
@@ -150,8 +138,6 @@ static NSString *const NewsFeed = @"http://www.bachurch.org/category/news/feed/"
 		}
 		
 	}
-	
-	
 	
 	reachability = nil;
 	

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppRecord.h"
+#import "MediaRecord.h"
 #import "ParseOperation.h"
 #import "FeedLoader.h"
 #import "RotatingTabBarController.h"

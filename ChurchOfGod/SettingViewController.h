@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ChurchDetailController.h"
 
-@interface SettingViewController : UITableViewController {
+@interface SettingViewController : UITableViewController <UITextFieldDelegate> {
     
 	ChurchDetailController *churchDetailController;
 }

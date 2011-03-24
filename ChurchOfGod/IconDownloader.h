@@ -20,13 +20,13 @@
  
  */
 
-@class AppRecord;
+@class MediaRecord;
 
 @protocol IconDownloaderDelegate;
 
 @interface IconDownloader : NSObject
 {
-    AppRecord *appRecord;
+    MediaRecord *mediaRecord;
     NSIndexPath *indexPathInTableView;
     id <IconDownloaderDelegate> delegate;
     
@@ -34,7 +34,7 @@
     NSURLConnection *imageConnection;
 }
 
-@property (nonatomic, retain) AppRecord *appRecord;
+@property (nonatomic, retain) MediaRecord *mediaRecord;
 @property (nonatomic, retain) NSIndexPath *indexPathInTableView;
 @property (nonatomic, assign) id <IconDownloaderDelegate> delegate;
 

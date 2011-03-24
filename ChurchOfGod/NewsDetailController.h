@@ -22,18 +22,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class AppRecord;
+@class MediaRecord;
 
 @interface NewsDetailController : UIViewController <UIWebViewDelegate> {
 	UIWebView  *newsDescription;
-	AppRecord *record;
+	MediaRecord *record;
 	UIActivityIndicatorView *activityIndicator;
 	NSURLRequest *lastRequest;
 	UIBarButtonItem *refreshButton;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView  *newsDescription;
-@property (nonatomic, retain) IBOutlet AppRecord *record;
+@property (nonatomic, retain) IBOutlet MediaRecord *record;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *refreshButton;
 

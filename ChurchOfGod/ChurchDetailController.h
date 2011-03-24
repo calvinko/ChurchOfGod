@@ -13,4 +13,7 @@
 
 }
 
+@property (nonatomic, retain) NSMutableArray *churchArray;
+@property (nonatomic) NSInteger selectedIndex;
+
 @end

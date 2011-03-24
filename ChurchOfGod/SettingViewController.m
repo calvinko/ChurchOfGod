@@ -7,7 +7,8 @@
 //
 
 #import "SettingViewController.h"
-
+#import "ChurchConfigLoader.h"
+#import "ConfigManager.h"
 
 @implementation SettingViewController
 
@@ -16,25 +17,26 @@
 -(id)init
 {
 	self = [super init];
+    churchDetailController = nil;
     return self;
 }
 
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
 
-/*
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -58,8 +60,10 @@
 }
 */
 
+#pragma mark NavigationBar 
 
-#pragma mark -
+
+
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -76,7 +80,11 @@
     NSInteger rows = 0;
     switch (section) {
         case 0:
-			rows = 2;
+            if ([[ConfigManager getValidUserList] count] > 0) {
+                rows = 2;
+            } else {
+                rows = 1;
+            }
             break;
         case 1:
 			rows = 2;
@@ -88,20 +96,64 @@
 	
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	// The header for the section is the region name -- get this from the region at the section index.
+	switch (section) {
+        case 0: return @"Church";
+        case 1: return @"Performance";
+        default:
+                return @"";
+    }
+    return @"";
+}
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	static NSString *CellIdentifier = @"CellIdentifier";
+    static NSString *PWCell = @"PWCell";
+    UILabel *mainLabel;
+    UITextField *rightTextField;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
-        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		//cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		
+    
+    UITableViewCell *cell;
+    
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:PWCell ];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PWCell] autorelease];
+            mainLabel = [[[UILabel alloc] initWithFrame:CGRectMake(13.0, 10.0, 100.0, 30.0)] autorelease];
+            
+            mainLabel.tag = 1;            
+            mainLabel.font = [UIFont boldSystemFontOfSize:16.0];
+            mainLabel.textAlignment = UITextAlignmentLeft;
+            mainLabel.textColor = [UIColor blackColor];
+            [cell.contentView addSubview:mainLabel];
+            
+            rightTextField = [[UITextField alloc] initWithFrame:CGRectMake(180.0, 10.0, 80.0, 30.0)];
+            rightTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+            [rightTextField setDelegate:self];
+            [rightTextField setPlaceholder:[ConfigManager getUsername]];
+            [rightTextField setFont:[UIFont systemFontOfSize:16]];
+            rightTextField.textAlignment = UITextAlignmentCenter;
+            rightTextField.textColor = [UIColor blackColor];
+            [cell.contentView addSubview:rightTextField];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        } else {
+            mainLabel = (UILabel *)[cell.contentView viewWithTag:1];
+        }
+        mainLabel.text = @"UserType";  
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                        
+        }
     }
-    
+  
     // Cache a date formatter to create a string representation of the date object.
     static NSDateFormatter *dateFormatter = nil;
     if (dateFormatter == nil) {
@@ -109,40 +161,35 @@
         [dateFormatter setDateFormat:@"yyyy"];
     }
     
-    // Set the text in the cell for the section/row.
-    
-    NSString *cellText = nil;
-	NSString *cellValue = nil;
-    
+    // Set the text in the cell for the section/row.    
     switch (indexPath.section) {
         case 0:
 			if (indexPath.row==0) {
-				cellText = @"Church URL";
-				cellValue = @"www.bachurch.org";
+				cell.detailTextLabel.text = nil;
+				cell.textLabel.text = [ConfigManager getChurchname];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			} else {
-				cellText = @"Username";
-				cellValue = @"guest";
+                if ([[ConfigManager getValidUserList] count] > 0) {
+                    //cell.textLabel.text = @"Usertype";
+                    //cell.detailTextLabel.text = [ConfigManager getUsername];
+                    //cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+                };
 			}
-            
             break;
         case 1:
 			if (indexPath.row==0) {
-				cellText = @"Memory";
+				cell.textLabel.text = @"Memory";
                 UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
                 [button setTitle: @"Click" forState: UIControlStateNormal ];
                 [button addTarget: self action: @selector(edit:) forControlEvents: UIControlEventTouchUpInside ];
                 [cell.contentView addSubview:button];
 			} else {
-				cellText = @"Field2";
+				cell.textLabel.text = @"Field2";
 			}
             break;
 		default:
             break;
     }
-    
-    cell.textLabel.text = cellText;
-	cell.detailTextLabel.text = cellValue;
-	
 	return cell;
 }
 
@@ -196,9 +243,15 @@
     switch (indexPath.section) {
         case 0:
 			if (indexPath.row==0) {
-				ChurchDetailController *churchController = [ChurchDetailController alloc];
-                [self.navigationController pushViewController:churchController animated:YES];
-                [churchController release];
+                if (churchDetailController == nil) {
+                    churchDetailController = [[ChurchDetailController alloc] init];
+                }
+                
+                churchDetailController.churchArray = [ConfigManager loadConfig];
+
+                [self.navigationController pushViewController:churchDetailController animated:YES];
+                
+                    
 			} else {
             }
             
@@ -216,12 +269,19 @@
 
 		
     /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
     // ...
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	
+    [ConfigManager setUser:textField.text];
+    [textField resignFirstResponder];
+	return YES;
 }
 
 

@@ -7,28 +7,45 @@
 //
 
 #import "ChurchDetailController.h"
-
+#import "ChurchConfigLoader.h"
+#import "ChurchConfig.h"
+#import "ConfigManager.h"
 
 @implementation ChurchDetailController
 
+@synthesize churchArray, selectedIndex;
 
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- init {
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.churchArray = nil;
+    return self;
+    
 }
-*/
 
-/*
+- (void)viewDidLoad {
+    
+    
+    [super viewDidLoad];
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"Church";
+
+    //[self.tableView selectRowAtIndexPath:([NSIndexPath indexPathForRow:(1) inSection:(0)]) animated:(FALSE) scrollPosition:(UITableViewScrollPositionMiddle)];
+ 
+ 
+}
+
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //[self.tableView selectRowAtIndexPath:([NSIndexPath indexPathWithIndex:1]) animated:(NO) scrollPosition:(UITableViewScrollPositionNone)];
+
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -64,7 +81,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 4;
+    return [churchArray count];
+   
 }
 
 
@@ -77,19 +95,17 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        //cell.textLabel.highlightedTextColor = [UIColor greenColor];
+        
 	}
     
-	NSString *cellText;
+	NSString *cellText = @"churchname";
 	
-    switch (indexPath.row) {
-		case 0: cellText = @"Church of God in Oakland";
-			break;
-		case 1: cellText = @"Church of God in San Francisco";
-			break;
-		case 2: cellText = @"Church of God in Sacramento";
-			break;
-		default:cellText = @"Church of God in Oakland"; 
-			break;
+    if (indexPath.row < [churchArray count]) {
+        ChurchConfig *church = (ChurchConfig *) [churchArray objectAtIndex:indexPath.row]; 
+        cellText = church.name;
+    } else {
+        cellText = @"";
     }
 	cell.textLabel.text = cellText;
     return cell;
@@ -140,16 +156,17 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    */
+   
+    //[ConfigManager setDefaultChurchConfig:[ChurchConfigLoader getConfigAtIndex:indexPath.row]];
+    [ConfigManager setDefaultIndex:indexPath.row];
+    
 }
 
+
+//- (NSIndexPath*)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//}
 
 #pragma mark -
 #pragma mark Memory management

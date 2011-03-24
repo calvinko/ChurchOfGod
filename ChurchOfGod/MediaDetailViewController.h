@@ -25,7 +25,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-@class AppRecord;
+@class MediaRecord;
 
 @interface MediaDetailViewController : UIViewController {
 	UILabel *mediaTitle;
@@ -34,7 +34,7 @@
 	UIButton *playVideoButton;
 	UIButton *playAudioButton;
 	MPMoviePlayerViewController *theMovieController;
-	AppRecord *record;
+	MediaRecord *record;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *mediaTitle;
@@ -43,7 +43,7 @@
 @property (nonatomic, retain) IBOutlet UIButton  *playVideoButton;
 @property (nonatomic, retain) IBOutlet UIButton  *playAudioButton;
 
-@property (nonatomic, retain) IBOutlet AppRecord *record;
+@property (nonatomic, retain) IBOutlet MediaRecord *record;
 
 
 -(IBAction) playVideoTapped;

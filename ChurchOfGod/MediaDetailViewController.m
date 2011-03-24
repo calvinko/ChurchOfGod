@@ -21,7 +21,7 @@
  */
 
 #import "MediaDetailViewController.h"
-#import "AppRecord.h"
+#import "MediaRecord.h"
 
 @implementation MediaDetailViewController
 
@@ -32,7 +32,7 @@
 	[super viewWillAppear:animated];
 	mediaTitle.text = self.record.itemTitle;
 	//icon. = record.imageURLString;
-	description.text = self.record.itemSummary;
+	description.text = self.record.itemDescription;
 	
 	if(self.record.itemAudioURLString == nil)
 	{

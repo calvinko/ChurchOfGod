@@ -21,7 +21,7 @@
  */
 
 #import "NewsDetailController.h"
-#import "AppRecord.h"
+#import "MediaRecord.h"
 
 @implementation NewsDetailController
 
@@ -64,8 +64,11 @@
 	// open in Safari
 	//[self playMovieAtURL:[NSURL URLWithString:storyLink]];
 	//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:storyLink]];
-	[newsDescription loadHTMLString:self.record.itemSummary baseURL:[NSURL URLWithString:storyLink]];
-	
+    if (self.record.itemContent != nil) {
+        [newsDescription loadHTMLString:self.record.itemContent baseURL:[NSURL URLWithString:storyLink]];
+	} else {
+        [newsDescription loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.record.itemContentURL]]];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
