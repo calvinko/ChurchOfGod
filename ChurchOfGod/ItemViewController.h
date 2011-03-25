@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class  MediaRecord;
 
 
 @interface ItemViewController : UITableViewController {
-    
+    UIImageView *topBanner;
+    MediaRecord *record;
 }
 
+@property (nonatomic, retain) IBOutlet UIImageView *topBanner;
+@property (nonatomic, retain) MediaRecord *record; 
 @end

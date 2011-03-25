@@ -7,9 +7,13 @@
 //
 
 #import "ItemViewController.h"
+#import "MediaRecord.h"
+
 
 
 @implementation ItemViewController
+
+@synthesize topBanner, record;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -56,6 +60,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.topBanner.image = record.itemIcon;
+    topBanner.hidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -85,14 +91,21 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    int count = 5;
+	
+	// ff there's no data yet, return enough rows to fill the screen
+    if (count == 0)
+	{
+        return 5;
+    }
+    return count;
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,6 +117,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+    cell.textLabel.text = @"hahaha";
     // Configure the cell...
     
     return cell;

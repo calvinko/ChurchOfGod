@@ -21,9 +21,10 @@
  */
 
 #import "SermonsViewController.h"
+#import "ItemViewController.h"
 #import "MediaRecord.h"
 
-#define kCustomRowHeight    48.0
+#define kCustomRowHeight    40.0
 #define kCustomRowCount     7
 
 #pragma mark -
@@ -264,7 +265,11 @@
             
             NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:entry.itemContentURL]];
             sermonFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonFeedLoader] autorelease];
-            [self.navigationController pushViewController:sermonController animated:YES];
+            //[self.navigationController pushViewController:sermonController animated:YES];
+            ItemViewController *itemViewController = [[ItemViewController alloc] initWithNibName:@"ItemViewController" bundle:[NSBundle mainBundle]];
+            itemViewController.record = entry;
+            [self.navigationController pushViewController:itemViewController animated:YES];
+
         } else {
             mediaDetailView = [[MediaDetailViewController alloc] initWithNibName:@"MediaDetail" bundle:[NSBundle mainBundle]];
             mediaDetailView.record = entry;
@@ -312,7 +317,7 @@
 
 -(IBAction) rightButtonTapped
 {
-	[self.navigationController pushViewController:connectViewController animated:YES];
+	
 }
 
 @end
