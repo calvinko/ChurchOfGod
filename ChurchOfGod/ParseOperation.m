@@ -26,6 +26,7 @@
 
 // string contants found in the RSS feed
 static NSString *kLink      = @"link";
+static NSString *kType      = @"type";
 static NSString *kTitle     = @"title";
 static NSString *kImageStr  = @"thumbnail";
 static NSString *kDate      = @"pubDate";
@@ -59,7 +60,7 @@ static NSString *kContentURL  = @"contenturl";
     {
         self.dataToParse = data;
         self.delegate = theDelegate;
-        self.elementsToParse = [NSArray arrayWithObjects:kContent, kContentURL, kLink, kTitle, kImageStr, kDate, kDescription, kAudioLink, nil];
+        self.elementsToParse = [NSArray arrayWithObjects:kContent, kContentURL, kLink, kType, kTitle, kImageStr, kDate, kDescription, kAudioLink, nil];
     }
     return self;
 }
@@ -150,6 +151,10 @@ static NSString *kContentURL  = @"contenturl";
                 if ([elementName isEqualToString:kLink])
                 {
                     self.workingEntry.itemURLString = trimmedString;
+                }
+                else if ([elementName isEqualToString:kType])
+                {        
+                    self.workingEntry.itemType = trimmedString ;
                 }
                 else if ([elementName isEqualToString:kTitle])
                 {        

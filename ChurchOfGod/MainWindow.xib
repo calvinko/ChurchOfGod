@@ -113,16 +113,16 @@
 					</object>
 					<object class="NSArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="840968771">
+						<object class="IBUIViewController" id="840751749">
 							<object class="NSArray" key="IBUIToolbarItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 							</object>
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="90727914">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="669080629">
 								<string key="IBUITitle">Sermon</string>
-								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="360078496">
+								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="581417818">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
-									<reference key="IBUINavigationItem" ref="90727914"/>
+									<reference key="IBUINavigationItem" ref="669080629"/>
 									<int key="IBUISystemItemIdentifier">13</int>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -482,7 +482,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">sermonsViewController</string>
 						<reference key="source" ref="664661524"/>
-						<reference key="destination" ref="840968771"/>
+						<reference key="destination" ref="840751749"/>
 					</object>
 					<int key="connectionID">184</int>
 				</object>
@@ -562,7 +562,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="35335648"/>
 							<reference ref="655738047"/>
-							<reference ref="840968771"/>
+							<reference ref="840751749"/>
 						</object>
 						<reference key="parent" ref="1034742383"/>
 					</object>
@@ -711,26 +711,27 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">182</int>
-						<reference key="object" ref="840968771"/>
+						<reference key="object" ref="840751749"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="90727914"/>
+							<reference ref="669080629"/>
 						</object>
 						<reference key="parent" ref="757587453"/>
+						<string key="objectName">Sermons View Controller - Sermon</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">183</int>
-						<reference key="object" ref="90727914"/>
+						<reference key="object" ref="669080629"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="360078496"/>
+							<reference ref="581417818"/>
 						</object>
-						<reference key="parent" ref="840968771"/>
+						<reference key="parent" ref="840751749"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">187</int>
-						<reference key="object" ref="360078496"/>
-						<reference key="parent" ref="90727914"/>
+						<reference key="object" ref="581417818"/>
+						<reference key="parent" ref="669080629"/>
 					</object>
 				</object>
 			</object>

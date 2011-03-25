@@ -33,16 +33,16 @@
 	NSArray *entries;   // the main data model for our UITableView
     NSMutableDictionary *imageDownloadsInProgress;  // the set of IconDownloader objects for each app
 	MediaDetailViewController *mediaDetailView;
-	ConnectViewController *connectViewController;
 	UIView *headerCell;
+    UISegmentedControl *selector;
 	Boolean didRelease;
 }
 
 @property (nonatomic, retain) NSArray *entries;
 @property (nonatomic, retain) NSMutableDictionary *imageDownloadsInProgress;
 @property (nonatomic, retain) IBOutlet MediaDetailViewController *mediaDetailView;
-@property (nonatomic, retain) IBOutlet ConnectViewController *connectViewController;
 @property (nonatomic, retain) IBOutlet UIView *headerCell;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *selector;
 
 - (void)appImageDidLoad:(NSIndexPath *)indexPath;
 

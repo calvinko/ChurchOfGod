@@ -10,7 +10,8 @@
 
 #define MTYPE_NEWS      1
 #define MTYPE_SERMON    2
-#define MTYPE_FOLDER    3
+#define MTYPE_NEWSFOLDER    3
+#define MTYPE_SERMONFOLDER  4
 
 @interface MediaRecord : NSObject {
     
@@ -22,11 +23,11 @@
     NSString *itemDate;
 
     NSString *itemDescription;
-    NSString *imageURLString;
+    NSString *itemThumbURLString;
     NSString *itemVideoURLString;
     NSString *itemAudioURLString;
     NSString *itemContentURL;
-    NSInteger mType;
+    NSString *itemType;
 }
 
 @property (nonatomic, retain) NSString *itemTitle;
@@ -41,7 +42,7 @@
 @property (nonatomic, retain) NSString *itemVideoURLString;
 @property (nonatomic, retain) NSString *itemAudioURLString;
 @property (nonatomic, retain) NSString *itemContentURL;
-@property (nonatomic) NSInteger mType;
+@property (nonatomic, retain) NSString *itemType;
 
 -(NSString *)itemDateShortStyle;
 -(NSString *)itemDateLongStyle;

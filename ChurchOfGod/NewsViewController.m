@@ -238,8 +238,15 @@
 	if ([entries count] > 0) {
 		
 		MediaRecord *entry = [entries objectAtIndex: storyIndex];
-        if ([entry isFolder]) {
+        if ([entry isNewsFolder]) {
+            NewsViewController *newsController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:[NSBundle mainBundle]];
+            newsController.title = entry.itemTitle;
+            FeedLoader *newsFeedLoader = [[FeedLoader alloc] init];
+            newsFeedLoader.delegate = newsController;
             
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:entry.itemContentURL]];
+            newsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:newsFeedLoader] autorelease];
+            [self.navigationController pushViewController:newsController animated:YES];
         } else {
             newsDetailView.record = entry;
             newsDetailView.hidesBottomBarWhenPushed = YES;

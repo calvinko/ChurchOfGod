@@ -8,10 +8,14 @@
 
 #import "MediaRecord.h"
 
+static NSString *kNews = @"News";
+static NSString *kNewsFolder = @"News Folder";
+static NSString *kSermon = @"Sermon";
+static NSString *kSermonFolder = @"Sermon Folder";
 
 @implementation MediaRecord
 
-@synthesize itemIcon, itemDate, itemTag, itemThumbIcon, itemDescription, mType, itemContent, itemContentURL;
+@synthesize itemIcon, itemDate, itemTag, itemThumbIcon, itemDescription, itemType, itemContent, itemContentURL;
 @synthesize itemTitle, imageURLString, itemURLString, itemAudioURLString;
 @synthesize itemVideoURLString;
 
@@ -51,25 +55,26 @@
 
 -(bool) isNews
 {
-    return (mType == MTYPE_NEWS);
+    return [itemType isEqualToString:kNews];
 }
 
 -(bool) isSermon
 {
-    return (mType == MTYPE_SERMON);
+    return [itemType isEqualToString:kSermon];
 }
 
 -(bool) isNewsFolder {
-    return (mType == MTYPE_FOLDER);
+    return [itemType isEqualToString:kNewsFolder];
 }
 
--(bool) isSermonFolder
-{
-    return (mType == MTYPE_FOLDER);
+-(bool) isSermonFolder {
+
+    return [itemType isEqualToString:kSermonFolder];
 }
+
 -(bool) isFolder
 {
-    return (mType == MTYPE_FOLDER);
+    return [self isNewsFolder] || [self isSermonFolder];
 }
 
 

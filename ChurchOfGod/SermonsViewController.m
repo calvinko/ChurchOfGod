@@ -39,7 +39,7 @@
 @synthesize entries;
 @synthesize imageDownloadsInProgress;
 @synthesize mediaDetailView;
-@synthesize connectViewController;
+@synthesize selector;
 @synthesize headerCell;
 
 
@@ -172,6 +172,7 @@
         MediaRecord *mediaRecord = [self.entries objectAtIndex:indexPath.row];
         
 		cell.textLabel.text = mediaRecord.itemTitle;
+        [cell.textLabel setFont:[UIFont systemFontOfSize:16]];
         cell.detailTextLabel.text = [mediaRecord itemDateLongStyle];
 		
         // Only load cached images; defer new downloads until scrolling ends
@@ -253,22 +254,22 @@
 	// Do we have any records yet?
 	if ([entries count] > 0) {
 		
-	
-		MediaRecord * entry = [entries objectAtIndex: storyIndex];
-		
-		//NSString * storyLink = entry.itemURLString;
-		
-		// clean up the link - get rid of spaces, returns, and tabs...
-		//storyLink = [storyLink stringByReplacingOccurrencesOfString:@" " withString:@""];
-		//storyLink = [storyLink stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-		//storyLink = [storyLink stringByReplacingOccurrencesOfString:@"	" withString:@""];
-		
-		//NSLog(@"link: %@", storyLink);
-		// open in Safari
-		//[self playMovieAtURL:[NSURL URLWithString:storyLink]];
-		// [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storyLink]];}
-		mediaDetailView.record = entry;
-		[self.navigationController pushViewController:mediaDetailView animated:YES];
+        MediaRecord *entry = [entries objectAtIndex: storyIndex];
+        if ([entry isSermonFolder]) {
+            SermonsViewController *sermonController = [[SermonsViewController alloc] init];
+                                                     
+            sermonController.title = entry.itemTitle;
+            FeedLoader *sermonFeedLoader = [[FeedLoader alloc] init];
+            sermonFeedLoader.delegate = sermonController;
+            
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:entry.itemContentURL]];
+            sermonFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonFeedLoader] autorelease];
+            [self.navigationController pushViewController:sermonController animated:YES];
+        } else {
+            mediaDetailView = [[MediaDetailViewController alloc] initWithNibName:@"MediaDetail" bundle:[NSBundle mainBundle]];
+            mediaDetailView.record = entry;
+            [self.navigationController pushViewController:mediaDetailView animated:YES];
+        }
 	}
 }
 
