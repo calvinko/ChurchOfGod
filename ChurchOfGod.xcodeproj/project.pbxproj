@@ -17,7 +17,6 @@
 		CB5CDBFA134D01620076E771 /* SongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5CDBF8134D01620076E771 /* SongTextViewController.m */; };
 		CB5CDBFB134D01620076E771 /* SongTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB5CDBF9134D01620076E771 /* SongTextViewController.xib */; };
 		CB5CDBFE134D25FE0076E771 /* musicnote2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB5CDBFD134D25FE0076E771 /* musicnote2.png */; };
-		CB5CDC02134D325F0076E771 /* song1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CB5CDC01134D325F0076E771 /* song1.rtf */; };
 		CB5CDC04134D38790076E771 /* song.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB5CDC03134D38790076E771 /* song.txt */; };
 		CB777738132EC040001EA20B /* ChurchConfigLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = CB777737132EC040001EA20B /* ChurchConfigLoader.m */; };
 		CB777743132FC7A7001EA20B /* ChurchConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CB777742132FC7A5001EA20B /* ChurchConfig.m */; };
@@ -73,6 +72,11 @@
 		CBA3B9B5132C9151007ED9FD /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */; };
 		CBA3B9B7132C9163007ED9FD /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */; };
 		CBE5C597132C96470091B26F /* oakchurch.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE5C596132C96470091B26F /* oakchurch.png */; };
+		CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF974D134E6741004F3D06 /* PDBReader.m */; };
+		CBEF9751134E73EA004F3D06 /* Family6.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9750134E73EA004F3D06 /* Family6.pdb */; };
+		CBF39477134D547E000769D6 /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF39475134D547E000769D6 /* SongViewController.m */; };
+		CBF39478134D547E000769D6 /* SongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF39476134D547E000769D6 /* SongViewController.xib */; };
+		CBF3947A134D56D0000769D6 /* song2.txt in Resources */ = {isa = PBXBuildFile; fileRef = CBF39479134D56CF000769D6 /* song2.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +93,6 @@
 		CB5CDBF8134D01620076E771 /* SongTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongTextViewController.m; sourceTree = "<group>"; };
 		CB5CDBF9134D01620076E771 /* SongTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongTextViewController.xib; sourceTree = "<group>"; };
 		CB5CDBFD134D25FE0076E771 /* musicnote2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicnote2.png; sourceTree = "<group>"; };
-		CB5CDC01134D325F0076E771 /* song1.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = song1.rtf; sourceTree = "<group>"; };
 		CB5CDC03134D38790076E771 /* song.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = song.txt; sourceTree = "<group>"; };
 		CB777736132EC040001EA20B /* ChurchConfigLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChurchConfigLoader.h; sourceTree = "<group>"; };
 		CB777737132EC040001EA20B /* ChurchConfigLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChurchConfigLoader.m; sourceTree = "<group>"; };
@@ -166,6 +169,13 @@
 		CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
 		CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		CBE5C596132C96470091B26F /* oakchurch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oakchurch.png; path = "../../ChurchofGod-old/oakchurch.png"; sourceTree = "<group>"; };
+		CBEF974C134E6741004F3D06 /* PDBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBReader.h; sourceTree = "<group>"; };
+		CBEF974D134E6741004F3D06 /* PDBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBReader.m; sourceTree = "<group>"; };
+		CBEF9750134E73EA004F3D06 /* Family6.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family6.pdb; sourceTree = "<group>"; };
+		CBF39474134D547E000769D6 /* SongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
+		CBF39475134D547E000769D6 /* SongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
+		CBF39476134D547E000769D6 /* SongViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongViewController.xib; sourceTree = "<group>"; };
+		CBF39479134D56CF000769D6 /* song2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = song2.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +232,7 @@
 				CBA3B974132B591E007ED9FD /* MainWindow */,
 				CBA3B997132BF0A3007ED9FD /* Sermon & News */,
 				CBA3B995132BF037007ED9FD /* Settings */,
+				CBF39473134D5426000769D6 /* Songs */,
 				CBA3B996132BF06B007ED9FD /* Misc */,
 				CBA3B975132B59FC007ED9FD /* BrowserViewController.xib */,
 				CBA3B943132B5918007ED9FD /* BrowserViewController.h */,
@@ -239,14 +250,15 @@
 		CBA3B92E132B5724007ED9FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBEF9750134E73EA004F3D06 /* Family6.pdb */,
 				CBA3B92F132B5724007ED9FD /* ChurchOfGod-Info.plist */,
 				CBA3B930132B5724007ED9FD /* InfoPlist.strings */,
 				CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */,
 				CBA3B934132B5724007ED9FD /* main.m */,
 				CB777744132FDB6F001EA20B /* churchlist.plist */,
 				CB777746132FDBE9001EA20B /* church.xml */,
-				CB5CDC01134D325F0076E771 /* song1.rtf */,
 				CB5CDC03134D38790076E771 /* song.txt */,
+				CBF39479134D56CF000769D6 /* song2.txt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -293,9 +305,6 @@
 				CB77777F1331DFF6001EA20B /* ConfigManager.m */,
 				CB012B891339C7FE0071168E /* MediaRecord.h */,
 				CB012B8A1339C7FE0071168E /* MediaRecord.m */,
-				CB5CDBF7134D01620076E771 /* SongTextViewController.h */,
-				CB5CDBF8134D01620076E771 /* SongTextViewController.m */,
-				CB5CDBF9134D01620076E771 /* SongTextViewController.xib */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -351,6 +360,21 @@
 				CBA3B9A4132C8DF1007ED9FD /* wrench.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		CBF39473134D5426000769D6 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				CB5CDBF7134D01620076E771 /* SongTextViewController.h */,
+				CB5CDBF8134D01620076E771 /* SongTextViewController.m */,
+				CB5CDBF9134D01620076E771 /* SongTextViewController.xib */,
+				CBF39474134D547E000769D6 /* SongViewController.h */,
+				CBF39475134D547E000769D6 /* SongViewController.m */,
+				CBF39476134D547E000769D6 /* SongViewController.xib */,
+				CBEF974C134E6741004F3D06 /* PDBReader.h */,
+				CBEF974D134E6741004F3D06 /* PDBReader.m */,
+			);
+			name = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +460,10 @@
 				CB012B96133C67BA0071168E /* media_header.png in Resources */,
 				CB5CDBFB134D01620076E771 /* SongTextViewController.xib in Resources */,
 				CB5CDBFE134D25FE0076E771 /* musicnote2.png in Resources */,
-				CB5CDC02134D325F0076E771 /* song1.rtf in Resources */,
 				CB5CDC04134D38790076E771 /* song.txt in Resources */,
+				CBF39478134D547E000769D6 /* SongViewController.xib in Resources */,
+				CBF3947A134D56D0000769D6 /* song2.txt in Resources */,
+				CBEF9751134E73EA004F3D06 /* Family6.pdb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +496,8 @@
 				CB012B8B1339C7FE0071168E /* MediaRecord.m in Sources */,
 				CB012B93133BEAC60071168E /* ItemViewController.m in Sources */,
 				CB5CDBFA134D01620076E771 /* SongTextViewController.m in Sources */,
+				CBF39477134D547E000769D6 /* SongViewController.m in Sources */,
+				CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +528,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PROVISIONING_PROFILE = "4939E04B-92FC-4F5A-A1A0-781BDC0CBA0D";
 				SDKROOT = iphoneos;
 			};
@@ -516,7 +544,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "4939E04B-92FC-4F5A-A1A0-781BDC0CBA0D";
 				SDKROOT = iphoneos;
@@ -532,7 +560,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -546,7 +574,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

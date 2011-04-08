@@ -10,6 +10,7 @@
 #import "MediaViewController.h"
 #import "SermonsViewController.h"
 #import "NewsViewController.h"
+#import "SongTextViewController.h"
 #import "ParseOperation.h"
 #import "FeedLoader.h"
 #import "ChurchConfigLoader.h"
@@ -24,7 +25,7 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 
 @synthesize window;
 @synthesize tabBarController;
-@synthesize sermonNavConntroller, newsNavConntroller, mediaNavConntroller, settingNavController;
+@synthesize sermonNavConntroller, newsNavConntroller, mediaNavConntroller, settingNavController, songNavController;
 @synthesize mediaViewController, newsViewController, sermonsViewController, settingViewController;
 
 
@@ -36,6 +37,24 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
     
     // Override point for customization after application launch.
 
+    
+    /*UIViewController *stViewController = [[SongTextViewController alloc] init];
+    
+    UINavigationController *nController = [[UINavigationController alloc] initWithRootViewController:stViewController];
+    nController.tabBarItem.title = @"Song";
+    [stViewController release];
+    
+    NSArray *vcArray = tabBarController.viewControllers; 
+    NSArray *nArray = [vcArray arrayByAddingObject:nController];
+    tabBarController.viewControllers = nArray; */
+    
+    if (![[ConfigManager getUsername] isEqualToString:@"oakbs"]) {
+         NSMutableArray* newArray = [NSMutableArray arrayWithArray:songNavController.tabBarController.viewControllers];
+         [newArray removeObject:songNavController];
+         tabBarController.viewControllers = newArray;
+    }
+    
+    
     // Add the tab bar controller's view to the window and display.
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];

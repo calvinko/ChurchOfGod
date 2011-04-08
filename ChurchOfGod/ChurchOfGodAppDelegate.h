@@ -25,6 +25,7 @@
 	UINavigationController *newsNavConntroller;
 	UINavigationController *mediaNavConntroller;
 	UINavigationController *settingNavController;
+    UINavigationController *songNavController;
 	
     MediaViewController     *mediaViewController;
 	SermonsViewController   *sermonsViewController;
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *newsNavConntroller;
 @property (nonatomic, retain) IBOutlet UINavigationController *mediaNavConntroller;
 @property (nonatomic, retain) IBOutlet UINavigationController *settingNavController;
+@property (nonatomic, retain) IBOutlet UINavigationController *songNavController;
 
 @property (nonatomic, retain) IBOutlet MediaViewController *mediaViewController;
 @property (nonatomic, retain) IBOutlet SermonsViewController *sermonsViewController;
