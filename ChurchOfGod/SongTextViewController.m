@@ -42,22 +42,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSStringEncoding enstr;
-    NSError *nerror;
     //NSRange range;
-    
     //range.location = 3000;
     //range.length = 2;
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"song2" ofType:@"txt"];
     
-    //const char *fpath = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
-    
     //NSString *fileContents = [NSString stringWithContentsOfFile:filePath usedEncoding:&enstr error:&nerror];
-    //NSString *fileContents = [NSMutableString stringWithContentsOfFile:filePath encoding:kCFStringEncodingBig5 error:&nerror];
     
+    /*
     NSMutableString *sText = [[NSMutableString alloc] init];
     NSString *thisChar;
-    
     unsigned char *buf = [PDBReader readByte];
     int i=0;
     bool cont = TRUE;
@@ -77,11 +72,11 @@
         }
         if (i>200) cont=FALSE;
     }
+    */
     
-    //NSMutableString *fileContents = [NSMutableString stringWithCString:outbuf encoding:NSUTF8StringEncoding];
-    
+    NSString *sText = [PDBReader readSongBook:@"Family1"];
     self.songText.text = sText;
-    //self.songText.text = [PDBReader readSongBook:@"Family6"];
+    
     //[self.songText scrollRangeToVisible:range];
     
 }

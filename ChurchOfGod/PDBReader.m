@@ -47,6 +47,7 @@ NSString *readPDBFile(const char *filename)
         // Read Text Record
         NSMutableString *songText = [[NSMutableString alloc] init];
         for (i=1;i<=numTextRecords;i++) {
+
             offset = getRecordOffset(fp, i);
             // compute record Size
             if (i < numRecords-1) { 
@@ -56,19 +57,35 @@ NSString *readPDBFile(const char *filename)
             fseek(fp, offset, SEEK_SET);
             int nbytes = fread(buf, 1, recSize, fp);
             bool cont = TRUE;
-           
+            int j=0;
             while (cont) {
                 NSString *thisChar;
-                CFStringRef cref = CFStringCreateWithBytes (NULL, buf+i, 2, kCFStringEncodingBig5, true);
+                CFStringRef cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5, true);
                 if (cref != NULL) {
                     thisChar = cref;
                     [songText appendString:thisChar];
-                    i = i+2;
+                    j = j+2;
                 } else {
-                    [songText appendString:@"#"];
-                    i=i+1;
+                    unsigned char c = buf[j];
+                    unsigned char *b1 = &buf[j];
+                    if (isascii(c)) {
+                        NSString *ch = [[NSString alloc] initWithBytes:b1 length:1 encoding:NSASCIIStringEncoding];
+                        [songText appendString:ch];
+                    } else {
+                        [songText appendString:@"#"];
+                    }
+                    /*
+                    if (c == '\n') {
+                        [songText appendString:@"\n"];
+                    } else if (c == ' ') {
+                        [songText appendString:@" "];
+                    } else {
+                        [songText appendString:@"#"];
+                    }
+                     */
+                    j=j+1;
                 }
-                if (i>nbytes-1) cont=FALSE;
+                if (j>nbytes-1) cont=FALSE;
             }
         }
         
@@ -81,6 +98,37 @@ NSString *readPDBFile(const char *filename)
 
 
 @implementation PDBReader
+
+
+- (id) initWithFile:(NSString *) fileName {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"pdb"];
+    fp = fopen([filePath cStringUsingEncoding:NSUTF8StringEncoding], "rb");
+    if (fp) return self else return NULL;
+}
+
+- (bool) readPDBHeader 
+{
+    PDBHeader       header;
+    HeaderRecord    headerRec;
+    int             ret;
+    UInt32          offset;
+    unsigned char buf[4096];
+    
+    
+    fread(&header, sizeof(header), 1, fp);
+    numRecords = ntohs(header.recordList.numRecords);
+    
+    // read header record i.e, record 0
+    fread(&offset, 4, 1, fp);
+    offset = ntohs(offset);
+    fseek( fp, offset, SEEK_SET );
+    fread( &headerRec, sizeof(headerRec), 1, fp );
+    numTextRecords = ntohs(headerRec.num_records);
+    totalSize = headerRec.doc_size;
+    numBookmarkRecords = numRecords - numTextRecords - 1;
+    return TRUE;
+
+}
 
 + (NSString *)readSongBook:(NSString *) resourceName
 {

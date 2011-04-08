@@ -37,8 +37,15 @@ typedef struct {
 
 
 @interface PDBReader : NSObject {
+    FILE *fp;
+    int numRecords;
+    int numTextRecords;
+    int numBookmarkRecords;
+    int totalSize, recSize;
     
 }
+
+- initWithFile:(NSString *) fileName;
 + (NSString *)readSongBook:(NSString *) recsourceName;
 + (unsigned char *)readByte;
 
