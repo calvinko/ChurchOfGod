@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ChurchConfig.h" 
 
-
+@class PDBReader;
 @interface ConfigManager : NSObject {
     
     
@@ -20,6 +20,14 @@
 + (NSString *) getSermonURL;
 + (NSString *) getNewsURL;
 + (NSArray *) getValidUserList;
++ (NSArray *) getSongBookList;
+
++ (NSArray *) getSongBookList; 
++ (NSInteger) getNumberofSongBook; 
++ (NSString *) getSongBookFilenameAtIndex:(int)index;
++ (NSString *) getSongBookNameAtIndex:(int)index; 
++ (NSArray *) getSongBookNameList;
++ (PDBReader *) getReaderAtIndex:(NSUInteger) index;
 
 + (void) setDefaultChurchConfig:(ChurchConfig *)config; 
 + (void) setDefaultIndex:(NSUInteger)index;

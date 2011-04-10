@@ -11,7 +11,7 @@
 
 @implementation SongTextViewController
 
-@synthesize songText, nameLabel;
+@synthesize songText,range,reader;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,39 +45,8 @@
     //NSRange range;
     //range.location = 3000;
     //range.length = 2;
-    
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"song2" ofType:@"txt"];
-    
-    //NSString *fileContents = [NSString stringWithContentsOfFile:filePath usedEncoding:&enstr error:&nerror];
-    
-    /*
-    NSMutableString *sText = [[NSMutableString alloc] init];
-    NSString *thisChar;
-    unsigned char *buf = [PDBReader readByte];
-    int i=0;
-    bool cont = TRUE;
-    char strbuf[128];
-    while (cont) {
-        CFStringRef cref = CFStringCreateWithBytes (NULL, buf+i, 2, kCFStringEncodingBig5, true);
-        if (cref != NULL) {
-            //CFStringGetCString(cref, strbuf, 100, kCFStringEncodingUTF8);
-            //strbuf[2] = '\x0';
-            //thisChar = [NSString stringWithCString:strbuf encoding:NSUTF8StringEncoding];
-            thisChar = cref;
-            [sText appendString:thisChar];
-            i = i+2;
-        } else {
-            [sText appendString:@"#"];
-            i=i+1;
-        }
-        if (i>200) cont=FALSE;
-    }
-    */
-    
-    NSString *sText = [PDBReader readSongBook:@"Family1"];
-    self.songText.text = sText;
-    
-    //[self.songText scrollRangeToVisible:range];
+    self.songText.text = [reader getMainText];
+    [self.songText scrollRangeToVisible:range];
     
 }
 

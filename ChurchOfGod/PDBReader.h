@@ -13,27 +13,7 @@
 #include <MacTypes.h>
 
 
-typedef struct {
-    UInt32  nextRecordListID;
-    UInt16  numRecords;
-} RecordList;
 
-typedef struct {
-    unsigned char   head[72];
-    RecordList      recordList;
-} PDBHeader;
-
-typedef struct {
-    UInt16  version;                /* 1 = plain text, 2 = compressed */
-    UInt16  reserved1;
-    UInt32  doc_size;               /* in bytes, when uncompressed */
-    UInt16  num_records;            /* number of text record */
-    UInt16  rec_size;               /* usually RECORD_SIZE_MAX */
-    UInt32  vposition;  
-} HeaderRecord;
-
-#define PDBHDRSIZE 78
-#define PDBRECSIZE 8
 
 
 @interface PDBReader : NSObject {
@@ -41,13 +21,25 @@ typedef struct {
     int numRecords;
     int numTextRecords;
     int numBookmarkRecords;
-    int totalSize, recSize;
-    
+    int totalSize;
+    int bmposTable[500];
+    NSMutableArray *bookmarkArray;
+    NSMutableString *mainText;
 }
 
-- initWithFile:(NSString *) fileName;
+- (id) init;
+- (bool) readFile:(NSString *) fileName ;
+- (bool) readPDBHeader;
+- (NSInteger) getNumOfBookmark;
+- (NSString *) getMainText;
+- (NSString *)getBookmarkStringAtIndex:(int) index;
+- (int) getBookmarkPositionAtIndex:(int) index ;
+- (NSString *)readMainText;
+- (NSArray *) readBookmarkRecords;
+
 + (NSString *)readSongBook:(NSString *) recsourceName;
 + (unsigned char *)readByte;
+- (bool) hasOpenedFile;
 
 
 @end

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-
+@class SongIndexViewController;
+@class PDBReader;
 @interface SongViewController : UITableViewController {
-    
+    SongIndexViewController *iViewController;
 }
+
+@property (nonatomic, retain) SongIndexViewController *iViewController;
 
 @end

@@ -17,6 +17,7 @@
 @class NewsViewController;
 @class SettingViewController;
 @class RotatingTabBarController;
+@class SongViewController;
 
 @interface ChurchofGodAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
@@ -31,6 +32,7 @@
 	SermonsViewController   *sermonsViewController;
 	NewsViewController		*newsViewController;
 	SettingViewController	*settingViewController;
+    SongViewController      *songViewController;
 	
 	FeedLoader *mediaFeedLoader;
 	FeedLoader *newsFeedLoader;
@@ -49,6 +51,7 @@
 @property (nonatomic, retain) IBOutlet SermonsViewController *sermonsViewController;
 @property (nonatomic, retain) IBOutlet NewsViewController *newsViewController;
 @property (nonatomic, retain) IBOutlet SettingViewController *settingViewController;
+@property (nonatomic, retain) IBOutlet SongViewController *songViewController;
 
 -(Boolean)hasNetworkConnection;
 

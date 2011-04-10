@@ -1,19 +1,20 @@
 //
-//  SongViewController.m
+//  SongIndexViewController.m
 //  ChurchOfGod
 //
-//  Created by Calvin Ko on 4/6/11.
+//  Created by Calvin Ko on 4/9/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SongViewController.h"
-#import "ConfigManager.h"
 #import "SongIndexViewController.h"
 #import "PDBReader.h"
+#import "SongTextViewController.h"
 
 
-@implementation SongViewController
-@synthesize iViewController;
+
+@implementation SongIndexViewController
+
+@synthesize reader, stViewController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -48,9 +49,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-   
 }
 
 - (void)viewDidUnload
@@ -90,15 +88,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    NSInteger i = [ConfigManager getNumberofSongBook];
-    return i;
+    if (reader != NULL) {
+        return [reader getNumOfBookmark];
+    } else {
+        return 1; 
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -110,7 +109,11 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    cell.textLabel.text = [ConfigManager getSongBookNameAtIndex:indexPath.row];
+    if (reader != NULL) {
+        cell.textLabel.text = [reader getBookmarkStringAtIndex:indexPath.row];
+    } else {
+        cell.textLabel.text = @"Loading...";
+    }
     return cell;
 }
 
@@ -157,14 +160,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    iViewController = [[SongIndexViewController alloc] init];
-    // ...
-    // Pass the selected object to the new view controller.
-
-    iViewController.reader = [ConfigManager getReaderAtIndex:indexPath.row];
-    [self.navigationController pushViewController:iViewController animated:YES];   
-    [iViewController release];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
 }
 
 @end

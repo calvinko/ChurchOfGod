@@ -14,6 +14,7 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<string>IBUIImageView</string>
 			<string>IBUIBarButtonItem</string>
+			<string>IBUITableView</string>
 			<string>IBUISegmentedControl</string>
 			<string>IBUILabel</string>
 			<string>IBUINavigationBar</string>
@@ -23,6 +24,7 @@
 			<string>IBUITabBar</string>
 			<string>IBUINavigationItem</string>
 			<string>IBUITabBarItem</string>
+			<string>IBUITableViewController</string>
 			<string>IBUIView</string>
 			<string>IBUINavigationController</string>
 			<string>IBUIViewController</string>
@@ -106,13 +108,35 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="549939530">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="194734611">
+						<object class="IBUITableViewController" id="430537677">
+							<object class="IBUITableView" key="IBUIView" id="452577242">
+								<reference key="NSNextResponder"/>
+								<int key="NSvFlags">274</int>
+								<string key="NSFrame">{{0, 64}, {320, 367}}</string>
+								<reference key="NSSuperview"/>
+								<reference key="NSNextKeyView" ref="795333663"/>
+								<object class="NSColor" key="IBUIBackgroundColor" id="462871836">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+								</object>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<bool key="IBUIAlwaysBounceVertical">YES</bool>
+								<int key="IBUISeparatorStyle">1</int>
+								<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
+								<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
+								<float key="IBUIRowHeight">44</float>
+								<float key="IBUISectionHeaderHeight">22</float>
+								<float key="IBUISectionFooterHeight">22</float>
+							</object>
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="1006884289">
 								<string key="IBUITitle">Song Book</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="774583193"/>
-							<string key="IBUINibName">SongTextViewController</string>
+							<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -146,10 +170,7 @@
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{320, 44}</string>
-							<object class="NSColor" key="IBUIBackgroundColor" id="462871836">
-								<int key="NSColorSpace">3</int>
-								<bytes key="NSWhite">MQA</bytes>
-							</object>
+							<reference key="IBUIBackgroundColor" ref="462871836"/>
 							<bool key="IBUIOpaque">NO</bool>
 							<bool key="IBUIClipsSubviews">YES</bool>
 							<int key="IBUITag">1</int>
@@ -535,6 +556,30 @@
 					</object>
 					<int key="connectionID">193</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="452577242"/>
+						<reference key="destination" ref="430537677"/>
+					</object>
+					<int key="connectionID">203</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="452577242"/>
+						<reference key="destination" ref="430537677"/>
+					</object>
+					<int key="connectionID">204</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">songViewController</string>
+						<reference key="source" ref="664661524"/>
+						<reference key="destination" ref="430537677"/>
+					</object>
+					<int key="connectionID">206</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -789,23 +834,15 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="727046356"/>
-							<reference ref="549939530"/>
 							<reference ref="180172162"/>
+							<reference ref="430537677"/>
 						</object>
 						<reference key="parent" ref="1034742383"/>
+						<string key="objectName">Navigation Controller - Song</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">189</int>
 						<reference key="object" ref="727046356"/>
-						<reference key="parent" ref="774583193"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">190</int>
-						<reference key="object" ref="549939530"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="194734611"/>
-						</object>
 						<reference key="parent" ref="774583193"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -814,9 +851,24 @@
 						<reference key="parent" ref="774583193"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">191</int>
-						<reference key="object" ref="194734611"/>
-						<reference key="parent" ref="549939530"/>
+						<int key="objectID">201</int>
+						<reference key="object" ref="430537677"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="452577242"/>
+							<reference ref="1006884289"/>
+						</object>
+						<reference key="parent" ref="774583193"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">202</int>
+						<reference key="object" ref="452577242"/>
+						<reference key="parent" ref="430537677"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">205</int>
+						<reference key="object" ref="1006884289"/>
+						<reference key="parent" ref="430537677"/>
 					</object>
 				</object>
 			</object>
@@ -849,12 +901,13 @@
 					<string>187.IBPluginDependency</string>
 					<string>188.IBPluginDependency</string>
 					<string>189.IBPluginDependency</string>
-					<string>190.CustomClassName</string>
-					<string>190.IBPluginDependency</string>
 					<string>192.IBPluginDependency</string>
 					<string>2.IBAttributePlaceholdersKey</string>
 					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
+					<string>201.CustomClassName</string>
+					<string>201.IBPluginDependency</string>
+					<string>202.IBPluginDependency</string>
 					<string>3.CustomClassName</string>
 					<string>3.IBPluginDependency</string>
 				</object>
@@ -885,8 +938,6 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>SongTextViewController</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSMutableDictionary">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -894,6 +945,9 @@
 						<reference key="dict.values" ref="0"/>
 					</object>
 					<string>{{229, 373}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>SongViewController</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>ChurchofGodAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -911,7 +965,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">193</int>
+			<int key="maxID">206</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

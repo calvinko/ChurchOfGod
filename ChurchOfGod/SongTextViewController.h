@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-
+@class PDBReader;
 @interface SongTextViewController : UIViewController {
-@private
+
     
     UITextView *songText;
-    UILabel *nameLabel;
+    PDBReader  *reader;
+    NSRange    range;
 }
 
 
 @property (nonatomic, retain) IBOutlet UITextView *songText;
-@property (nonatomic, retain) IBOutlet UILabel *nameLabel;
-
+@property (nonatomic, retain) PDBReader *reader;
+@property (nonatomic, assign) NSRange range;
 @end
