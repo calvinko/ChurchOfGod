@@ -9,12 +9,19 @@
 #import "SongIndexViewController.h"
 #import "PDBReader.h"
 #import "SongTextViewController.h"
+#import "ConfigManager.h"
 
 
 
 @implementation SongIndexViewController
 
-@synthesize reader, stViewController;
+@synthesize songTextViewControllerArray, reader, cmap, songBookID;
+
+- (id) init 
+{
+    self.cmap = [[NSMutableDictionary alloc] init];
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -168,6 +175,22 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    //SongTextViewController  *vc = [[SongTextViewController alloc] initWithNibName:@"SongTextViewController" bundle:[NSBundle mainBundle]] ;
+    
+    
+    SongTextViewController *vc = [cmap objectForKey:[ConfigManager getSongBookFilenameAtIndex:songBookID]];
+    if (vc == NULL) {
+        vc = [[SongTextViewController alloc] init];
+        vc.reader = [ConfigManager getReaderAtIndex:songBookID];
+        [cmap setObject:vc forKey:[ConfigManager getSongBookFilenameAtIndex:songBookID]];
+    }
+    NSRange range;
+    range.location = [reader getBookmarkPositionAtIndex:indexPath.row];
+    range.length = 4;
+    vc.range = range;
+    [vc.songText scrollRangeToVisible:range];
+    [self.navigationController pushViewController:vc animated:YES];   
+    
 }
 
 @end

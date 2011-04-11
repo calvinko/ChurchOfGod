@@ -24,7 +24,7 @@
 #import "ItemViewController.h"
 #import "MediaRecord.h"
 
-#define kCustomRowHeight    40.0
+#define kCustomRowHeight    48.0
 #define kCustomRowCount     7
 
 #pragma mark -

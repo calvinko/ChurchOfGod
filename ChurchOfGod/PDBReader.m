@@ -215,6 +215,7 @@ NSString *convertText(unsigned char *buf, int length)
 
 {
     int i;
+    if (bookmarkArray != NULL) return bookmarkArray;
     bookmarkArray = [[NSMutableArray alloc] init ];
     for (i=1;i<=numBookmarkRecords;i++)
     {
@@ -230,23 +231,30 @@ NSString *convertText(unsigned char *buf, int length)
         bmposTable[i-1] = bmPosition;
     }
     return bookmarkArray;
-}
+} 
 
 - (NSString *)getBookmarkStringAtIndex:(int) index {
-    if (bookmarkArray == NULL) {
-        [self readBookmarkRecords];
+    if (mainText == NULL) {
+        [self readMainText];
     }
     if (bookmarkArray != NULL) {
         return [bookmarkArray objectAtIndex:index];
     } else 
         return NULL;
 }
+  
 
 - (int) getBookmarkPositionAtIndex:(int) index {
-    if (index >= 1000) 
+    if (mainText == NULL) {
+        [self readMainText];
+    }
+    if (index >= 500) 
         return 0;
-    else
-        return bmposTable[index];
+    else {
+        int i = bmposTable[index];
+        int j = adjustposTable[index];
+        return adjustposTable[index];
+    }
 }
 
 - (NSInteger) getNumOfBookmark
@@ -264,11 +272,14 @@ NSString *convertText(unsigned char *buf, int length)
 
 - (NSString *)readMainText
 {
-    int i;
+    int i, bookmarkIndex=0;
+    int byteCount = 0;
+    int charCount = 0;
     UInt32 offset;
     int recSize;
     unsigned char buf[4096];
     mainText = [[NSMutableString alloc] init];
+    if (bookmarkArray == NULL) [self readBookmarkRecords];
     
     // Read Text Record
     for (i=1;i<=numTextRecords;i++) {
@@ -291,6 +302,8 @@ NSString *convertText(unsigned char *buf, int length)
                 thisChar = cref;
                 [mainText appendString:thisChar];
                 j = j+2;
+                byteCount = byteCount+2;
+                charCount = charCount+1;
             } else {
                 unsigned char c = buf[j];
                 unsigned char *b1 = &buf[j];
@@ -300,7 +313,13 @@ NSString *convertText(unsigned char *buf, int length)
                 } else {
                     [mainText appendString:@"#"];
                 }
-                    j=j+1;
+                j=j+1;
+                byteCount++;
+                charCount++;
+            }
+            if (bookmarkIndex < numBookmarkRecords && byteCount >= bmposTable[bookmarkIndex]) {
+                adjustposTable[bookmarkIndex] = charCount;
+                bookmarkIndex++;
             }
             if (j>nbytes-1) cont=FALSE;
         }

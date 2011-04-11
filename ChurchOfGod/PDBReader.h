@@ -23,6 +23,7 @@
     int numBookmarkRecords;
     int totalSize;
     int bmposTable[500];
+    int adjustposTable[500];
     NSMutableArray *bookmarkArray;
     NSMutableString *mainText;
 }

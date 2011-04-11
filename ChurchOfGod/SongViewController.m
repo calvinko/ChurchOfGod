@@ -15,6 +15,12 @@
 @implementation SongViewController
 @synthesize iViewController;
 
+
+- (id) init {
+    iViewController = NULL;
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -158,13 +164,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    iViewController = [[SongIndexViewController alloc] init];
+    if (iViewController == NULL) {
+        self.iViewController = [[SongIndexViewController alloc] init ];
+    }
     // ...
     // Pass the selected object to the new view controller.
 
     iViewController.reader = [ConfigManager getReaderAtIndex:indexPath.row];
+    iViewController.songBookID = indexPath.row;
+    iViewController.tabBarItem.title = [ConfigManager getSongBookNameAtIndex:indexPath.row];
+    [[iViewController tableView] reloadData];
     [self.navigationController pushViewController:iViewController animated:YES];   
-    [iViewController release];
+
 }
 
 @end

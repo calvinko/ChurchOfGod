@@ -42,9 +42,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //NSRange range;
-    //range.location = 3000;
-    //range.length = 2;
+    
     self.songText.text = [reader getMainText];
     [self.songText scrollRangeToVisible:range];
     
