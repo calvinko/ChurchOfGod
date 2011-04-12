@@ -126,13 +126,21 @@ NSString *readPDBFile(const char *filename)
     }
 };
 
+@implementation SongRecord 
+@synthesize title, pos, adjustpos, sizeInBytes;
+
+-(id) initWithName:(NSString *) name 
+{
+    self.title = name;
+    return self;
+}
+                        
+@end
 
 @implementation PDBReader
 
 -(id) init 
 {
-    int i;
-    for (i=0;i<100;i++) bmposTable[i] = 0;
     fp = NULL;
     bookmarkArray = NULL;     
     mainText = NULL; 
@@ -180,31 +188,35 @@ NSString *readPDBFile(const char *filename)
     fseek( fp, offset, SEEK_SET );
     fread( &headerRec, sizeof(headerRec), 1, fp );
     numTextRecords = ntohs(headerRec.num_records);
-    totalSize = headerRec.doc_size;
+    totalSize = htonl(headerRec.doc_size);
     numBookmarkRecords = numRecords - numTextRecords - 1;
+    textOffset = getRecordOffset(fp, 1);
     return TRUE;
 }
 
 NSString *convertText(unsigned char *buf, int length) 
 {
     int j=0;
-    NSMutableString *mText = [[NSMutableString alloc] init];
+    NSMutableString *mText = [[NSMutableString alloc] init] ;
     while (j < length-1) {
-        NSString *thisChar;
-        CFStringRef cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5, true);
-        if (cref != NULL) {
-            thisChar = cref;
-            [mText appendString:thisChar];
-            j = j+2;
+        unsigned char c = buf[j];
+        if (isascii(c)) {
+            NSString *ch = [[NSString alloc] initWithBytes:&c length:1 encoding:NSASCIIStringEncoding];
+            [mText appendString:ch];
+            j++;
         } else {
-            unsigned char *c  = &buf[j];
-            if (isascii(buf[j])) {
-                NSString *ch = [[NSString alloc] initWithBytes:c length:1 encoding:NSASCIIStringEncoding];
-                [mText appendString:ch];
+            NSString *thisChar;
+            CFStringRef cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5, true);
+            if (cref != NULL) {
+                thisChar = (NSString *) cref;
+                [mText appendString:thisChar];
+                j = j+2;
             } else {
-                [mText appendString:@"#"];
+                NSInteger i = (NSInteger) buf[j];
+                [mText appendString:[NSString stringWithFormat:@"%x",i]];
+                j++;
             }
-            j=j+1;
+
         }
     }
     return mText;
@@ -217,45 +229,52 @@ NSString *convertText(unsigned char *buf, int length)
     int i;
     if (bookmarkArray != NULL) return bookmarkArray;
     bookmarkArray = [[NSMutableArray alloc] init ];
+    SongRecord *lastRecord = NULL;
+    SongRecord *thisRecord = NULL;
     for (i=1;i<=numBookmarkRecords;i++)
     {
         UInt32 offset;
         BookmarkRecord brec;
-        int bmPosition;
+        thisRecord = [[SongRecord alloc] init];
+        
         offset = getRecordOffset(fp, i+numTextRecords);
         fseek(fp, offset, SEEK_SET);
         int nbytes = fread(&brec, 1, sizeof(BookmarkRecord), fp);
-        bmPosition = ntohl(brec.position);
-        NSString *iName = convertText(brec.name, 16);
-        [bookmarkArray addObject:iName];
-        bmposTable[i-1] = bmPosition;
+        if (nbytes != sizeof(BookmarkRecord)) return NULL;
+        
+        thisRecord.pos = ntohl(brec.position);
+        thisRecord.title = convertText(brec.name, 16);
+        if (lastRecord != NULL) {
+            lastRecord.sizeInBytes = thisRecord.pos - lastRecord.pos;
+        }
+        [bookmarkArray addObject:thisRecord];
+        lastRecord = thisRecord;
     }
+    thisRecord.sizeInBytes = totalSize - thisRecord.pos;
     return bookmarkArray;
 } 
 
 - (NSString *)getBookmarkStringAtIndex:(int) index {
-    if (mainText == NULL) {
-        [self readMainText];
-    }
+    if (bookmarkArray == NULL) 
+        [self readBookmarkRecords];
     if (bookmarkArray != NULL) {
-        return [bookmarkArray objectAtIndex:index];
+        SongRecord *s = [bookmarkArray objectAtIndex:index];
+        return s.title;
     } else 
-        return NULL;
+        return nil;
 }
   
 
 - (int) getBookmarkPositionAtIndex:(int) index {
-    if (mainText == NULL) {
-        [self readMainText];
-    }
-    if (index >= 500) 
+    if (bookmarkArray == NULL) 
+        [self readBookmarkRecords];
+    if (bookmarkArray != NULL) {
+        SongRecord *s = [bookmarkArray objectAtIndex:index];
+        return s.pos;
+    } else 
         return 0;
-    else {
-        int i = bmposTable[index];
-        int j = adjustposTable[index];
-        return adjustposTable[index];
-    }
 }
+      
 
 - (NSInteger) getNumOfBookmark
 {
@@ -268,6 +287,20 @@ NSString *convertText(unsigned char *buf, int length)
         [self readMainText];
     }
     return mainText;
+}
+
+- (NSString *) getSongText:(NSInteger) index 
+{
+    unsigned char buf[2048];
+    SongRecord *rec = [bookmarkArray objectAtIndex:index];
+    fseek(fp, textOffset + rec.pos, SEEK_SET);
+    int nbytes = fread(buf, 1, rec.sizeInBytes , fp);
+    if (nbytes != rec.sizeInBytes) {
+        return @"Error";
+    } else {
+        NSString *str = convertText(buf, nbytes);
+        return str;
+    }
 }
 
 - (NSString *)readMainText
@@ -296,32 +329,34 @@ NSString *convertText(unsigned char *buf, int length)
         int nbytes = fread(buf, 1, recSize, fp);
        
         while (cont) {
-            NSString *thisChar;
-            CFStringRef cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5, true);
-            if (cref != NULL) {
-                thisChar = cref;
-                [mainText appendString:thisChar];
-                j = j+2;
-                byteCount = byteCount+2;
-                charCount = charCount+1;
-            } else {
-                unsigned char c = buf[j];
+            unsigned char c = buf[j];
+            if (isascii(c)) {
                 unsigned char *b1 = &buf[j];
-                if (isascii(c)) {
-                    NSString *ch = [[NSString alloc] initWithBytes:b1 length:1 encoding:NSASCIIStringEncoding];
-                    [mainText appendString:ch];
-                } else {
-                    [mainText appendString:@"#"];
-                }
+                NSString *ch = [[NSString alloc] initWithBytes:b1 length:1 encoding:NSASCIIStringEncoding];
+                [mainText appendString:ch];
                 j=j+1;
                 byteCount++;
                 charCount++;
+            } else {
+                NSString *thisChar;
+                CFStringRef cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5, true);
+                if (cref == NULL) {
+                    cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5_HKSCS_1999, true);
+                } 
+                if (cref != NULL) {
+                    thisChar = (NSString *) cref;
+                    [mainText appendString:thisChar];
+                    j = j+2;
+                    byteCount = byteCount+2;
+                    charCount = charCount+1;
+                } else {
+                    [mainText appendString:@"#"];
+                    j=j+1;
+                    byteCount++;
+                    charCount++;
+                }
             }
-            if (bookmarkIndex < numBookmarkRecords && byteCount >= bmposTable[bookmarkIndex]) {
-                adjustposTable[bookmarkIndex] = charCount;
-                bookmarkIndex++;
-            }
-            if (j>nbytes-1) cont=FALSE;
+        if (j>nbytes-1) cont=FALSE;
         }
     }
     return mainText;

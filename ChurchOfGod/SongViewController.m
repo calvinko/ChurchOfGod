@@ -172,7 +172,7 @@
 
     iViewController.reader = [ConfigManager getReaderAtIndex:indexPath.row];
     iViewController.songBookID = indexPath.row;
-    iViewController.tabBarItem.title = [ConfigManager getSongBookNameAtIndex:indexPath.row];
+    iViewController.navigationItem.title = [ConfigManager getSongBookNameAtIndex:indexPath.row];
     [[iViewController tableView] reloadData];
     [self.navigationController pushViewController:iViewController animated:YES];   
 

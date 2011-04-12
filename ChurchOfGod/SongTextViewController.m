@@ -11,7 +11,7 @@
 
 @implementation SongTextViewController
 
-@synthesize songText,range,reader;
+@synthesize songText,range,reader,text;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,10 +41,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    
-    self.songText.text = [reader getMainText];
-    [self.songText scrollRangeToVisible:range];
+    self.songText.text = self.text;
+    //[self.songText scrollRangeToVisible:range];
     
 }
 

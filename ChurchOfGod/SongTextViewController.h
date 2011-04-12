@@ -13,6 +13,7 @@
 
     
     UITextView *songText;
+    NSString *text;
     PDBReader  *reader;
     NSRange    range;
 }
@@ -21,4 +22,6 @@
 @property (nonatomic, retain) IBOutlet UITextView *songText;
 @property (nonatomic, retain) PDBReader *reader;
 @property (nonatomic, assign) NSRange range;
+@property (nonatomic, retain) NSString *text;
+
 @end

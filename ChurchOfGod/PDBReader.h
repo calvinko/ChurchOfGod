@@ -14,16 +14,30 @@
 
 
 
+@interface SongRecord : NSObject {
+    NSString    *title;
+    NSInteger   pos;
+    NSInteger   adjustPos;
+    NSUInteger  sizeInBytes;
+}
+
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) NSInteger pos;
+@property (nonatomic) NSInteger adjustpos;
+@property (nonatomic) NSUInteger sizeInBytes;
+
+@end
 
 
 @interface PDBReader : NSObject {
     FILE *fp;
+    int textOffset;
     int numRecords;
     int numTextRecords;
     int numBookmarkRecords;
     int totalSize;
-    int bmposTable[500];
-    int adjustposTable[500];
+    //int bmposTable[300];
+    //int adjustposTable[300];
     NSMutableArray *bookmarkArray;
     NSMutableString *mainText;
 }
@@ -33,6 +47,7 @@
 - (bool) readPDBHeader;
 - (NSInteger) getNumOfBookmark;
 - (NSString *) getMainText;
+- (NSString *) getSongText:(NSInteger) index; 
 - (NSString *)getBookmarkStringAtIndex:(int) index;
 - (int) getBookmarkPositionAtIndex:(int) index ;
 - (NSString *)readMainText;

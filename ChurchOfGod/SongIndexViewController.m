@@ -175,9 +175,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    //SongTextViewController  *vc = [[SongTextViewController alloc] initWithNibName:@"SongTextViewController" bundle:[NSBundle mainBundle]] ;
+    SongTextViewController *vc = [[[SongTextViewController alloc] init] autorelease];
+    vc.text = [reader getSongText:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];   
     
-    
+    /*
     SongTextViewController *vc = [cmap objectForKey:[ConfigManager getSongBookFilenameAtIndex:songBookID]];
     if (vc == NULL) {
         vc = [[SongTextViewController alloc] init];
@@ -190,6 +192,7 @@
     vc.range = range;
     [vc.songText scrollRangeToVisible:range];
     [self.navigationController pushViewController:vc animated:YES];   
+     */
     
 }
 
