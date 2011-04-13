@@ -12,14 +12,11 @@
 @class SongTextViewController;
 @class PDBReader;
 @interface SongIndexViewController : UITableViewController {
-    NSMutableArray *songTextViewControllerArray;
-    NSMutableDictionary *cmap;
     PDBReader *reader;
     NSUInteger songBookID;
 
 }
-@property (nonatomic, retain) NSMutableArray *songTextViewControllerArray;
-@property (nonatomic, retain) NSMutableDictionary *cmap;
+
 @property (nonatomic, retain) PDBReader *reader;
 @property (nonatomic) NSUInteger songBookID;
 

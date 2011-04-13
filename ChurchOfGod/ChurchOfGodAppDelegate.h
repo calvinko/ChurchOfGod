@@ -18,6 +18,7 @@
 @class SettingViewController;
 @class RotatingTabBarController;
 @class SongViewController;
+@class ToolTableViewController;
 
 @interface ChurchofGodAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;

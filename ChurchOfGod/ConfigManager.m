@@ -46,6 +46,8 @@ static NSMutableArray *churchArray;
                     [[[PDBReader alloc] init] retain], 
                     [[[PDBReader alloc] init] retain], 
                     [[[PDBReader alloc] init] retain], 
+                    [[[PDBReader alloc] init] retain], 
+                    [[[PDBReader alloc] init] retain], 
                     [[[PDBReader alloc] init] retain], nil] retain];
     
     NSString *testValue = [[NSUserDefaults standardUserDefaults] stringForKey:kChurchName];
@@ -69,8 +71,8 @@ static NSMutableArray *churchArray;
         //NSArray  *userlist = [NSArray arrayWithObjects:@"oakbs", @"oakadmin", nil]; 
         NSArray *userlist = [[NSArray alloc] init];
 		NSString *username = @"guest";
-        NSArray *songbooklist = [NSArray arrayWithObjects:@"Family1.pdb", @"Family2.pdb", @"Family3.pdb", @"Family4.pdb", @"Family5.pdb", @"Family6.pdb", @"Family7.pdb", @"Family8.pdb", nil];
-        NSArray *songbooknamelist = [NSArray arrayWithObjects:@"神家詩歌 1", @"神家詩歌 2",@"神家詩歌 3",@"神家詩歌 4",@"神家詩歌 5",@"神家詩歌 6",@"神家詩歌 7",@"神家詩歌 8", nil];
+        NSArray *songbooklist = [NSArray arrayWithObjects:@"Family1.pdb", @"Family2.pdb", @"Family3.pdb", @"Family4.pdb", @"Family5.pdb", @"Family6.pdb", @"Family7.pdb", @"Family8.pdb", @"Family9.pdb", @"Family10.pdb", nil];
+        NSArray *songbooknamelist = [NSArray arrayWithObjects:@"神家詩歌 1", @"神家詩歌 2",@"神家詩歌 3",@"神家詩歌 4",@"神家詩歌 5",@"神家詩歌 6",@"神家詩歌 7",@"神家詩歌 8", @"神家詩歌 9", @"神家詩歌 10",nil];
         
         // since no default values have been set (i.e. no preferences file created), create it here		
 		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:

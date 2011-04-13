@@ -1,21 +1,16 @@
 //
-//  SongIndexViewController.m
+//  ToolTableViewController.m
 //  ChurchOfGod
 //
-//  Created by Calvin Ko on 4/9/11.
+//  Created by Calvin Ko on 4/12/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "SongIndexViewController.h"
-#import "PDBReader.h"
-#import "SongTextViewController.h"
-#import "ConfigManager.h"
+#import "ToolTableViewController.h"
+#import "GospelOneViewController.h"
 
 
-
-@implementation SongIndexViewController
-
-@synthesize reader, songBookID;
+@implementation ToolTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -94,11 +89,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (reader != NULL) {
-        return [reader getNumOfBookmark];
-    } else {
-        return 1; 
-    }
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,11 +100,10 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    if (reader != NULL) {
-        cell.textLabel.text = [reader getBookmarkStringAtIndex:indexPath.row];
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"Wordless Gospel Book";
     } else {
-        cell.textLabel.text = @"Loading...";
+        cell.textLabel.text = @"Text Gospel";
     }
     return cell;
 }
@@ -162,32 +152,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    
+    GospelOneViewController *gViewController = [[GospelOneViewController alloc] init];
+                                                
      // ...
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
-    SongTextViewController *vc = [[[SongTextViewController alloc] init] autorelease];
-    vc.text = [reader getSongText:indexPath.row];
-    [self.navigationController pushViewController:vc animated:YES];   
-    
-    /*
-    SongTextViewController *vc = [cmap objectForKey:[ConfigManager getSongBookFilenameAtIndex:songBookID]];
-    if (vc == NULL) {
-        vc = [[SongTextViewController alloc] init];
-        vc.reader = [ConfigManager getReaderAtIndex:songBookID];
-        [cmap setObject:vc forKey:[ConfigManager getSongBookFilenameAtIndex:songBookID]];
-    }
-    NSRange range;
-    range.location = [reader getBookmarkPositionAtIndex:indexPath.row];
-    range.length = 4;
-    vc.range = range;
-    [vc.songText scrollRangeToVisible:range];
-    [self.navigationController pushViewController:vc animated:YES];   
-     */
-    
+     [self.navigationController pushViewController:gViewController animated:YES];
+    [gViewController release];
 }
 
 @end

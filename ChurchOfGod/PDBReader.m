@@ -207,6 +207,12 @@ NSString *convertText(unsigned char *buf, int length)
         } else {
             NSString *thisChar;
             CFStringRef cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5, true);
+            if (cref == NULL) {
+                cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5_HKSCS_1999, true);
+            } 
+            if (cref == NULL) {
+                cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5_E, true);
+            } 
             if (cref != NULL) {
                 thisChar = (NSString *) cref;
                 [mText appendString:thisChar];
@@ -243,7 +249,7 @@ NSString *convertText(unsigned char *buf, int length)
         if (nbytes != sizeof(BookmarkRecord)) return NULL;
         
         thisRecord.pos = ntohl(brec.position);
-        thisRecord.title = convertText(brec.name, 16);
+        thisRecord.title = convertText(brec.name, 15);
         if (lastRecord != NULL) {
             lastRecord.sizeInBytes = thisRecord.pos - lastRecord.pos;
         }

@@ -81,6 +81,19 @@
 		CBA3B9B1132C90EC007ED9FD /* NewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */; };
 		CBA3B9B5132C9151007ED9FD /* NewsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */; };
 		CBA3B9B7132C9163007ED9FD /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */; };
+		CBB2174E1354D3EC00FF8360 /* ToolTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB2174C1354D3EC00FF8360 /* ToolTableViewController.m */; };
+		CBB2174F1354D3EC00FF8360 /* ToolTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB2174D1354D3EC00FF8360 /* ToolTableViewController.xib */; };
+		CBB217551354D57800FF8360 /* GospelOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB217531354D57800FF8360 /* GospelOneViewController.m */; };
+		CBB217561354D57800FF8360 /* GospelOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB217541354D57800FF8360 /* GospelOneViewController.xib */; };
+		CBB217601354FADD00FF8360 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB2175F1354FADD00FF8360 /* MyViewController.m */; };
+		CBB217621354FB3E00FF8360 /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB217611354FB3E00FF8360 /* MyView.xib */; };
+		CBB21764135559D600FF8360 /* content_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBB21763135559D600FF8360 /* content_iPhone.plist */; };
+		CBB217691355668500FF8360 /* wordless-gold.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217651355667F00FF8360 /* wordless-gold.png */; };
+		CBB2176A1355668500FF8360 /* wordless-white.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217661355668000FF8360 /* wordless-white.png */; };
+		CBB2176B1355668500FF8360 /* wordless-red.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217671355668200FF8360 /* wordless-red.png */; };
+		CBB2176C1355668500FF8360 /* wordless-black.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217681355668300FF8360 /* wordless-black.png */; };
+		CBB2176E13565DF400FF8360 /* wordless-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBB2176D13565DF100FF8360 /* wordless-cover.jpg */; };
+		CBB2177013565F2500FF8360 /* Family10.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBB2176F13565F2500FF8360 /* Family10.pdb */; };
 		CBE5C597132C96470091B26F /* oakchurch.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE5C596132C96470091B26F /* oakchurch.png */; };
 		CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF974D134E6741004F3D06 /* PDBReader.m */; };
 		CBEF9751134E73EA004F3D06 /* Family6.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9750134E73EA004F3D06 /* Family6.pdb */; };
@@ -188,6 +201,22 @@
 		CBA3B9B0132C90EC007ED9FD /* NewsDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailController.m; sourceTree = "<group>"; };
 		CBA3B9B4132C9151007ED9FD /* NewsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailController.xib; sourceTree = "<group>"; };
 		CBA3B9B6132C9163007ED9FD /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		CBB2174B1354D3EC00FF8360 /* ToolTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolTableViewController.h; sourceTree = "<group>"; };
+		CBB2174C1354D3EC00FF8360 /* ToolTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolTableViewController.m; sourceTree = "<group>"; };
+		CBB2174D1354D3EC00FF8360 /* ToolTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolTableViewController.xib; sourceTree = "<group>"; };
+		CBB217521354D57800FF8360 /* GospelOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GospelOneViewController.h; sourceTree = "<group>"; };
+		CBB217531354D57800FF8360 /* GospelOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GospelOneViewController.m; sourceTree = "<group>"; };
+		CBB217541354D57800FF8360 /* GospelOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GospelOneViewController.xib; sourceTree = "<group>"; };
+		CBB2175E1354FADD00FF8360 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		CBB2175F1354FADD00FF8360 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		CBB217611354FB3E00FF8360 /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
+		CBB21763135559D600FF8360 /* content_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = content_iPhone.plist; sourceTree = "<group>"; };
+		CBB217651355667F00FF8360 /* wordless-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-gold.png"; sourceTree = "<group>"; };
+		CBB217661355668000FF8360 /* wordless-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-white.png"; sourceTree = "<group>"; };
+		CBB217671355668200FF8360 /* wordless-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-red.png"; sourceTree = "<group>"; };
+		CBB217681355668300FF8360 /* wordless-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-black.png"; sourceTree = "<group>"; };
+		CBB2176D13565DF100FF8360 /* wordless-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wordless-cover.jpg"; sourceTree = "<group>"; };
+		CBB2176F13565F2500FF8360 /* Family10.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family10.pdb; sourceTree = "<group>"; };
 		CBE5C596132C96470091B26F /* oakchurch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oakchurch.png; path = "../../ChurchofGod-old/oakchurch.png"; sourceTree = "<group>"; };
 		CBEF974C134E6741004F3D06 /* PDBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBReader.h; sourceTree = "<group>"; };
 		CBEF974D134E6741004F3D06 /* PDBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBReader.m; sourceTree = "<group>"; };
@@ -252,6 +281,7 @@
 				CBA3B997132BF0A3007ED9FD /* Sermon & News */,
 				CBA3B995132BF037007ED9FD /* Settings */,
 				CBF39473134D5426000769D6 /* Songs */,
+				CBB217511354D54000FF8360 /* Tools */,
 				CBA3B996132BF06B007ED9FD /* Misc */,
 				CBA3B975132B59FC007ED9FD /* BrowserViewController.xib */,
 				CBA3B943132B5918007ED9FD /* BrowserViewController.h */,
@@ -269,6 +299,8 @@
 		CBA3B92E132B5724007ED9FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBB2176F13565F2500FF8360 /* Family10.pdb */,
+				CBB21763135559D600FF8360 /* content_iPhone.plist */,
 				CB3E06B5134F7D470019BA22 /* Family1.pdb */,
 				CB10E10713512D610040F31B /* Family2.pdb */,
 				CB10E10813512D610040F31B /* Family3.pdb */,
@@ -363,6 +395,11 @@
 		CBA3B99A132C8DA4007ED9FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CBB2176D13565DF100FF8360 /* wordless-cover.jpg */,
+				CBB217651355667F00FF8360 /* wordless-gold.png */,
+				CBB217661355668000FF8360 /* wordless-white.png */,
+				CBB217671355668200FF8360 /* wordless-red.png */,
+				CBB217681355668300FF8360 /* wordless-black.png */,
 				CB5CDBFD134D25FE0076E771 /* musicnote2.png */,
 				CB012B95133C67B80071168E /* media_header.png */,
 				CB012B8C133AAEC70071168E /* oaksign.jpg */,
@@ -386,6 +423,22 @@
 				CBA3B9A4132C8DF1007ED9FD /* wrench.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		CBB217511354D54000FF8360 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CBB217611354FB3E00FF8360 /* MyView.xib */,
+				CBB2175E1354FADD00FF8360 /* MyViewController.h */,
+				CBB2175F1354FADD00FF8360 /* MyViewController.m */,
+				CBB2174B1354D3EC00FF8360 /* ToolTableViewController.h */,
+				CBB2174C1354D3EC00FF8360 /* ToolTableViewController.m */,
+				CBB2174D1354D3EC00FF8360 /* ToolTableViewController.xib */,
+				CBB217521354D57800FF8360 /* GospelOneViewController.h */,
+				CBB217531354D57800FF8360 /* GospelOneViewController.m */,
+				CBB217541354D57800FF8360 /* GospelOneViewController.xib */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 		CBF39473134D5426000769D6 /* Songs */ = {
@@ -501,6 +554,16 @@
 				CB10E11213512D610040F31B /* Family7.pdb in Resources */,
 				CB10E11313512D610040F31B /* Family8.pdb in Resources */,
 				CB10E11413512D610040F31B /* Family9.pdb in Resources */,
+				CBB2174F1354D3EC00FF8360 /* ToolTableViewController.xib in Resources */,
+				CBB217561354D57800FF8360 /* GospelOneViewController.xib in Resources */,
+				CBB217621354FB3E00FF8360 /* MyView.xib in Resources */,
+				CBB21764135559D600FF8360 /* content_iPhone.plist in Resources */,
+				CBB217691355668500FF8360 /* wordless-gold.png in Resources */,
+				CBB2176A1355668500FF8360 /* wordless-white.png in Resources */,
+				CBB2176B1355668500FF8360 /* wordless-red.png in Resources */,
+				CBB2176C1355668500FF8360 /* wordless-black.png in Resources */,
+				CBB2176E13565DF400FF8360 /* wordless-cover.jpg in Resources */,
+				CBB2177013565F2500FF8360 /* Family10.pdb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +599,9 @@
 				CBF39477134D547E000769D6 /* SongViewController.m in Sources */,
 				CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */,
 				CB10E10413510C930040F31B /* SongIndexViewController.m in Sources */,
+				CBB2174E1354D3EC00FF8360 /* ToolTableViewController.m in Sources */,
+				CBB217551354D57800FF8360 /* GospelOneViewController.m in Sources */,
+				CBB217601354FADD00FF8360 /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

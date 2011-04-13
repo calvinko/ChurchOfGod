@@ -60,6 +60,7 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -79,44 +80,36 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="1073175778">
-					<bool key="IBUIAutoresizesArchivedViewToFullSize">NO</bool>
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="829313286">
-						<string key="IBUITitle">Settings</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">sliders.png</string>
-						</object>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="929397420">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="680712438">
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUISystemItemIdentifier">9</int>
 					</object>
-					<reference key="IBUIToolbarItems" ref="0"/>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
+					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 						<int key="IBUIInterfaceOrientation">1</int>
 						<int key="interfaceOrientation">1</int>
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="317932123">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="146806373">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
-						<string key="NSFrameSize">{320, 44}</string>
+						<string key="NSFrameSize">{0, 0}</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<int key="IBUIBarStyle">1</int>
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="426922272">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="620878610">
-								<string key="IBUITitle">Settings</string>
+						<object class="IBUIViewController" id="9463332">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="40586752">
+								<string key="IBUITitle">Download</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="1073175778"/>
-							<string key="IBUINibName">SettingViewController</string>
-							<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+							<reference key="IBUIParentViewController" ref="929397420"/>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -258,6 +251,7 @@
 							<bool key="IBUIClipsSubviews">YES</bool>
 							<bool key="IBUIMultipleTouchEnabled">YES</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							<int key="IBUIBarStyle">1</int>
 						</object>
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -266,7 +260,6 @@
 									<nil key="NSNextResponder"/>
 									<int key="NSvFlags">274</int>
 									<string key="NSFrame">{{0, 64}, {320, 367}}</string>
-									<reference key="NSNextKeyView" ref="795333663"/>
 									<reference key="IBUIBackgroundColor" ref="462871836"/>
 									<bool key="IBUIOpaque">NO</bool>
 									<bool key="IBUIClipsSubviews">YES</bool>
@@ -339,7 +332,55 @@
 							</object>
 						</object>
 					</object>
-					<reference ref="1073175778"/>
+					<reference ref="929397420"/>
+					<object class="IBUINavigationController" id="1073175778">
+						<bool key="IBUIAutoresizesArchivedViewToFullSize">NO</bool>
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="829313286">
+							<string key="IBUITitle">Settings</string>
+							<object class="NSCustomResource" key="IBUIImage">
+								<string key="NSClassName">NSImage</string>
+								<string key="NSResourceName">sliders.png</string>
+							</object>
+							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						</object>
+						<reference key="IBUIToolbarItems" ref="0"/>
+						<reference key="IBUIParentViewController" ref="1034742383"/>
+						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+							<int key="IBUIInterfaceOrientation">1</int>
+							<int key="interfaceOrientation">1</int>
+						</object>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<bool key="IBUIHorizontal">NO</bool>
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="317932123">
+							<nil key="NSNextResponder"/>
+							<int key="NSvFlags">256</int>
+							<string key="NSFrameSize">{320, 44}</string>
+							<bool key="IBUIOpaque">NO</bool>
+							<bool key="IBUIClipsSubviews">YES</bool>
+							<bool key="IBUIMultipleTouchEnabled">YES</bool>
+							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							<int key="IBUIBarStyle">1</int>
+						</object>
+						<object class="NSMutableArray" key="IBUIViewControllers">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBUIViewController" id="426922272">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="620878610">
+									<reference key="IBUINavigationBar"/>
+									<string key="IBUITitle">Settings</string>
+									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								</object>
+								<reference key="IBUIParentViewController" ref="1073175778"/>
+								<string key="IBUINibName">SettingViewController</string>
+								<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
+									<int key="IBUIInterfaceOrientation">1</int>
+									<int key="interfaceOrientation">1</int>
+								</object>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<bool key="IBUIHorizontal">NO</bool>
+							</object>
+						</object>
+					</object>
 					<object class="IBUIViewController" id="268481961">
 						<string key="IBUITitle">About</string>
 						<object class="IBUIView" key="IBUIView" id="583132328">
@@ -461,6 +502,7 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
 						<bytes key="NSWhite">MCAwAA</bytes>
@@ -619,6 +661,7 @@
 							<reference ref="268481961"/>
 							<reference ref="284202235"/>
 							<reference ref="774583193"/>
+							<reference ref="929397420"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -867,6 +910,42 @@
 						<reference key="object" ref="1006884289"/>
 						<reference key="parent" ref="430537677"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">207</int>
+						<reference key="object" ref="929397420"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="146806373"/>
+							<reference ref="9463332"/>
+							<reference ref="680712438"/>
+						</object>
+						<reference key="parent" ref="1034742383"/>
+						<string key="objectName">Navigation Controller</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">208</int>
+						<reference key="object" ref="146806373"/>
+						<reference key="parent" ref="929397420"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">209</int>
+						<reference key="object" ref="9463332"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="40586752"/>
+						</object>
+						<reference key="parent" ref="929397420"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">210</int>
+						<reference key="object" ref="40586752"/>
+						<reference key="parent" ref="9463332"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">211</int>
+						<reference key="object" ref="680712438"/>
+						<reference key="parent" ref="929397420"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -884,6 +963,7 @@
 					<string>143.CustomClassName</string>
 					<string>160.IBPluginDependency</string>
 					<string>161.IBPluginDependency</string>
+					<string>162.CustomClassName</string>
 					<string>162.IBPluginDependency</string>
 					<string>164.IBPluginDependency</string>
 					<string>165.CustomClassName</string>
@@ -905,6 +985,10 @@
 					<string>201.CustomClassName</string>
 					<string>201.IBPluginDependency</string>
 					<string>202.IBPluginDependency</string>
+					<string>207.IBPluginDependency</string>
+					<string>208.IBPluginDependency</string>
+					<string>209.IBPluginDependency</string>
+					<string>211.IBPluginDependency</string>
 					<string>3.CustomClassName</string>
 					<string>3.IBPluginDependency</string>
 				</object>
@@ -921,6 +1005,7 @@
 					<string>NewsViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>ToolTableViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>SettingViewController</string>
@@ -946,6 +1031,10 @@
 					<string>SongViewController</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>ChurchofGodAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
@@ -962,7 +1051,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">206</int>
+			<int key="maxID">211</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
