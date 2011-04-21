@@ -118,15 +118,11 @@
     if ([error code] == kCFURLErrorNotConnectedToInternet)
 	{
         // if we can identify the error, we can present a more precise message to the user.
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"No Connection Error"
-															 forKey:NSLocalizedDescriptionKey];
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"No Connection Error" forKey:NSLocalizedDescriptionKey];
         NSError *noConnectionError = [NSError errorWithDomain:NSCocoaErrorDomain
-														 code:kCFURLErrorNotConnectedToInternet
-													 userInfo:userInfo];
+                code:kCFURLErrorNotConnectedToInternet userInfo:userInfo];
         [self handleError:noConnectionError];
-    }
-	else
-	{
+    } else {
         // otherwise handle the error generically
         [self handleError:error];
     }

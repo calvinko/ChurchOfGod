@@ -178,13 +178,13 @@
             break;
         case 1:
 			if (indexPath.row==0) {
-				cell.textLabel.text = @"Memory";
+				cell.textLabel.text = @"Download Items";
                 UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
                 [button setTitle: @"Click" forState: UIControlStateNormal ];
                 [button addTarget: self action: @selector(edit:) forControlEvents: UIControlEventTouchUpInside ];
                 [cell.contentView addSubview:button];
 			} else {
-				cell.textLabel.text = @"Field2";
+				cell.textLabel.text = @"Memory Used";
 			}
             break;
 		default:

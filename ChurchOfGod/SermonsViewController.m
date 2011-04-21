@@ -22,10 +22,11 @@
 
 #import "SermonsViewController.h"
 #import "ItemViewController.h"
+#import "SermonSeriesViewController.h"
 #import "MediaRecord.h"
 
 #define kCustomRowHeight    48.0
-#define kCustomRowCount     7
+#define kCustomRowCount     6
 
 #pragma mark -
 
@@ -173,7 +174,7 @@
         MediaRecord *mediaRecord = [self.entries objectAtIndex:indexPath.row];
         
 		cell.textLabel.text = mediaRecord.itemTitle;
-        [cell.textLabel setFont:[UIFont systemFontOfSize:16]];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:18]];
         cell.detailTextLabel.text = [mediaRecord itemDateLongStyle];
 		
         // Only load cached images; defer new downloads until scrolling ends
@@ -265,10 +266,22 @@
             
             NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:entry.itemContentURL]];
             sermonFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonFeedLoader] autorelease];
-            //[self.navigationController pushViewController:sermonController animated:YES];
-            ItemViewController *itemViewController = [[ItemViewController alloc] initWithNibName:@"ItemViewController" bundle:[NSBundle mainBundle]];
-            itemViewController.record = entry;
-            [self.navigationController pushViewController:itemViewController animated:YES];
+            [self.navigationController pushViewController:sermonController animated:YES];
+        } else if ([entry isSermonSeries]){
+            SermonSeriesViewController *sViewController = [[SermonSeriesViewController alloc] initWithNibName:@"SermonSeriesViewController" bundle:nil];
+            sViewController.title = entry.itemTitle;
+            FeedLoader *sermonFeedLoader = [[FeedLoader alloc] init];
+            sermonFeedLoader.delegate = sViewController;
+            
+            //sViewController.topBanner.image = entry.itemIcon;
+            //sViewController.topBanner.hidden = NO;
+            sViewController.image = entry.itemIcon;
+            
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:entry.itemContentURL]];
+            sermonFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonFeedLoader] autorelease];
+            
+            [self.navigationController pushViewController:sViewController animated:YES];
+            [sViewController release];
 
         } else {
             mediaDetailView = [[MediaDetailViewController alloc] initWithNibName:@"MediaDetail" bundle:[NSBundle mainBundle]];

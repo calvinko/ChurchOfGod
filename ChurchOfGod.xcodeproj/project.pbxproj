@@ -38,6 +38,9 @@
 		CB7777AD1339AC76001EA20B /* LearnLead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB7777A91339AC76001EA20B /* LearnLead.jpg */; };
 		CB7777AE1339AC76001EA20B /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7777AA1339AC76001EA20B /* refresh.png */; };
 		CB7777B01339B102001EA20B /* download1.gif in Resources */ = {isa = PBXBuildFile; fileRef = CB7777AF1339B101001EA20B /* download1.gif */; };
+		CB8C56C613576E820026807A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8C56C513576E820026807A /* Default.png */; };
+		CB8C56CA1357C5590026807A /* SermonSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C56C81357C5590026807A /* SermonSeriesViewController.m */; };
+		CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */; };
 		CBA3B928132B5724007ED9FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B927132B5724007ED9FD /* UIKit.framework */; };
 		CBA3B92A132B5724007ED9FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B929132B5724007ED9FD /* Foundation.framework */; };
 		CBA3B92C132B5724007ED9FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */; };
@@ -140,6 +143,10 @@
 		CB7777A91339AC76001EA20B /* LearnLead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LearnLead.jpg; sourceTree = "<group>"; };
 		CB7777AA1339AC76001EA20B /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		CB7777AF1339B101001EA20B /* download1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = download1.gif; sourceTree = "<group>"; };
+		CB8C56C513576E820026807A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CB8C56C71357C5580026807A /* SermonSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SermonSeriesViewController.h; sourceTree = "<group>"; };
+		CB8C56C81357C5590026807A /* SermonSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SermonSeriesViewController.m; sourceTree = "<group>"; };
+		CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SermonSeriesViewController.xib; sourceTree = "<group>"; };
 		CBA3B923132B5724007ED9FD /* ChurchOfGod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChurchOfGod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA3B927132B5724007ED9FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBA3B929132B5724007ED9FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -283,14 +290,6 @@
 				CBF39473134D5426000769D6 /* Songs */,
 				CBB217511354D54000FF8360 /* Tools */,
 				CBA3B996132BF06B007ED9FD /* Misc */,
-				CBA3B975132B59FC007ED9FD /* BrowserViewController.xib */,
-				CBA3B943132B5918007ED9FD /* BrowserViewController.h */,
-				CBA3B944132B5918007ED9FD /* BrowserViewController.m */,
-				CBA3B94C132B5918007ED9FD /* ConnectViewController.h */,
-				CBA3B94D132B5918007ED9FD /* ConnectViewController.m */,
-				CBA3B952132B5918007ED9FD /* kotablecell.h */,
-				CBA3B953132B5918007ED9FD /* kotablecell.m */,
-				CBA3B954132B5918007ED9FD /* kotablecell.xib */,
 				CBA3B92E132B5724007ED9FD /* Supporting Files */,
 			);
 			path = ChurchOfGod;
@@ -299,7 +298,6 @@
 		CBA3B92E132B5724007ED9FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBB2176F13565F2500FF8360 /* Family10.pdb */,
 				CBB21763135559D600FF8360 /* content_iPhone.plist */,
 				CB3E06B5134F7D470019BA22 /* Family1.pdb */,
 				CB10E10713512D610040F31B /* Family2.pdb */,
@@ -310,6 +308,7 @@
 				CB10E10B13512D610040F31B /* Family7.pdb */,
 				CB10E10C13512D610040F31B /* Family8.pdb */,
 				CB10E10D13512D610040F31B /* Family9.pdb */,
+				CBB2176F13565F2500FF8360 /* Family10.pdb */,
 				CBA3B92F132B5724007ED9FD /* ChurchOfGod-Info.plist */,
 				CBA3B930132B5724007ED9FD /* InfoPlist.strings */,
 				CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */,
@@ -324,6 +323,7 @@
 		CBA3B974132B591E007ED9FD /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
+				CB8C56C513576E820026807A /* Default.png */,
 				CBA3B94A132B5918007ED9FD /* ChurchofGodAppDelegate.h */,
 				CBA3B94B132B5918007ED9FD /* ChurchofGodAppDelegate.m */,
 				CBA3B95B132B5918007ED9FD /* RotatingTabBarController.h */,
@@ -342,6 +342,9 @@
 				CBA3B95F132B5918007ED9FD /* SettingViewController.h */,
 				CBA3B960132B5918007ED9FD /* SettingViewController.m */,
 				CBA3B961132B5918007ED9FD /* SettingViewController.xib */,
+				CBA3B952132B5918007ED9FD /* kotablecell.h */,
+				CBA3B953132B5918007ED9FD /* kotablecell.m */,
+				CBA3B954132B5918007ED9FD /* kotablecell.xib */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -363,6 +366,11 @@
 				CB77777F1331DFF6001EA20B /* ConfigManager.m */,
 				CB012B891339C7FE0071168E /* MediaRecord.h */,
 				CB012B8A1339C7FE0071168E /* MediaRecord.m */,
+				CBA3B975132B59FC007ED9FD /* BrowserViewController.xib */,
+				CBA3B943132B5918007ED9FD /* BrowserViewController.h */,
+				CBA3B944132B5918007ED9FD /* BrowserViewController.m */,
+				CBA3B94C132B5918007ED9FD /* ConnectViewController.h */,
+				CBA3B94D132B5918007ED9FD /* ConnectViewController.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -385,6 +393,9 @@
 				CBA3B95D132B5918007ED9FD /* SermonsViewController.h */,
 				CBA3B95E132B5918007ED9FD /* SermonsViewController.m */,
 				CBA3B97B132B59FC007ED9FD /* SermonsViewController.xib */,
+				CB8C56C71357C5580026807A /* SermonSeriesViewController.h */,
+				CB8C56C81357C5590026807A /* SermonSeriesViewController.m */,
+				CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */,
 				CB012B90133BEAAF0071168E /* ItemViewController.h */,
 				CB012B91133BEAB60071168E /* ItemViewController.m */,
 				CB012B92133BEABC0071168E /* ItemViewController.xib */,
@@ -564,6 +575,8 @@
 				CBB2176C1355668500FF8360 /* wordless-black.png in Resources */,
 				CBB2176E13565DF400FF8360 /* wordless-cover.jpg in Resources */,
 				CBB2177013565F2500FF8360 /* Family10.pdb in Resources */,
+				CB8C56C613576E820026807A /* Default.png in Resources */,
+				CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +615,7 @@
 				CBB2174E1354D3EC00FF8360 /* ToolTableViewController.m in Sources */,
 				CBB217551354D57800FF8360 /* GospelOneViewController.m in Sources */,
 				CBB217601354FADD00FF8360 /* MyViewController.m in Sources */,
+				CB8C56CA1357C5590026807A /* SermonSeriesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +678,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -678,7 +692,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

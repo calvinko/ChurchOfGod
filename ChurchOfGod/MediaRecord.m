@@ -12,6 +12,7 @@ static NSString *kNews = @"News";
 static NSString *kNewsFolder = @"News Folder";
 static NSString *kSermon = @"Sermon";
 static NSString *kSermonFolder = @"Sermon Folder";
+static NSString *kSermonSeries = @"Sermon Series";
 
 @implementation MediaRecord
 
@@ -70,6 +71,12 @@ static NSString *kSermonFolder = @"Sermon Folder";
 -(bool) isSermonFolder {
 
     return [itemType isEqualToString:kSermonFolder];
+}
+
+
+-(bool) isSermonSeries {
+    
+    return [itemType isEqualToString:kSermonSeries];
 }
 
 -(bool) isFolder

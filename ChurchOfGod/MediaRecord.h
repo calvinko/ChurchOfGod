@@ -51,6 +51,7 @@
 -(bool) isNewsFolder;
 -(bool) isSermon;
 -(bool) isSermonFolder;
+-(bool) isSermonSeries; 
 -(bool) isFolder;
 
 @end
