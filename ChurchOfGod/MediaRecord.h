@@ -28,6 +28,7 @@
     NSString *itemAudioURLString;
     NSString *itemContentURL;
     NSString *itemType;
+    NSString *itemCategory;
 }
 
 @property (nonatomic, retain) NSString *itemTitle;
@@ -43,6 +44,8 @@
 @property (nonatomic, retain) NSString *itemAudioURLString;
 @property (nonatomic, retain) NSString *itemContentURL;
 @property (nonatomic, retain) NSString *itemType;
+@property (nonatomic, retain) NSString *itemCategory;
+
 
 -(NSString *)itemDateShortStyle;
 -(NSString *)itemDateLongStyle;

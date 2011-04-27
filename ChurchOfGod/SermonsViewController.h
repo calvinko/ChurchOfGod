@@ -30,7 +30,8 @@
 
 @interface SermonsViewController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate, FeedLoaderDelegate>
 {
-	NSArray *entries;   // the main data model for our UITableView
+    NSArray *allEntries; // the main data model 
+	NSArray *entries;    // the filtered data model for our UITableView
     NSMutableDictionary *imageDownloadsInProgress;  // the set of IconDownloader objects for each app
 	MediaDetailViewController *mediaDetailView;
 	UIView *headerCell;
@@ -38,7 +39,7 @@
 	Boolean didRelease;
 }
 
-@property (nonatomic, retain) NSArray *entries;
+@property (nonatomic, retain) NSArray *entries, *allEntries;
 @property (nonatomic, retain) NSMutableDictionary *imageDownloadsInProgress;
 @property (nonatomic, retain) IBOutlet MediaDetailViewController *mediaDetailView;
 @property (nonatomic, retain) IBOutlet UIView *headerCell;
@@ -46,8 +47,6 @@
 
 - (void)appImageDidLoad:(NSIndexPath *)indexPath;
 
--(IBAction) leftButtonTapped;
--(IBAction) rightButtonTapped;
--(IBAction) midButtonTapped;
+-(IBAction) segmentControlTapped:(id)sender;
 
 @end

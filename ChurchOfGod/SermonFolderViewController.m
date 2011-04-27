@@ -1,124 +1,119 @@
-/* 
- Communique - The open church communications iPhone app.
- 
- Copyright (C) 2010  Sugar Creek Baptist Church <info at sugarcreek.net> - 
- Rick Russell <rrussell at sugarcreek.net>
- 
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License along
- with this program; if not, write to the Free Software Foundation, Inc.,
- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- 
- */
+//
+//  SermonFolderViewController.m
+//  ChurchOfGod
+//
+//  Created by Calvin Ko on 4/27/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
 
-#import "SermonsViewController.h"
-#import "SermonSeriesViewController.h"
 #import "SermonFolderViewController.h"
+#import "ItemViewController.h"
+#import "SermonSeriesViewController.h"
 #import "MediaRecord.h"
+
 
 #define kCustomRowHeight    48.0
 #define kCustomRowCount     6
 
-#pragma mark -
-
-@interface SermonsViewController ()
+@interface SermonFolderViewController ()
 
 - (void)startIconDownload:(MediaRecord *)mediaRecord forIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
-@implementation SermonsViewController
+@implementation SermonFolderViewController
 
-@synthesize entries, allEntries;
+@synthesize entries;
 @synthesize imageDownloadsInProgress;
 @synthesize mediaDetailView;
-@synthesize selector;
-@synthesize headerCell;
 
 
-#pragma mark 
-
--(id)init
+- (id)initWithStyle:(UITableViewStyle)style
 {
-	self = [super init];
-	didRelease = NO;
-	return self;
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.tableView.rowHeight = kCustomRowHeight;
+
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
-	//self.entries = nil;
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
-	
-	if (didRelease) {
+    [super viewWillAppear:animated];
+    if (didRelease) {
 		[self.tableView reloadData];
 	}
 }
 
-/*
--(void)viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-	if(UIInterfaceOrientationIsPortrait(self.interfaceOrientation)){
-        [UIView beginAnimations:@"View Flip" context:nil];
-        [UIView setAnimationDuration:0.5f];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        self.tabBarController.view.transform = CGAffineTransformIdentity;
-        self.tabBarController.view.transform =
-		CGAffineTransformMakeRotation(M_PI * (90) / 180.0);
-        self.view.bounds = CGRectMake(0.0f, 0.0f, 320.0f, 480.0f);
-        [UIView commitAnimations];
-    }
-}
-*/
-
-- (void)dealloc
-{
-    [entries release];
-	[imageDownloadsInProgress release];
-    [super dealloc];
+    [super viewDidAppear:animated];
+    
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    didRelease = YES;
-    // terminate all pending download connections
-    //NSArray *allDownloads = [self.imageDownloadsInProgress allValues];
-    //[allDownloads performSelector:@selector(cancelDownload)];
+    [super viewWillDisappear:animated];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark -
-#pragma mark Table view creation (UITableViewDataSource)
+#pragma mark - Table view data source
 
-// customize the number of rows in the table view
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	int count = [entries count];
+    int count = [entries count];
 	
 	// ff there's no data yet, return enough rows to fill the screen
     if (count == 0)
@@ -130,15 +125,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// customize the appearance of table view cells
-	//
-	static NSString *CellIdentifier = @"MediaTableCell";
+    static NSString *CellIdentifier = @"MediaTableCell";
     static NSString *PlaceholderCellIdentifier = @"PlaceholderCell";
     
     // add a placeholder cell while waiting on table data
     int nodeCount = [self.entries count];
-	
-
 	
 	if (nodeCount == 0 && indexPath.row == 0)
 	{
@@ -194,8 +185,47 @@
     }
     
     return cell;
+
 }
 
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
 
 #pragma mark -
 #pragma mark Table cell image support
@@ -246,19 +276,21 @@
     }
 }
 
-// Override to support row selection in the table view.
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// Navigation logic
-	
-	int storyIndex = [indexPath indexAtPosition: [indexPath length] - 1];
 
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int storyIndex = [indexPath indexAtPosition: [indexPath length] - 1];
+    
 	// Do we have any records yet?
 	if ([entries count] > 0) {
 		
         MediaRecord *entry = [entries objectAtIndex: storyIndex];
         if ([entry isSermonFolder]) {
             SermonFolderViewController *sermonController = [[SermonFolderViewController alloc] init];
-                                                     
+            
             sermonController.title = entry.itemTitle;
             FeedLoader *sermonFeedLoader = [[FeedLoader alloc] init];
             sermonFeedLoader.delegate = sermonController;
@@ -281,88 +313,23 @@
             
             [self.navigationController pushViewController:sViewController animated:YES];
             [sViewController release];
-
+            
         } else {
             mediaDetailView = [[MediaDetailViewController alloc] initWithNibName:@"MediaDetail" bundle:[NSBundle mainBundle]];
             mediaDetailView.record = entry;
             [self.navigationController pushViewController:mediaDetailView animated:YES];
         }
 	}
-}
 
-
-#pragma mark -
-#pragma mark Deferred image loading (UIScrollViewDelegate)
-
-// Load images for all onscreen rows when scrolling is finished
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (!decelerate)
-	{
-        [self loadImagesForOnscreenRows];
-    }
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    [self loadImagesForOnscreenRows];
-}
-
-NSArray *getFilterRecord(NSArray *inArray, NSString *cat) {
-    NSMutableArray *a = [[[NSMutableArray alloc] init ] autorelease];
-    NSEnumerator *enumerator = [inArray objectEnumerator];
-    MediaRecord *r;
-    
-    while ((r = [enumerator nextObject])) {
-        if ([r.itemCategory isEqualToString:cat]) {
-            [a addObject:r];
-        }
-    };
-    return a;
 }
 
 // Implementation of the FromViewDelegate
 - (void)reloadView:(NSMutableArray *)records 
 {
-	self.allEntries = records;
-    switch (self.selector.selectedSegmentIndex) {
-        case 0: 
-            self.entries = getFilterRecord(self.allEntries, @"Featured");
-            break;
-        case 1:
-            self.entries = self.allEntries;
-            break;
-        case 2:
-            self.entries = self.allEntries;
-            break;
-        default: 
-            self.entries = self.allEntries;
-            break;
-    };
-	[self.tableView reloadData];
+	self.entries = records;
+    [self.tableView reloadData];
 }
 
-
-
--(IBAction) segmentControlTapped:(id)sender
-{
-   	switch (self.selector.selectedSegmentIndex) {
-        case 0: 
-            self.entries = getFilterRecord(self.allEntries, @"Featured");
-            break;
-        case 1:
-            self.entries = self.allEntries;
-            break;
-        case 2:
-            self.entries = self.allEntries;
-            break;
-        default: 
-            self.entries = self.allEntries;
-            break;
-    };
-	[self.tableView reloadData];
-
-}
 
 
 @end

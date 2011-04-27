@@ -36,19 +36,6 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    // Override point for customization after application launch.
-
-    
-    /*UIViewController *stViewController = [[SongTextViewController alloc] init];
-    
-    UINavigationController *nController = [[UINavigationController alloc] initWithRootViewController:stViewController];
-    nController.tabBarItem.title = @"Song";
-    [stViewController release];
-    
-    NSArray *vcArray = tabBarController.viewControllers; 
-    NSArray *nArray = [vcArray arrayByAddingObject:nController];
-    tabBarController.viewControllers = nArray; */
-    
     /*if (![[ConfigManager getUsername] isEqualToString:@"oakbs"]) {
          NSMutableArray* newArray = [NSMutableArray arrayWithArray:songNavController.tabBarController.viewControllers];
          [newArray removeObject:songNavController];

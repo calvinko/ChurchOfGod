@@ -11,7 +11,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>oakchurch.png</string>
+	<string>icon114x114.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.kosolution.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>

@@ -10,7 +10,6 @@
 		CB012B871339BC880071168E /* blue-download.png in Resources */ = {isa = PBXBuildFile; fileRef = CB012B861339BC880071168E /* blue-download.png */; };
 		CB012B8B1339C7FE0071168E /* MediaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CB012B8A1339C7FE0071168E /* MediaRecord.m */; };
 		CB012B8E133AAEC70071168E /* oaksign.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB012B8C133AAEC70071168E /* oaksign.jpg */; };
-		CB012B8F133AAEC70071168E /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CB012B8D133AAEC70071168E /* Placeholder.png */; };
 		CB012B93133BEAC60071168E /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB012B91133BEAB60071168E /* ItemViewController.m */; };
 		CB012B94133BEAC60071168E /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB012B92133BEABC0071168E /* ItemViewController.xib */; };
 		CB012B96133C67BA0071168E /* media_header.png in Resources */ = {isa = PBXBuildFile; fileRef = CB012B95133C67B80071168E /* media_header.png */; };
@@ -41,6 +40,9 @@
 		CB8C56C613576E820026807A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8C56C513576E820026807A /* Default.png */; };
 		CB8C56CA1357C5590026807A /* SermonSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C56C81357C5590026807A /* SermonSeriesViewController.m */; };
 		CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */; };
+		CB9D06421368C73400CC59C2 /* SermonFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D06401368C73400CC59C2 /* SermonFolderViewController.m */; };
+		CB9D06431368C73400CC59C2 /* SermonFolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9D06411368C73400CC59C2 /* SermonFolderViewController.xib */; };
+		CB9D06481368D63D00CC59C2 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9D06471368D63D00CC59C2 /* Placeholder.png */; };
 		CBA3B928132B5724007ED9FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B927132B5724007ED9FD /* UIKit.framework */; };
 		CBA3B92A132B5724007ED9FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B929132B5724007ED9FD /* Foundation.framework */; };
 		CBA3B92C132B5724007ED9FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */; };
@@ -97,6 +99,7 @@
 		CBB2176C1355668500FF8360 /* wordless-black.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217681355668300FF8360 /* wordless-black.png */; };
 		CBB2176E13565DF400FF8360 /* wordless-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBB2176D13565DF100FF8360 /* wordless-cover.jpg */; };
 		CBB2177013565F2500FF8360 /* Family10.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBB2176F13565F2500FF8360 /* Family10.pdb */; };
+		CBC49AA113689FB100051324 /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC49AA013689FB100051324 /* icon114x114.png */; };
 		CBE5C597132C96470091B26F /* oakchurch.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE5C596132C96470091B26F /* oakchurch.png */; };
 		CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF974D134E6741004F3D06 /* PDBReader.m */; };
 		CBEF9751134E73EA004F3D06 /* Family6.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9750134E73EA004F3D06 /* Family6.pdb */; };
@@ -109,7 +112,6 @@
 		CB012B891339C7FE0071168E /* MediaRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaRecord.h; sourceTree = "<group>"; };
 		CB012B8A1339C7FE0071168E /* MediaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaRecord.m; sourceTree = "<group>"; };
 		CB012B8C133AAEC70071168E /* oaksign.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oaksign.jpg; sourceTree = "<group>"; };
-		CB012B8D133AAEC70071168E /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		CB012B90133BEAAF0071168E /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
 		CB012B91133BEAB60071168E /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
 		CB012B92133BEABC0071168E /* ItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
@@ -147,6 +149,10 @@
 		CB8C56C71357C5580026807A /* SermonSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SermonSeriesViewController.h; sourceTree = "<group>"; };
 		CB8C56C81357C5590026807A /* SermonSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SermonSeriesViewController.m; sourceTree = "<group>"; };
 		CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SermonSeriesViewController.xib; sourceTree = "<group>"; };
+		CB9D063F1368C73400CC59C2 /* SermonFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SermonFolderViewController.h; sourceTree = "<group>"; };
+		CB9D06401368C73400CC59C2 /* SermonFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SermonFolderViewController.m; sourceTree = "<group>"; };
+		CB9D06411368C73400CC59C2 /* SermonFolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SermonFolderViewController.xib; sourceTree = "<group>"; };
+		CB9D06471368D63D00CC59C2 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		CBA3B923132B5724007ED9FD /* ChurchOfGod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChurchOfGod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA3B927132B5724007ED9FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBA3B929132B5724007ED9FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -224,6 +230,7 @@
 		CBB217681355668300FF8360 /* wordless-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-black.png"; sourceTree = "<group>"; };
 		CBB2176D13565DF100FF8360 /* wordless-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wordless-cover.jpg"; sourceTree = "<group>"; };
 		CBB2176F13565F2500FF8360 /* Family10.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family10.pdb; sourceTree = "<group>"; };
+		CBC49AA013689FB100051324 /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
 		CBE5C596132C96470091B26F /* oakchurch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oakchurch.png; path = "../../ChurchofGod-old/oakchurch.png"; sourceTree = "<group>"; };
 		CBEF974C134E6741004F3D06 /* PDBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBReader.h; sourceTree = "<group>"; };
 		CBEF974D134E6741004F3D06 /* PDBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBReader.m; sourceTree = "<group>"; };
@@ -396,6 +403,9 @@
 				CB8C56C71357C5580026807A /* SermonSeriesViewController.h */,
 				CB8C56C81357C5590026807A /* SermonSeriesViewController.m */,
 				CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */,
+				CB9D063F1368C73400CC59C2 /* SermonFolderViewController.h */,
+				CB9D06401368C73400CC59C2 /* SermonFolderViewController.m */,
+				CB9D06411368C73400CC59C2 /* SermonFolderViewController.xib */,
 				CB012B90133BEAAF0071168E /* ItemViewController.h */,
 				CB012B91133BEAB60071168E /* ItemViewController.m */,
 				CB012B92133BEABC0071168E /* ItemViewController.xib */,
@@ -406,6 +416,8 @@
 		CBA3B99A132C8DA4007ED9FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB9D06471368D63D00CC59C2 /* Placeholder.png */,
+				CBC49AA013689FB100051324 /* icon114x114.png */,
 				CBB2176D13565DF100FF8360 /* wordless-cover.jpg */,
 				CBB217651355667F00FF8360 /* wordless-gold.png */,
 				CBB217661355668000FF8360 /* wordless-white.png */,
@@ -414,7 +426,6 @@
 				CB5CDBFD134D25FE0076E771 /* musicnote2.png */,
 				CB012B95133C67B80071168E /* media_header.png */,
 				CB012B8C133AAEC70071168E /* oaksign.jpg */,
-				CB012B8D133AAEC70071168E /* Placeholder.png */,
 				CB012B861339BC880071168E /* blue-download.png */,
 				CB7777AF1339B101001EA20B /* download1.gif */,
 				CB7777A71339AC76001EA20B /* download.png */,
@@ -548,7 +559,6 @@
 				CB7777B01339B102001EA20B /* download1.gif in Resources */,
 				CB012B871339BC880071168E /* blue-download.png in Resources */,
 				CB012B8E133AAEC70071168E /* oaksign.jpg in Resources */,
-				CB012B8F133AAEC70071168E /* Placeholder.png in Resources */,
 				CB012B94133BEAC60071168E /* ItemViewController.xib in Resources */,
 				CB012B96133C67BA0071168E /* media_header.png in Resources */,
 				CB5CDBFB134D01620076E771 /* SongTextViewController.xib in Resources */,
@@ -577,6 +587,9 @@
 				CBB2177013565F2500FF8360 /* Family10.pdb in Resources */,
 				CB8C56C613576E820026807A /* Default.png in Resources */,
 				CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */,
+				CBC49AA113689FB100051324 /* icon114x114.png in Resources */,
+				CB9D06431368C73400CC59C2 /* SermonFolderViewController.xib in Resources */,
+				CB9D06481368D63D00CC59C2 /* Placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +629,7 @@
 				CBB217551354D57800FF8360 /* GospelOneViewController.m in Sources */,
 				CBB217601354FADD00FF8360 /* MyViewController.m in Sources */,
 				CB8C56CA1357C5590026807A /* SermonSeriesViewController.m in Sources */,
+				CB9D06421368C73400CC59C2 /* SermonFolderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +660,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PROVISIONING_PROFILE = "4939E04B-92FC-4F5A-A1A0-781BDC0CBA0D";
 				SDKROOT = iphoneos;
 			};
@@ -662,7 +676,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "4939E04B-92FC-4F5A-A1A0-781BDC0CBA0D";
 				SDKROOT = iphoneos;
@@ -678,8 +692,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -692,8 +707,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
