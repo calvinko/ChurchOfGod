@@ -272,9 +272,9 @@
             FeedLoader *sermonFeedLoader = [[FeedLoader alloc] init];
             sermonFeedLoader.delegate = sViewController;
             
-            //sViewController.topBanner.image = entry.itemIcon;
-            //sViewController.topBanner.hidden = NO;
             sViewController.image = entry.itemIcon;
+            sViewController.itemIcon = entry.itemIcon;
+            sViewController.itemThumbIcon = entry.itemThumbIcon;
             
             NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:entry.itemContentURL]];
             sermonFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonFeedLoader] autorelease];
@@ -314,7 +314,9 @@ NSArray *getFilterRecord(NSArray *inArray, NSString *cat) {
     MediaRecord *r;
     
     while ((r = [enumerator nextObject])) {
-        if ([r.itemCategory isEqualToString:cat]) {
+        // match string
+        NSRange range = [r.itemCategory rangeOfString:cat]; 
+        if (range.length != 0) {
             [a addObject:r];
         }
     };
@@ -327,10 +329,10 @@ NSArray *getFilterRecord(NSArray *inArray, NSString *cat) {
 	self.allEntries = records;
     switch (self.selector.selectedSegmentIndex) {
         case 0: 
-            self.entries = getFilterRecord(self.allEntries, @"Featured");
+            self.entries = getFilterRecord(self.allEntries, @"Recent");
             break;
         case 1:
-            self.entries = self.allEntries;
+            self.entries = getFilterRecord(self.allEntries, @"Featured");
             break;
         case 2:
             self.entries = self.allEntries;
@@ -348,10 +350,10 @@ NSArray *getFilterRecord(NSArray *inArray, NSString *cat) {
 {
    	switch (self.selector.selectedSegmentIndex) {
         case 0: 
-            self.entries = getFilterRecord(self.allEntries, @"Featured");
+            self.entries = getFilterRecord(self.allEntries, @"Recent");
             break;
         case 1:
-            self.entries = self.allEntries;
+            self.entries = getFilterRecord(self.allEntries, @"Featured");;
             break;
         case 2:
             self.entries = self.allEntries;

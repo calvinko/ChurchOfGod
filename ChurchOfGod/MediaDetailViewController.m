@@ -25,7 +25,7 @@
 
 @implementation MediaDetailViewController
 
-@synthesize mediaTitle, icon, description, playVideoButton, playAudioButton, record;
+@synthesize mediaTitle, icon, description, playVideoButton, playAudioButton, downloadAudioButton, record;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -37,8 +37,10 @@
 	if(self.record.itemAudioURLString == nil)
 	{
 		playAudioButton.hidden = YES;
+        downloadAudioButton.hidden = YES;
 	} else {
 		playAudioButton.hidden = NO;
+        downloadAudioButton.hidden = NO;
 	}
 	
 	if (self.record.itemURLString == nil) {

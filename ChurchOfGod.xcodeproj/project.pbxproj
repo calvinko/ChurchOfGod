@@ -42,7 +42,8 @@
 		CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */; };
 		CB9D06421368C73400CC59C2 /* SermonFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D06401368C73400CC59C2 /* SermonFolderViewController.m */; };
 		CB9D06431368C73400CC59C2 /* SermonFolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9D06411368C73400CC59C2 /* SermonFolderViewController.xib */; };
-		CB9D06481368D63D00CC59C2 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9D06471368D63D00CC59C2 /* Placeholder.png */; };
+		CB9D06481368D63D00CC59C2 /* Placeholder1.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9D06471368D63D00CC59C2 /* Placeholder1.png */; };
+		CB9D064A1368DA6900CC59C2 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9D06491368DA6900CC59C2 /* Placeholder.png */; };
 		CBA3B928132B5724007ED9FD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B927132B5724007ED9FD /* UIKit.framework */; };
 		CBA3B92A132B5724007ED9FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B929132B5724007ED9FD /* Foundation.framework */; };
 		CBA3B92C132B5724007ED9FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3B92B132B5724007ED9FD /* CoreGraphics.framework */; };
@@ -152,7 +153,8 @@
 		CB9D063F1368C73400CC59C2 /* SermonFolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SermonFolderViewController.h; sourceTree = "<group>"; };
 		CB9D06401368C73400CC59C2 /* SermonFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SermonFolderViewController.m; sourceTree = "<group>"; };
 		CB9D06411368C73400CC59C2 /* SermonFolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SermonFolderViewController.xib; sourceTree = "<group>"; };
-		CB9D06471368D63D00CC59C2 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		CB9D06471368D63D00CC59C2 /* Placeholder1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder1.png; sourceTree = "<group>"; };
+		CB9D06491368DA6900CC59C2 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
 		CBA3B923132B5724007ED9FD /* ChurchOfGod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChurchOfGod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBA3B927132B5724007ED9FD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBA3B929132B5724007ED9FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -416,7 +418,8 @@
 		CBA3B99A132C8DA4007ED9FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CB9D06471368D63D00CC59C2 /* Placeholder.png */,
+				CB9D06491368DA6900CC59C2 /* Placeholder.png */,
+				CB9D06471368D63D00CC59C2 /* Placeholder1.png */,
 				CBC49AA013689FB100051324 /* icon114x114.png */,
 				CBB2176D13565DF100FF8360 /* wordless-cover.jpg */,
 				CBB217651355667F00FF8360 /* wordless-gold.png */,
@@ -589,7 +592,8 @@
 				CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */,
 				CBC49AA113689FB100051324 /* icon114x114.png in Resources */,
 				CB9D06431368C73400CC59C2 /* SermonFolderViewController.xib in Resources */,
-				CB9D06481368D63D00CC59C2 /* Placeholder.png in Resources */,
+				CB9D06481368D63D00CC59C2 /* Placeholder1.png in Resources */,
+				CB9D064A1368DA6900CC59C2 /* Placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

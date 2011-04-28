@@ -33,6 +33,7 @@
 	UITextView  *description;
 	UIButton *playVideoButton;
 	UIButton *playAudioButton;
+    UIButton *downloadAudioButton;
 	MPMoviePlayerViewController *theMovieController;
 	MediaRecord *record;
 }
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) IBOutlet UITextView  *description;
 @property (nonatomic, retain) IBOutlet UIButton  *playVideoButton;
 @property (nonatomic, retain) IBOutlet UIButton  *playAudioButton;
+@property (nonatomic, retain) IBOutlet UIButton  *downloadAudioButton;
 
 @property (nonatomic, retain) IBOutlet MediaRecord *record;
 

@@ -24,10 +24,10 @@
 #import "MediaRecord.h"
 
 #define kIconHeight 180
-#define kIconWidth 320
+#define kIconWidth 360
 
 #define kIconThumbHeight 48
-#define kIconThumbWidth 85
+#define kIconThumbWidth 72
 
 
 

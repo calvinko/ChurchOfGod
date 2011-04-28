@@ -11,7 +11,8 @@
 #import "FeedLoader.h"
 
 @implementation SermonSeriesViewController
-@synthesize topBanner, entries, image;
+@synthesize topBanner, entries, image, mediaDetailView;
+@synthesize itemIcon, itemThumbIcon;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -173,14 +174,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    int storyIndex = [indexPath indexAtPosition: [indexPath length] - 1];
+    if ([entries count] > 0) {
+
+        MediaRecord *entry = [entries objectAtIndex: storyIndex];
+        entry.itemIcon = self.itemIcon;
+        mediaDetailView = [[MediaDetailViewController alloc] initWithNibName:@"MediaDetail" bundle:[NSBundle mainBundle]];
+        mediaDetailView.record = entry;
+        [self.navigationController pushViewController:mediaDetailView animated:YES];
+    }
 }
 
 // Implementation of the FromViewDelegate
