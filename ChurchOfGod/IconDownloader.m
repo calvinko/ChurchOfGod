@@ -39,6 +39,24 @@
 @synthesize activeDownload;
 @synthesize imageConnection;
 
+static NSMutableDictionary *imageCache; 
+
++ (void) initialize {
+    
+    imageCache = [[NSMutableDictionary alloc] init]; 
+}
+
++ (bool) loadImageFromCache:(NSString *) imageURLString toRecord:(MediaRecord *)rec {
+    NSArray *images = [imageCache objectForKey:imageURLString];
+    if (images != nil) {
+        rec.itemThumbIcon = [images objectAtIndex:0];
+        rec.itemIcon = [images objectAtIndex:1];
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
+
 #pragma mark
 
 - (void)dealloc
@@ -111,7 +129,6 @@
     {
         self.mediaRecord.itemIcon = image;
     }
-    
 	
 	if (image.size.width != kIconThumbWidth && image.size.height != kIconThumbHeight)
 	{
@@ -127,7 +144,9 @@
         self.mediaRecord.itemThumbIcon = image;
     }
 	
+    [imageCache setObject:[NSArray arrayWithObjects:self.mediaRecord.itemIcon, self.mediaRecord.itemThumbIcon, nil] forKey:mediaRecord.imageURLString];
     self.activeDownload = nil;
+    
     [image release];
     
     // Release the connection now that it's finished

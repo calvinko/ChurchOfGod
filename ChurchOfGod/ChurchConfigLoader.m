@@ -35,7 +35,6 @@ static NSMutableArray *churchArray = nil;
 
 }
 
-
 - (id)init
 {
 	[super init];
@@ -50,30 +49,6 @@ static NSMutableArray *churchArray = nil;
     return c;
 }
 
-// Load the Church Configurations 
-/*+ (NSMutableArray*)loadConfig
-{
-    if (churchArray == nil) {
-        NSURL *url = [NSURL URLWithString:(@"http://bachurch.org/iphone/churchdata.xml")];
-        ChurchConfigLoader *loader = [[ChurchConfigLoader alloc] init];
-        NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:(url)];
-        [parser setDelegate:(loader)];
-
-        if ([parser parse]) {
-            [parser release];
-            churchArray = [NSMutableArray array];
-            [churchArray addObjectsFromArray:(loader.records)];   
-        } else {
-            NSError *e = [parser parserError];
-            [parser release];
-            [parseErrorDescription setString:([e localizedDescription])];
-        }
-    } 
-    return churchArray;
-    
-}
- */
-
 + (NSString*) getError {
     return parseErrorDescription;
 }
@@ -83,8 +58,6 @@ static NSMutableArray *churchArray = nil;
                 qualifiedName:(NSString *)qName
                 attributes:(NSDictionary *)attributeDict
 {
-    // entry: { id (link), im:name (app name), im:image (variable height) }
-    //
     if ([elementName isEqualToString:tagChurch])
 	{
         self.workingEntry = [[[ChurchConfig alloc] init] autorelease];
@@ -166,7 +139,7 @@ static NSMutableArray *churchArray = nil;
 - (void)handleError:(NSError *)error
 {
     NSString *errorMessage = [error localizedDescription];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cannot Load Feed"
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Cannot Load Church Config"
 														message:errorMessage
 													   delegate:nil
 											  cancelButtonTitle:@"OK"

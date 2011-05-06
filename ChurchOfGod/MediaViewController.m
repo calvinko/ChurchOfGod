@@ -232,7 +232,7 @@
 	
 		MediaRecord * entry = [entries objectAtIndex: storyIndex];
 		
-		NSString * storyLink = entry.itemURLString;
+		NSString * storyLink = entry.itemLink;
 		
 		// clean up the link - get rid of spaces, returns, and tabs...
 		storyLink = [storyLink stringByReplacingOccurrencesOfString:@" " withString:@""];

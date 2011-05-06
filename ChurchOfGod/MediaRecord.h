@@ -13,11 +13,12 @@
 #define MTYPE_NEWSFOLDER    3
 #define MTYPE_SERMONFOLDER  4
 
+@class AudioDownloader;
 @interface MediaRecord : NSObject {
     
     NSString *itemTitle;
     NSString *itemTag;
-    NSString *itemURLString;
+    NSString *itemLink;
     UIImage  *itemIcon;
 	UIImage  *itemThumbIcon;
     NSString *itemDate;
@@ -29,11 +30,14 @@
     NSString *itemContentURL;
     NSString *itemType;
     NSString *itemCategory;
+    NSInteger audioFileSize;
+    
+    AudioDownloader *loader;
 }
 
 @property (nonatomic, retain) NSString *itemTitle;
 @property (nonatomic, retain) NSString *itemTag;
-@property (nonatomic, retain) NSString *itemURLString;
+@property (nonatomic, retain) NSString *itemLink;
 @property (nonatomic, retain) UIImage  *itemIcon;
 @property (nonatomic, retain) UIImage  *itemThumbIcon;
 @property (nonatomic, retain) NSString *itemDate;
@@ -45,7 +49,8 @@
 @property (nonatomic, retain) NSString *itemContentURL;
 @property (nonatomic, retain) NSString *itemType;
 @property (nonatomic, retain) NSString *itemCategory;
-
+@property (nonatomic, retain) AudioDownloader *loader;
+@property (nonatomic) NSInteger audioFileSize;
 
 -(NSString *)itemDateShortStyle;
 -(NSString *)itemDateLongStyle;
@@ -58,3 +63,12 @@
 -(bool) isFolder;
 
 @end
+
+/*
+@interface DownloadedItemRecord : NSObject {
+    NSString *itemTitle;
+    NSString *itemFilePath;
+    UIImage  *itemIcon;
+}
+@end
+ */

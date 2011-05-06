@@ -1,31 +1,20 @@
 /* 
- Communique - The open church communications iPhone app.
- 
- Copyright (C) 2010  Sugar Creek Baptist Church <info at sugarcreek.net> - 
- Rick Russell <rrussell at sugarcreek.net>
- 
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- 
- You should have received a copy of the GNU General Public License along
- with this program; if not, write to the Free Software Foundation, Inc.,
- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- 
+ ChurchOfGod
+ //
+ //  Created by Calvin Ko on 5/3/11.
+ //  Copyright 2011 KoSolution.net All rights reserved.
  */
 
 #import "MediaDetailViewController.h"
 #import "MediaRecord.h"
+#import "ConfigManager.h"
+#import "AudioDownloader.h"
+#import "DownloadViewController.h"
 
 @implementation MediaDetailViewController
 
-@synthesize mediaTitle, icon, description, playVideoButton, playAudioButton, downloadAudioButton, record;
+@synthesize mediaTitle, icon, description, playVideoButton, playAudioButton, downloadAudioButton, cancelButton, pView;
+@synthesize downloading, record;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -43,7 +32,7 @@
         downloadAudioButton.hidden = NO;
 	}
 	
-	if (self.record.itemURLString == nil) {
+	if (self.record.itemVideoURLString == nil) {
 		playVideoButton.hidden = YES;
 	} else {
 		playVideoButton.hidden = NO;
@@ -65,13 +54,13 @@
 
 -(IBAction) playVideoTapped
 {
-	NSString * storyLink = self.record.itemURLString;
+	NSString * storyLink = self.record.itemVideoURLString;
 	
 	// clean up the link - get rid of spaces, returns, and tabs...
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@" " withString:@""];
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@"\n" withString:@""];
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@"	" withString:@""];
-	
+
 	NSLog(@"link: %@", storyLink);
 	[self playMovieAtURL:[NSURL URLWithString:storyLink]];
 }
@@ -90,6 +79,30 @@
 	[self playMovieAtURL:[NSURL URLWithString:storyLink]];
 }
 
+-(IBAction) downloadAudioTapped
+{
+	NSString * storyLink = self.record.itemAudioURLString;
+	NSLog(@"audioLink: %@", storyLink);
+    AudioDownloader *loader = [[AudioDownloader alloc] init];
+    self.record.loader = loader;
+    loader.audioURL = self.record.itemAudioURLString;
+    loader.filePath = [[ConfigManager getDocumentPath] stringByAppendingPathComponent:@"file.mp3"];
+    loader.delegate = self;
+    loader.fileSize = self.record.audioFileSize;
+    loader.pview = self.pView;
+	[loader startDownload];
+    
+    self.pView.hidden = NO;
+    UIView *v1 = [self.view viewWithTag:9];
+    v1.hidden = NO;
+    self.cancelButton.hidden = NO;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];  
+    //DownloadViewController *dview = [[DownloadViewController alloc] init]; 
+    //dview.downloadedItemArray = [ConfigManager getDownloadedMediaArray];
+    //[dview.downloadedItemArray addObject:self.record];
+    //[self.navigationController pushViewController:dview animated:YES];
+    //[dview release];
+}
 
 
 -(void) playMovieAtURL: (NSURL*) theURL {
@@ -145,6 +158,19 @@
 - (void)dealloc
 {
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark audioDownloader delegate
+
+- (void)audioFileDidLoad:(NSString *)fileName
+{
+    self.pView.hidden = NO;
+    UIView *v1 = [self.view viewWithTag:9];
+    v1.hidden = YES;
+    self.cancelButton.hidden = YES;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];  
+    return;
 }
 
 @end

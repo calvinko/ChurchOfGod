@@ -28,6 +28,7 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 @synthesize tabBarController;
 @synthesize sermonNavConntroller, newsNavConntroller, mediaNavConntroller, settingNavController, songNavController;
 @synthesize mediaViewController, newsViewController, sermonsViewController, settingViewController, songViewController;
+@synthesize downloadNavController, downloadViewController;
 
 
 
@@ -170,6 +171,19 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
 }
 */
+
+-(IBAction) refreshSermonTapped:(id)sender
+{
+    NSURLRequest *urlRequest;
+    urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[ConfigManager getSermonURL]]];
+    //sermonsFeedLoader = [[FeedLoader alloc] init];
+    //sermonsFeedLoader.delegate = sermonsViewController;
+    sermonsFeedLoader.records = [NSMutableArray array];
+    sermonsViewController.allEntries = [NSArray array];
+    [sermonsViewController viewDidLoad];
+    sermonsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonsFeedLoader] autorelease];
+    [sermonsViewController.tableView reloadData];
+}
 
 
 #pragma mark -

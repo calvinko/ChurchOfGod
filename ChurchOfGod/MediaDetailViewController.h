@@ -24,18 +24,22 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "AudioDownloader.h"
 
 @class MediaRecord;
 
-@interface MediaDetailViewController : UIViewController {
+@interface MediaDetailViewController : UIViewController <AudioDownloaderDelegate> {
 	UILabel *mediaTitle;
 	UIImageView *icon;
 	UITextView  *description;
 	UIButton *playVideoButton;
 	UIButton *playAudioButton;
     UIButton *downloadAudioButton;
+    UIButton *cancelButton;
 	MPMoviePlayerViewController *theMovieController;
 	MediaRecord *record;
+    UIProgressView *pView;
+    bool downloading;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *mediaTitle;
@@ -44,12 +48,17 @@
 @property (nonatomic, retain) IBOutlet UIButton  *playVideoButton;
 @property (nonatomic, retain) IBOutlet UIButton  *playAudioButton;
 @property (nonatomic, retain) IBOutlet UIButton  *downloadAudioButton;
+@property (nonatomic, retain) IBOutlet UIButton  *cancelButton;
+@property (nonatomic, retain) IBOutlet UIProgressView *pView;
 
-@property (nonatomic, retain) IBOutlet MediaRecord *record;
+@property (nonatomic, retain) MediaRecord *record;
+@property (nonatomic) bool downloading;
+
 
 
 -(IBAction) playVideoTapped;
 -(IBAction) playAudioTapped;
+-(IBAction) downloadAudioTapped;
 
 - (void)playMovieAtURL:(NSURL *)theURL;
 

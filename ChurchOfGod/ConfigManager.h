@@ -22,17 +22,22 @@
 + (NSArray *) getValidUserList;
 + (NSArray *) getSongBookList;
 
-+ (NSArray *) getSongBookList; 
 + (NSInteger) getNumberofSongBook; 
 + (NSString *) getSongBookFilenameAtIndex:(int)index;
 + (NSString *) getSongBookNameAtIndex:(int)index; 
-+ (NSArray *) getSongBookNameList;
 + (PDBReader *) getReaderAtIndex:(NSUInteger) index;
++ (NSMutableArray *) getDownloadedMediaArray;
+
 
 + (void) setDefaultChurchConfig:(ChurchConfig *)config; 
 + (void) setDefaultIndex:(NSUInteger)index;
 + (void) setUser:(NSString *)user;
 + (NSInteger) getDefaultIndex;
 + (NSMutableArray *) loadConfig;
++ (NSString *) getDocumentPath;
+
+
++ (void) loadMediaList;
++ (void) saveMediaList;
 
 @end

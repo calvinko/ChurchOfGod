@@ -17,12 +17,14 @@ static NSString *kSermonSeries = @"Sermon Series";
 @implementation MediaRecord
 
 @synthesize itemIcon, itemDate, itemTag, itemThumbIcon, itemDescription, itemType, itemCategory, itemContent, itemContentURL;
-@synthesize itemTitle, imageURLString, itemURLString, itemAudioURLString;
-@synthesize itemVideoURLString;
+@synthesize itemTitle, imageURLString, itemLink;
+@synthesize itemAudioURLString, itemVideoURLString, audioFileSize;
+@synthesize loader;
 
 -(id) init {
     self.itemContent = nil;
     self.itemContentURL = nil;
+    audioFileSize = 10 << 20;
     return self;
 }
 

@@ -2,17 +2,52 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Family1</key>
-	<string>Family1.pdb</string>
-	<key>Family2</key>
-	<string>Family2.pdb</string>
-	<key>神家詩歌 3</key>
-	<string>Family3.pdb</string>
-	<key>神家詩歌 4</key>
-	<string>Family4.pdb</string>
-	<key>神家詩歌 5</key>
-	<string>Family5.pdb</string>
-	<key>神家詩歌 6</key>
-	<string>Family6.pdb</string>
+	<key>songbooks</key>
+	<array>
+		<array>
+			<string>愛的迴響</string>
+			<string>LoveCircle.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 1</string>
+			<string>Family1.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 2</string>
+			<string>Family2.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 3</string>
+			<string>Family3.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 4</string>
+			<string>Family4.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 5</string>
+			<string>Family5.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 6</string>
+			<string>Family6.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 7</string>
+			<string>Family7.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 8</string>
+			<string>Family8.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 9</string>
+			<string>Family9.pdb</string>
+		</array>
+		<array>
+			<string>神家詩歌 10</string>
+			<string>Family10.pdb</string>
+		</array>
+	</array>
 </dict>
 </plist>

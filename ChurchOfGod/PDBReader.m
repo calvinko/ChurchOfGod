@@ -92,7 +92,7 @@ NSString *readPDBFile(const char *filename)
                 NSString *thisChar;
                 CFStringRef cref = CFStringCreateWithBytes (NULL, buf+j, 2, kCFStringEncodingBig5, true);
                 if (cref != NULL) {
-                    thisChar = cref;
+                    thisChar = (NSString *) cref;
                     [songText appendString:thisChar];
                     j = j+2;
                 } else {
@@ -311,7 +311,7 @@ NSString *convertText(unsigned char *buf, int length)
 
 - (NSString *)readMainText
 {
-    int i, bookmarkIndex=0;
+    int i;
     int byteCount = 0;
     int charCount = 0;
     UInt32 offset;

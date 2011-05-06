@@ -26,6 +26,9 @@
 
 // string contants found in the RSS feed
 static NSString *kLink      = @"link";
+static NSString *kAudioLink = @"audioLink";
+static NSString *kAudioSize = @"audioFileSize";
+static NSString *kVideoLink = @"videoLink";
 static NSString *kType      = @"type";
 static NSString *kCategory  = @"category";
 static NSString *kTitle     = @"title";
@@ -33,9 +36,6 @@ static NSString *kImageStr  = @"thumbnail";
 static NSString *kDate      = @"pubDate";
 static NSString *kDescription = @"description";
 static NSString *kItem      = @"item";
-static NSString *kAudioLink = @"audioLink";
-static NSString *kVideoLink = @"videoLink";
-static NSString *kChannelLink = @"channelLink";
 static NSString *kContent     = @"content:encoded";
 static NSString *kContentURL  = @"contenturl";
 
@@ -151,7 +151,7 @@ static NSString *kContentURL  = @"contenturl";
                 [workingPropertyString setString:@""];  // clear the string for next time
                 if ([elementName isEqualToString:kLink])
                 {
-                    self.workingEntry.itemURLString = trimmedString;
+                    self.workingEntry.itemLink = trimmedString;
                 }
                 else if ([elementName isEqualToString:kType])
                 {        
@@ -179,6 +179,14 @@ static NSString *kContentURL  = @"contenturl";
                 else if ([elementName isEqualToString:kAudioLink])
                 {
                     self.workingEntry.itemAudioURLString = trimmedString;
+                }
+                else if ([elementName isEqualToString:kAudioSize])
+                {
+                    self.workingEntry.audioFileSize = [trimmedString integerValue];
+                }
+                else if ([elementName isEqualToString:kVideoLink])
+                {
+                    self.workingEntry.itemVideoURLString = trimmedString;
                 }
                 else if ([elementName isEqualToString:kContent])
                 {

@@ -43,6 +43,7 @@
 @synthesize mediaDetailView;
 @synthesize selector;
 @synthesize headerCell;
+@synthesize refleshItem;
 
 
 #pragma mark 
@@ -130,19 +131,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	// customize the appearance of table view cells
-	//
 	static NSString *CellIdentifier = @"MediaTableCell";
     static NSString *PlaceholderCellIdentifier = @"PlaceholderCell";
     
     // add a placeholder cell while waiting on table data
     int nodeCount = [self.entries count];
 	
-
-	
-	if (nodeCount == 0 && indexPath.row == 0)
+	if (nodeCount <= 0 )
 	{
-		
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PlaceholderCellIdentifier];
         if (cell == nil)
 		{
@@ -151,24 +147,24 @@
             cell.detailTextLabel.textAlignment = UITextAlignmentCenter;
 			cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-		
-		cell.detailTextLabel.text = @"Loading…";
-		
+        cell.imageView.image = nil;
+		cell.detailTextLabel.text = @"";
+        if (indexPath.row == 0) {
+		     cell.detailTextLabel.text = @"Loading…";
+		}
 		return cell;
-    }
-	
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-	{
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-									   reuseIdentifier:CellIdentifier] autorelease];
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-	
-    // Leave cells empty if there's no data yet
-    if (nodeCount > 0)
-	{
+    } else {
+        // Leave cells empty if there's no data yet
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                           reuseIdentifier:CellIdentifier] autorelease];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.detailTextLabel.text = @"Empty";
+        }
+
         // Set up the cell...
         MediaRecord *mediaRecord = [self.entries objectAtIndex:indexPath.row];
         
@@ -190,10 +186,9 @@
         {
 			cell.imageView.image = mediaRecord.itemThumbIcon;
         }
-		
+		return cell;
     }
     
-    return cell;
 }
 
 
@@ -344,8 +339,6 @@ NSArray *getFilterRecord(NSArray *inArray, NSString *cat) {
 	[self.tableView reloadData];
 }
 
-
-
 -(IBAction) segmentControlTapped:(id)sender
 {
    	switch (self.selector.selectedSegmentIndex) {
@@ -362,6 +355,7 @@ NSArray *getFilterRecord(NSArray *inArray, NSString *cat) {
             self.entries = self.allEntries;
             break;
     };
+    self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
 	[self.tableView reloadData];
 
 }

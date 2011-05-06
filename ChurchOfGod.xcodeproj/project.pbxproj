@@ -10,8 +10,6 @@
 		CB012B871339BC880071168E /* blue-download.png in Resources */ = {isa = PBXBuildFile; fileRef = CB012B861339BC880071168E /* blue-download.png */; };
 		CB012B8B1339C7FE0071168E /* MediaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CB012B8A1339C7FE0071168E /* MediaRecord.m */; };
 		CB012B8E133AAEC70071168E /* oaksign.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB012B8C133AAEC70071168E /* oaksign.jpg */; };
-		CB012B93133BEAC60071168E /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB012B91133BEAB60071168E /* ItemViewController.m */; };
-		CB012B94133BEAC60071168E /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB012B92133BEABC0071168E /* ItemViewController.xib */; };
 		CB012B96133C67BA0071168E /* media_header.png in Resources */ = {isa = PBXBuildFile; fileRef = CB012B95133C67B80071168E /* media_header.png */; };
 		CB10E10413510C930040F31B /* SongIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB10E10213510C930040F31B /* SongIndexViewController.m */; };
 		CB10E10513510C930040F31B /* SongIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB10E10313510C930040F31B /* SongIndexViewController.xib */; };
@@ -100,6 +98,13 @@
 		CBB2176C1355668500FF8360 /* wordless-black.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217681355668300FF8360 /* wordless-black.png */; };
 		CBB2176E13565DF400FF8360 /* wordless-cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CBB2176D13565DF100FF8360 /* wordless-cover.jpg */; };
 		CBB2177013565F2500FF8360 /* Family10.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBB2176F13565F2500FF8360 /* Family10.pdb */; };
+		CBC1C3D0136A09E900A04527 /* AudioDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC1C3CF136A09E900A04527 /* AudioDownloader.m */; };
+		CBC1C3D3136CB53200A04527 /* Oakland3.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBC1C3D2136CB53100A04527 /* Oakland3.pdb */; };
+		CBC1C3D5136FC1A000A04527 /* LoveCircle.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBC1C3D4136FC19F00A04527 /* LoveCircle.pdb */; };
+		CBC1C3DA137117E500A04527 /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC1C3D8137117E500A04527 /* DownloadViewController.m */; };
+		CBC1C3DB137117E500A04527 /* DownloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC1C3D9137117E500A04527 /* DownloadViewController.xib */; };
+		CBC1C3DD13711DDC00A04527 /* DownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC1C3DC13711DDC00A04527 /* DownloadCell.xib */; };
+		CBC23D291372358500D1EDFB /* DownloadedMediaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC23D281372358500D1EDFB /* DownloadedMediaRecord.m */; };
 		CBC49AA113689FB100051324 /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC49AA013689FB100051324 /* icon114x114.png */; };
 		CBE5C597132C96470091B26F /* oakchurch.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE5C596132C96470091B26F /* oakchurch.png */; };
 		CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF974D134E6741004F3D06 /* PDBReader.m */; };
@@ -113,9 +118,6 @@
 		CB012B891339C7FE0071168E /* MediaRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaRecord.h; sourceTree = "<group>"; };
 		CB012B8A1339C7FE0071168E /* MediaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaRecord.m; sourceTree = "<group>"; };
 		CB012B8C133AAEC70071168E /* oaksign.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oaksign.jpg; sourceTree = "<group>"; };
-		CB012B90133BEAAF0071168E /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
-		CB012B91133BEAB60071168E /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
-		CB012B92133BEABC0071168E /* ItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
 		CB012B95133C67B80071168E /* media_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = media_header.png; sourceTree = "<group>"; };
 		CB10E10113510C930040F31B /* SongIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongIndexViewController.h; sourceTree = "<group>"; };
 		CB10E10213510C930040F31B /* SongIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongIndexViewController.m; sourceTree = "<group>"; };
@@ -232,6 +234,16 @@
 		CBB217681355668300FF8360 /* wordless-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-black.png"; sourceTree = "<group>"; };
 		CBB2176D13565DF100FF8360 /* wordless-cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wordless-cover.jpg"; sourceTree = "<group>"; };
 		CBB2176F13565F2500FF8360 /* Family10.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family10.pdb; sourceTree = "<group>"; };
+		CBC1C3CE136A09E900A04527 /* AudioDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDownloader.h; sourceTree = "<group>"; };
+		CBC1C3CF136A09E900A04527 /* AudioDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioDownloader.m; sourceTree = "<group>"; };
+		CBC1C3D2136CB53100A04527 /* Oakland3.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Oakland3.pdb; sourceTree = "<group>"; };
+		CBC1C3D4136FC19F00A04527 /* LoveCircle.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoveCircle.pdb; sourceTree = "<group>"; };
+		CBC1C3D7137117E500A04527 /* DownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadViewController.h; sourceTree = "<group>"; };
+		CBC1C3D8137117E500A04527 /* DownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
+		CBC1C3D9137117E500A04527 /* DownloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadViewController.xib; sourceTree = "<group>"; };
+		CBC1C3DC13711DDC00A04527 /* DownloadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadCell.xib; sourceTree = "<group>"; };
+		CBC23D271372358500D1EDFB /* DownloadedMediaRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadedMediaRecord.h; sourceTree = "<group>"; };
+		CBC23D281372358500D1EDFB /* DownloadedMediaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadedMediaRecord.m; sourceTree = "<group>"; };
 		CBC49AA013689FB100051324 /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
 		CBE5C596132C96470091B26F /* oakchurch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oakchurch.png; path = "../../ChurchofGod-old/oakchurch.png"; sourceTree = "<group>"; };
 		CBEF974C134E6741004F3D06 /* PDBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBReader.h; sourceTree = "<group>"; };
@@ -297,6 +309,7 @@
 				CBA3B997132BF0A3007ED9FD /* Sermon & News */,
 				CBA3B995132BF037007ED9FD /* Settings */,
 				CBF39473134D5426000769D6 /* Songs */,
+				CBC1C3D6137117A300A04527 /* Download */,
 				CBB217511354D54000FF8360 /* Tools */,
 				CBA3B996132BF06B007ED9FD /* Misc */,
 				CBA3B92E132B5724007ED9FD /* Supporting Files */,
@@ -308,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				CBB21763135559D600FF8360 /* content_iPhone.plist */,
+				CBC1C3D4136FC19F00A04527 /* LoveCircle.pdb */,
 				CB3E06B5134F7D470019BA22 /* Family1.pdb */,
 				CB10E10713512D610040F31B /* Family2.pdb */,
 				CB10E10813512D610040F31B /* Family3.pdb */,
@@ -318,6 +332,7 @@
 				CB10E10C13512D610040F31B /* Family8.pdb */,
 				CB10E10D13512D610040F31B /* Family9.pdb */,
 				CBB2176F13565F2500FF8360 /* Family10.pdb */,
+				CBC1C3D2136CB53100A04527 /* Oakland3.pdb */,
 				CBA3B92F132B5724007ED9FD /* ChurchOfGod-Info.plist */,
 				CBA3B930132B5724007ED9FD /* InfoPlist.strings */,
 				CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */,
@@ -361,6 +376,8 @@
 		CBA3B996132BF06B007ED9FD /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				CBC1C3CE136A09E900A04527 /* AudioDownloader.h */,
+				CBC1C3CF136A09E900A04527 /* AudioDownloader.m */,
 				CBA3B986132B5A67007ED9FD /* IconDownloader.h */,
 				CBA3B987132B5A67007ED9FD /* IconDownloader.m */,
 				CBA3B983132B5A40007ED9FD /* ParseOperation.h */,
@@ -408,9 +425,6 @@
 				CB9D063F1368C73400CC59C2 /* SermonFolderViewController.h */,
 				CB9D06401368C73400CC59C2 /* SermonFolderViewController.m */,
 				CB9D06411368C73400CC59C2 /* SermonFolderViewController.xib */,
-				CB012B90133BEAAF0071168E /* ItemViewController.h */,
-				CB012B91133BEAB60071168E /* ItemViewController.m */,
-				CB012B92133BEABC0071168E /* ItemViewController.xib */,
 			);
 			name = "Sermon & News";
 			sourceTree = "<group>";
@@ -464,6 +478,19 @@
 				CBB217541354D57800FF8360 /* GospelOneViewController.xib */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		CBC1C3D6137117A300A04527 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				CBC1C3D7137117E500A04527 /* DownloadViewController.h */,
+				CBC1C3D8137117E500A04527 /* DownloadViewController.m */,
+				CBC1C3D9137117E500A04527 /* DownloadViewController.xib */,
+				CBC1C3DC13711DDC00A04527 /* DownloadCell.xib */,
+				CBC23D271372358500D1EDFB /* DownloadedMediaRecord.h */,
+				CBC23D281372358500D1EDFB /* DownloadedMediaRecord.m */,
+			);
+			name = Download;
 			sourceTree = "<group>";
 		};
 		CBF39473134D5426000769D6 /* Songs */ = {
@@ -562,7 +589,6 @@
 				CB7777B01339B102001EA20B /* download1.gif in Resources */,
 				CB012B871339BC880071168E /* blue-download.png in Resources */,
 				CB012B8E133AAEC70071168E /* oaksign.jpg in Resources */,
-				CB012B94133BEAC60071168E /* ItemViewController.xib in Resources */,
 				CB012B96133C67BA0071168E /* media_header.png in Resources */,
 				CB5CDBFB134D01620076E771 /* SongTextViewController.xib in Resources */,
 				CB5CDBFE134D25FE0076E771 /* musicnote2.png in Resources */,
@@ -594,6 +620,10 @@
 				CB9D06431368C73400CC59C2 /* SermonFolderViewController.xib in Resources */,
 				CB9D06481368D63D00CC59C2 /* Placeholder1.png in Resources */,
 				CB9D064A1368DA6900CC59C2 /* Placeholder.png in Resources */,
+				CBC1C3D3136CB53200A04527 /* Oakland3.pdb in Resources */,
+				CBC1C3D5136FC1A000A04527 /* LoveCircle.pdb in Resources */,
+				CBC1C3DB137117E500A04527 /* DownloadViewController.xib in Resources */,
+				CBC1C3DD13711DDC00A04527 /* DownloadCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +654,6 @@
 				CB777743132FC7A7001EA20B /* ChurchConfig.m in Sources */,
 				CB7777801331DFFE001EA20B /* ConfigManager.m in Sources */,
 				CB012B8B1339C7FE0071168E /* MediaRecord.m in Sources */,
-				CB012B93133BEAC60071168E /* ItemViewController.m in Sources */,
 				CB5CDBFA134D01620076E771 /* SongTextViewController.m in Sources */,
 				CBF39477134D547E000769D6 /* SongViewController.m in Sources */,
 				CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */,
@@ -634,6 +663,9 @@
 				CBB217601354FADD00FF8360 /* MyViewController.m in Sources */,
 				CB8C56CA1357C5590026807A /* SermonSeriesViewController.m in Sources */,
 				CB9D06421368C73400CC59C2 /* SermonFolderViewController.m in Sources */,
+				CBC1C3D0136A09E900A04527 /* AudioDownloader.m in Sources */,
+				CBC1C3DA137117E500A04527 /* DownloadViewController.m in Sources */,
+				CBC23D291372358500D1EDFB /* DownloadedMediaRecord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,14 +707,15 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Cheuk Ko (BGG475DN26)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cheuk Ko (BGG475DN26)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "4939E04B-92FC-4F5A-A1A0-781BDC0CBA0D";
+				PROVISIONING_PROFILE = "76959452-2A73-4AC6-BC48-FE63BD74F1A2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "76959452-2A73-4AC6-BC48-FE63BD74F1A2";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -696,7 +729,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -711,7 +744,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

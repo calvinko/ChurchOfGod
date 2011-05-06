@@ -53,7 +53,7 @@
 	self.navigationItem.title = self.record.itemTitle;
 	refreshButton.enabled = YES;
 	
-	NSString * storyLink = self.record.itemURLString;
+	NSString * storyLink = self.record.itemLink;
 	
 	// clean up the link - get rid of spaces, returns, and tabs...
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@" " withString:@""];

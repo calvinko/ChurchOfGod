@@ -10,6 +10,8 @@
 #import "ConfigManager.h"
 #import "ChurchConfig.h"
 #import "ChurchConfigLoader.h"
+#import "MediaRecord.h"
+#import "DownloadedMediaRecord.h"
 #import "PDBReader.h"
 
 
@@ -20,8 +22,6 @@ static NSString *kChurchName = @"churchname";
 static NSString *kChurchURL = @"churchurl";
 static NSString *kUserList = @"userlist";
 static NSString *kUserName = @"username";
-static NSString *kSongBookList = @"songbooklist";
-static NSString *kSongBookNameList = @"songbooknamelist";
 static NSString *kSermon = @"sermon";
 static NSString *kMSermon = @"membersermon";
 static NSString *kNews = @"news";
@@ -33,11 +33,19 @@ static NSString *kMTool = @"mtool";
 
 static NSArray *readerArray;
 static NSMutableArray *churchArray;
+static NSDictionary *songBookList;
+static NSMutableDictionary *readerDict;
+static NSArray *booklist;
+static NSMutableArray *downloadedMediaArray;
 
 
 + (void)initialize 
 {
     churchArray = nil;
+    songBookList = nil;
+    booklist = nil;
+    downloadedMediaArray = [[NSMutableArray alloc] init];
+    readerDict = [[[NSMutableDictionary alloc] initWithCapacity:5] retain];
     readerArray = [[NSArray arrayWithObjects:
                     [[[PDBReader alloc] init] retain], 
                     [[[PDBReader alloc] init] retain], 
@@ -71,8 +79,6 @@ static NSMutableArray *churchArray;
         //NSArray  *userlist = [NSArray arrayWithObjects:@"oakbs", @"oakadmin", nil]; 
         NSArray *userlist = [[NSArray alloc] init];
 		NSString *username = @"guest";
-        NSArray *songbooklist = [NSArray arrayWithObjects:@"Family1.pdb", @"Family2.pdb", @"Family3.pdb", @"Family4.pdb", @"Family5.pdb", @"Family6.pdb", @"Family7.pdb", @"Family8.pdb", @"Family9.pdb", @"Family10.pdb", nil];
-        NSArray *songbooknamelist = [NSArray arrayWithObjects:@"神家詩歌 1", @"神家詩歌 2",@"神家詩歌 3",@"神家詩歌 4",@"神家詩歌 5",@"神家詩歌 6",@"神家詩歌 7",@"神家詩歌 8", @"神家詩歌 9", @"神家詩歌 10",nil];
         
         // since no default values have been set (i.e. no preferences file created), create it here		
 		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -86,16 +92,17 @@ static NSMutableArray *churchArray;
                                      username,          kUserName,
                                      toolurl,           kTool,
                                      0,                 kChurchIndex,
-                                     0,                 kSongBookList,
-                                     0,                 kSongBookNameList,
                                      nil];
         
 		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
-        [[NSUserDefaults standardUserDefaults] setObject:songbooknamelist    forKey:kSongBookNameList];
-        [[NSUserDefaults standardUserDefaults] setObject:songbooklist    forKey:kSongBookList];
-		[[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] synchronize];
 
     }
+}
+
++ (void) loadSongBookList {
+    NSString *songlistPath = [[NSBundle mainBundle] pathForResource:@"songbooklist" ofType:@"plist"];
+    songBookList = [[NSDictionary dictionaryWithContentsOfFile:songlistPath] retain];
 }
 
 + (NSMutableArray*)loadConfig
@@ -154,24 +161,27 @@ static NSMutableArray *churchArray;
 }
 
 + (NSArray *) getSongBookList {
-    return [[NSUserDefaults standardUserDefaults] arrayForKey:kSongBookList];
+    if (songBookList == nil) [self loadSongBookList];
+    //return [[NSUserDefaults standardUserDefaults] arrayForKey:kSongBookList];
+    return [songBookList objectForKey:@"songbooks"];
 }
 
 +  (NSInteger) getNumberofSongBook {
-    NSArray *ar = [[NSUserDefaults standardUserDefaults] arrayForKey:kSongBookNameList];
-    return [ar count];
+    if (songBookList == nil) [self loadSongBookList];
+    NSArray *a = [songBookList objectForKey:@"songbooks"];
+    return [a count];
 }
 
 + (NSString *) getSongBookFilenameAtIndex:(int)index {
-    return [[[NSUserDefaults standardUserDefaults] arrayForKey:kSongBookList] objectAtIndex:index];
+    if (songBookList == nil) [self loadSongBookList];
+    NSArray *bookArray = [songBookList objectForKey:@"songbooks"];
+    return [[bookArray objectAtIndex:index] objectAtIndex:1];
 }
 
 + (NSString *) getSongBookNameAtIndex:(int)index {
-    return [[[NSUserDefaults standardUserDefaults] arrayForKey:kSongBookNameList] objectAtIndex:index];
-}
-
-+ (NSArray *) getSongBookNameList {
-    return [[NSUserDefaults standardUserDefaults] arrayForKey:kSongBookNameList];
+    if (songBookList == nil) [self loadSongBookList];
+    NSArray *bookArray = [songBookList objectForKey:@"songbooks"];
+    return [[bookArray objectAtIndex:index] objectAtIndex:0];
 }
 
 + (NSArray*) getValidUserList
@@ -211,14 +221,66 @@ static NSMutableArray *churchArray;
 
 + (PDBReader *) getReaderAtIndex:(NSUInteger) index 
 {
-    PDBReader *r = [readerArray objectAtIndex:index];
-    if ([r hasOpenedFile])
-        return r;
-    else {
+    NSString *bookName = [ConfigManager getSongBookNameAtIndex:index];
+    PDBReader *r = [readerDict objectForKey:bookName];
+    if (r == nil) {
+        r = [[PDBReader alloc] init];
         [r readFile:[ConfigManager getSongBookFilenameAtIndex:index]];
-        return r;
+        [readerDict setObject:r forKey:bookName];
     }
+    return r;
 }
+
++ (NSMutableArray *) getDownloadedMediaArray 
+{
+    if (downloadedMediaArray == nil) {
+        [ConfigManager loadMediaList];
+    }
+    return downloadedMediaArray;
+}
+
++ (NSString *) getDocumentPath 
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
++ (void) loadMediaList {
+    
+    NSString *pathStr = [self getDocumentPath];
+    NSString *filePath = [pathStr stringByAppendingPathComponent:@"mediaList.plist"];
+    downloadedMediaArray = [NSArray arrayWithContentsOfFile:filePath];
+    if (downloadedMediaArray == nil) {
+        downloadedMediaArray = [[[NSArray alloc] init] retain];
+    }
+    
+}
+
++ (void) saveMediaList {
+    
+    NSString *pathStr = [self getDocumentPath];
+    NSString *filePath = [pathStr stringByAppendingPathComponent:@"mediaList.plist"];
+    [downloadedMediaArray writeToFile:filePath atomically:YES];    
+}
+
++ (void) addSermonToStore:(MediaRecord *)rec withFileName:(NSString *)fname {
+    DownloadedMediaRecord *drec = [[DownloadedMediaRecord alloc] init];
+    drec.fileName = fname;
+    drec.itemTitle = rec.itemTitle;
+    drec.itemType = rec.itemType;
+    drec.itemDescription = rec.itemDescription;
+    [downloadedMediaArray addObject:drec];
+}
+
++ (void) saveLibrary {
+    NSDictionary *libraryDict;
+    NSString *pathStr = [[NSBundle mainBundle] bundlePath];
+    NSString *settingsBundlePath = [pathStr stringByAppendingPathComponent:@"Library.bundle"];
+    NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"local.plist"];
+    [libraryDict writeToFile:finalPath atomically:YES];
+}
+
 
 @end
 

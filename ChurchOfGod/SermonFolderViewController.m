@@ -7,7 +7,6 @@
 //
 
 #import "SermonFolderViewController.h"
-#import "ItemViewController.h"
 #import "SermonSeriesViewController.h"
 #import "MediaRecord.h"
 

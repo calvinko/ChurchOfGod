@@ -36,6 +36,7 @@
 	MediaDetailViewController *mediaDetailView;
 	UIView *headerCell;
     UISegmentedControl *selector;
+    UIBarButtonItem *refleshItem;
 	Boolean didRelease;
 }
 
@@ -44,9 +45,11 @@
 @property (nonatomic, retain) IBOutlet MediaDetailViewController *mediaDetailView;
 @property (nonatomic, retain) IBOutlet UIView *headerCell;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *selector;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *refleshItem;
 
 - (void)appImageDidLoad:(NSIndexPath *)indexPath;
 
 -(IBAction) segmentControlTapped:(id)sender;
+
 
 @end

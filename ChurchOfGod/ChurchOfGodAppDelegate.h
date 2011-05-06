@@ -19,6 +19,7 @@
 @class RotatingTabBarController;
 @class SongViewController;
 @class ToolTableViewController;
+@class DownloadViewController;
 
 @interface ChurchofGodAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
@@ -47,13 +48,17 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *mediaNavConntroller;
 @property (nonatomic, retain) IBOutlet UINavigationController *settingNavController;
 @property (nonatomic, retain) IBOutlet UINavigationController *songNavController;
+@property (nonatomic, retain) IBOutlet UINavigationController *downloadNavController;
 
 @property (nonatomic, retain) IBOutlet MediaViewController *mediaViewController;
 @property (nonatomic, retain) IBOutlet SermonsViewController *sermonsViewController;
 @property (nonatomic, retain) IBOutlet NewsViewController *newsViewController;
 @property (nonatomic, retain) IBOutlet SettingViewController *settingViewController;
 @property (nonatomic, retain) IBOutlet SongViewController *songViewController;
+@property (nonatomic, retain) IBOutlet DownloadViewController *downloadViewController;
 
 -(Boolean)hasNetworkConnection;
+
+-(IBAction) refreshSermonTapped:(id)sender;
 
 @end
