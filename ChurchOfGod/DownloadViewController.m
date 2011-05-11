@@ -47,8 +47,11 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.downloadedItemArray = [ConfigManager getDownloadedMediaArray];
+    
+	self.tableView.backgroundColor = [UIColor lightGrayColor];
+
 }
 
 - (void)viewDidUnload
@@ -102,27 +105,24 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
-        //[[NSBundle mainBundle] loadNibNamed:@"DownloadCell" owner:self options:nil];
-        //cell = dlCell;
-        //self.dlCell = nil;
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        [[NSBundle mainBundle] loadNibNamed:@"DownloadCell" owner:self options:nil];
+        cell = dlCell;
+        self.dlCell = nil;
         
     }
     
-    /*MediaRecord *rec = [downloadedItemArray objectAtIndex:indexPath.row];
+    DownloadedMediaRecord *rec = [self.downloadedItemArray objectAtIndex:indexPath.row];
     UILabel *label;
     label = (UILabel *)[cell viewWithTag:1];
     label.text = rec.itemTitle;
     
     UILabel *label1;
     label1 = (UILabel *)[cell viewWithTag:2];
-    label1.text = @"24.5M";
+    label1.text = @"Apr 12, 2011";
     
-    rec.loader.pview = (UIProgressView *)[cell viewWithTag:3];
-     */
-    
-    DownloadedMediaRecord *rec = [self.downloadedItemArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = rec.itemTitle;
+    cell.imageView.image = nil;
+    //cell.textLabel.text = rec.itemTitle;
     return cell;
 }
 
@@ -207,7 +207,7 @@
 	 object: theMovie];
 	[theMovie prepareToPlay];
     // Movie playback is asynchronous, so this method returns immediately.
-    //theMovie.initialPlaybackTime = record.currentPlaybackTime;
+    theMovie.initialPlaybackTime = record.currentPlaybackTime;
     [[theMovieController moviePlayer] play];
 	
 	[self.navigationController presentMoviePlayerViewControllerAnimated:theMovieController];
@@ -224,8 +224,7 @@
 	 object: theMovie];
 	
     NSTimeInterval tval = theMovie.currentPlaybackTime;
-    //self.currentRecord.currentPlaybackTime = tval;
-    // Release the movie instance created in playMovieAtURL:
+    self.currentRecord.currentPlaybackTime = tval;
     [theMovieController release];
 	
 }

@@ -24,6 +24,7 @@ static NSString *kSermonSeries = @"Sermon Series";
 -(id) init {
     self.itemContent = nil;
     self.itemContentURL = nil;
+    self.itemType = @"audio";
     self.currentPlaybackTime = -1;
     audioFileSize = 20 << 20;
     return self;

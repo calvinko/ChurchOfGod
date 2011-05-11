@@ -18,9 +18,6 @@
 #import "ConfigManager.h"
 #import <CFNetwork/CFNetwork.h>
 
-static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creative_feed.xml";
-
-
 
 @implementation ChurchofGodAppDelegate
 
@@ -29,8 +26,6 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 @synthesize sermonNavConntroller, newsNavConntroller, mediaNavConntroller, settingNavController, songNavController;
 @synthesize mediaViewController, newsViewController, sermonsViewController, settingViewController, songViewController;
 @synthesize downloadNavController, downloadViewController;
-
-
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -43,20 +38,17 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
          tabBarController.viewControllers = newArray;
     }*/
     
-    //[ConfigManager initialize];
+       
+    [ConfigManager setDelegate:self];
+    songViewController.iViewController = [[SongIndexViewController alloc] init ];
     
     // Add the tab bar controller's view to the window and display.
-    
-    [ConfigManager setDelegate:self];
-    
-    songViewController.iViewController = [[SongIndexViewController alloc] init ];
-      
+
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
 
 	if([self hasNetworkConnection])
 	{
-        
 		NSURLRequest *urlRequest;
         sermonsFeedLoader = [[FeedLoader alloc] init];
 		sermonsFeedLoader.delegate = sermonsViewController;
@@ -88,12 +80,9 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	} else {
 		tabBarController.selectedIndex = 3;
-		
 	}
-	
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -102,12 +91,12 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
      */
 }
 
-
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     /*
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+    [ConfigManager saveMediaList];
 }
 
 
@@ -130,6 +119,7 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
      Called when the application is about to terminate.
      See also applicationDidEnterBackground:.
      */
+    [ConfigManager saveMediaList];
 }
 
 -(Boolean)hasNetworkConnection
@@ -152,12 +142,9 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 		}
 		
 	}
-	
 	reachability = nil;
-	
 	return retVal;
 }
-
 
 #pragma mark -
 #pragma mark UITabBarControllerDelegate methods
@@ -178,8 +165,6 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
 {
     NSURLRequest *urlRequest;
     urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[ConfigManager getSermonURL]]];
-    //sermonsFeedLoader = [[FeedLoader alloc] init];
-    //sermonsFeedLoader.delegate = sermonsViewController;
     sermonsFeedLoader.records = [NSMutableArray array];
     sermonsViewController.allEntries = [NSArray array];
     [sermonsViewController viewDidLoad];

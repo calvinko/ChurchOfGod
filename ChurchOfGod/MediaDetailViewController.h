@@ -27,6 +27,7 @@
 #import "AudioDownloader.h"
 
 @class MediaRecord;
+@class DownloadedMediaRecord;
 
 @interface MediaDetailViewController : UIViewController <AudioDownloaderDelegate> {
 	UILabel *mediaTitle;
@@ -61,5 +62,6 @@
 -(IBAction) downloadAudioTapped;
 
 - (void)playMovieAtURL:(NSURL *)theURL;
+- (void)playMovieInRecord: (DownloadedMediaRecord *) drec;
 
 @end

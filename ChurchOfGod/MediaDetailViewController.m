@@ -10,6 +10,7 @@
 #import "ConfigManager.h"
 #import "AudioDownloader.h"
 #import "DownloadViewController.h"
+#import "DownloadedMediaRecord.h"
 
 @implementation MediaDetailViewController
 
@@ -80,7 +81,13 @@
 	storyLink = [storyLink stringByReplacingOccurrencesOfString:@"	" withString:@""];
 	
 	NSLog(@"audioLink: %@", storyLink);
-	[self playMovieAtURL:[NSURL URLWithString:storyLink]];
+    
+    DownloadedMediaRecord *rec = [ConfigManager findDownloadedMediaByName:[self.record.itemAudioURLString lastPathComponent]];
+    if (rec != nil) {
+        [self playMovieInRecord:rec];
+    } else {
+        [self playMovieAtURL:[NSURL URLWithString:storyLink]];
+    }
 }
 
 -(IBAction) downloadAudioTapped
@@ -88,7 +95,7 @@
     if ([ConfigManager findDownloadedMediaByName:[self.record.itemAudioURLString lastPathComponent]] == nil) {
         NSString * storyLink = self.record.itemAudioURLString;
         NSLog(@"audioLink: %@", storyLink);
-        AudioDownloader *loader = [[AudioDownloader alloc] init];
+        AudioDownloader *loader = [[[AudioDownloader alloc] init] autorelease];
         self.record.loader = loader;
         loader.audioURL = self.record.itemAudioURLString;
         loader.fileName = [loader.audioURL lastPathComponent];
@@ -111,18 +118,37 @@
     //[dview release];
 }
 
--(void) playMovieFromFile: (NSString *) fpath 
-{
-    NSURL *theURL = [[NSURL alloc] initFileURLWithPath:fpath];
-    theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL:theURL];
+-(void) playMovieInRecord: (DownloadedMediaRecord *) drec  {
+	
+	NSURL *theURL;
+    NSString *path = [[ConfigManager getDocumentPath] stringByAppendingPathComponent:drec.fileName ];
+    theURL = [[[NSURL alloc] initFileURLWithPath:path] autorelease];
+    theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL: theURL];
+	MPMoviePlayerController* theMovie = [theMovieController moviePlayer];
+    
+	
+	NSError *setCategoryErr = nil;
+	NSError *activationErr  = nil;
+	[[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: &setCategoryErr];
+	[[AVAudioSession sharedInstance] setActive: YES error: &activationErr];
+    [[NSNotificationCenter defaultCenter]
+	 addObserver: self
+	 selector: @selector(myMovieFinishedCallback:)
+	 name: MPMoviePlayerPlaybackDidFinishNotification
+	 object: theMovie];
+	[theMovie prepareToPlay];
+    [[theMovieController moviePlayer] play];
+	theMovie.initialPlaybackTime = drec.currentPlaybackTime;
+	[self.navigationController presentMoviePlayerViewControllerAnimated:theMovieController];
 }
+
+
 
 -(void) playMovieAtURL: (NSURL*) theURL {
 	
 	
     theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL: theURL];
 	MPMoviePlayerController* theMovie = [theMovieController moviePlayer];
-    
 	
 	NSError *setCategoryErr = nil;
 	NSError *activationErr  = nil;
@@ -161,6 +187,10 @@
 	
     NSTimeInterval tval = theMovie.currentPlaybackTime;
     self.record.currentPlaybackTime = tval;
+    DownloadedMediaRecord *rec = [ConfigManager findDownloadedMediaByName:[self.record.itemAudioURLString lastPathComponent]];
+    if (rec != nil) {
+        rec.currentPlaybackTime = tval;
+    }
     // Release the movie instance created in playMovieAtURL:
     [theMovieController release];
 	
@@ -190,6 +220,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES]; 
     [ConfigManager  addSermonToStore:self.record withFileName:self.record.loader.fileName];
     [ConfigManager  saveMediaList];
+    self.record.loader = nil;
     return;
 }
 

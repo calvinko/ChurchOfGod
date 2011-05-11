@@ -17,6 +17,7 @@
 {
     [super init];
     self.currentPlaybackTime = -1;
+    self.itemType = @"mp3";
     return self;
 }
 

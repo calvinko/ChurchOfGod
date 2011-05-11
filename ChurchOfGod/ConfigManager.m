@@ -316,6 +316,7 @@ static NSMutableArray *downloadedMediaArray;
     [delegate.downloadViewController.tableView reloadData];
 }
 
+/*
 + (void) saveLibrary {
     NSDictionary *libraryDict;
     NSString *pathStr = [[NSBundle mainBundle] bundlePath];
@@ -323,7 +324,7 @@ static NSMutableArray *downloadedMediaArray;
     NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"local.plist"];
     [libraryDict writeToFile:finalPath atomically:YES];
 }
-
+*/
 
 @end
 
