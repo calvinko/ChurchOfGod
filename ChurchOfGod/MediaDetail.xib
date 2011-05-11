@@ -51,6 +51,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, -45}, {320, 461}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="576414710"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="945863459">
 							<int key="NSColorSpace">3</int>
@@ -71,6 +72,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{23, 152}, {275, 32}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="687044364"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -106,6 +108,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{18, 173}, {285, 142}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="57427283"/>
 						<reference key="IBUIBackgroundColor" ref="945863459"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -134,6 +137,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{320, 144}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="708714476"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -143,8 +147,10 @@
 					<object class="IBUIButton" id="1001956430">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{184, 329}, {72, 37}}</string>
+						<string key="NSFrame">{{184, 323}, {72, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="480371933"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -171,8 +177,9 @@
 					<object class="IBUIButton" id="687044364">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{23, 329}, {72, 37}}</string>
+						<string key="NSFrame">{{23, 323}, {72, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="712183294"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -193,9 +200,10 @@
 					<object class="IBUIButton" id="712183294">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{94, 334}, {28, 27}}</string>
+						<string key="NSFrame">{{93, 328}, {28, 28}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="1001956430"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="590467207"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -222,6 +230,8 @@
 						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{23, 369}, {241, 9}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="948049426"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">8</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -232,6 +242,8 @@
 						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{23, 386}, {153, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="176457525"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -250,6 +262,8 @@
 						<int key="NSvFlags">-2147483356</int>
 						<string key="NSFrame">{{191, 386}, {65, 20}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<int key="IBUITag">10</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -269,9 +283,35 @@
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="32302010"/>
 					</object>
+					<object class="IBUILabel" id="590467207">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">-2147483356</int>
+						<string key="NSFrame">{{40, 352}, {72, 17}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1001956430"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<int key="IBUITag">11</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="IBUIText">Downloaded</string>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica-Bold</string>
+							<double key="NSSize">10</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<reference key="IBUITextColor" ref="747459102"/>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">1</int>
+						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUITextAlignment">1</int>
+					</object>
 				</object>
 				<string key="NSFrame">{{0, 64}, {320, 416}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="198583822"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -403,14 +443,15 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="57427283"/>
 							<reference ref="576414710"/>
-							<reference ref="687044364"/>
-							<reference ref="712183294"/>
 							<reference ref="198583822"/>
 							<reference ref="708714476"/>
-							<reference ref="1001956430"/>
 							<reference ref="480371933"/>
 							<reference ref="948049426"/>
 							<reference ref="176457525"/>
+							<reference ref="1001956430"/>
+							<reference ref="687044364"/>
+							<reference ref="590467207"/>
+							<reference ref="712183294"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -478,6 +519,11 @@
 						<reference key="object" ref="176457525"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">42</int>
+						<reference key="object" ref="590467207"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -496,6 +542,7 @@
 					<string>38.IBPluginDependency</string>
 					<string>4.IBPluginDependency</string>
 					<string>40.IBPluginDependency</string>
+					<string>42.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 					<string>8.IBPluginDependency</string>
 				</object>
@@ -504,6 +551,7 @@
 					<string>MediaDetailViewController</string>
 					<string>UIResponder</string>
 					<string>{{387, 376}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -529,9 +577,134 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">41</int>
+			<int key="maxID">42</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">MediaDetailViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>downloadAudioTapped</string>
+							<string>playAudioTapped</string>
+							<string>playVideoTapped</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>downloadAudioTapped</string>
+							<string>playAudioTapped</string>
+							<string>playVideoTapped</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">downloadAudioTapped</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">playAudioTapped</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">playVideoTapped</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>cancelButton</string>
+							<string>description</string>
+							<string>downloadAudioButton</string>
+							<string>icon</string>
+							<string>mediaTitle</string>
+							<string>pView</string>
+							<string>playAudioButton</string>
+							<string>playVideoButton</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIButton</string>
+							<string>UITextView</string>
+							<string>UIButton</string>
+							<string>UIImageView</string>
+							<string>UILabel</string>
+							<string>UIProgressView</string>
+							<string>UIButton</string>
+							<string>UIButton</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>cancelButton</string>
+							<string>description</string>
+							<string>downloadAudioButton</string>
+							<string>icon</string>
+							<string>mediaTitle</string>
+							<string>pView</string>
+							<string>playAudioButton</string>
+							<string>playVideoButton</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">cancelButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">description</string>
+								<string key="candidateClassName">UITextView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">downloadAudioButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">icon</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mediaTitle</string>
+								<string key="candidateClassName">UILabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">pView</string>
+								<string key="candidateClassName">UIProgressView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">playAudioButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">playVideoButton</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MediaDetailViewController.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">

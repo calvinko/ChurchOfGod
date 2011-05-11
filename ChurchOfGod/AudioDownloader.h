@@ -16,6 +16,7 @@
 @interface AudioDownloader : NSObject {
     FILE *fp;
     NSString *filePath;
+    NSString *fileName;
     NSString *audioURL;
     NSMutableData *dataStore;
     NSURLConnection *netConnection;
@@ -26,6 +27,7 @@
 }
 
 @property (nonatomic, retain) NSMutableData *dataStore;
+@property (nonatomic, retain) NSString *fileName;
 @property (nonatomic, retain) NSString *filePath;
 @property (nonatomic, retain) NSURLConnection *netConnection;
 @property (nonatomic, retain) NSString *audioURL;

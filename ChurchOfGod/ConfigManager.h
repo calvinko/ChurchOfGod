@@ -10,6 +10,9 @@
 #import "ChurchConfig.h" 
 
 @class PDBReader;
+@class MediaRecord;
+@class ChurchofGodAppDelegate;
+@class DownloadedMediaRecord;
 @interface ConfigManager : NSObject {
     
     
@@ -29,6 +32,9 @@
 + (NSMutableArray *) getDownloadedMediaArray;
 
 
++ (void) addSermonToStore:(MediaRecord *)rec withFileName:(NSString *)fname;
+
++ (void) setDelegate:(ChurchofGodAppDelegate *) del;
 + (void) setDefaultChurchConfig:(ChurchConfig *)config; 
 + (void) setDefaultIndex:(NSUInteger)index;
 + (void) setUser:(NSString *)user;
@@ -36,8 +42,9 @@
 + (NSMutableArray *) loadConfig;
 + (NSString *) getDocumentPath;
 
++ (DownloadedMediaRecord *) findDownloadedMediaByName:(NSString *) name;
 
 + (void) loadMediaList;
-+ (void) saveMediaList;
++ (bool) saveMediaList;
 
 @end

@@ -19,12 +19,13 @@ static NSString *kSermonSeries = @"Sermon Series";
 @synthesize itemIcon, itemDate, itemTag, itemThumbIcon, itemDescription, itemType, itemCategory, itemContent, itemContentURL;
 @synthesize itemTitle, imageURLString, itemLink;
 @synthesize itemAudioURLString, itemVideoURLString, audioFileSize;
-@synthesize loader;
+@synthesize loader, currentPlaybackTime;
 
 -(id) init {
     self.itemContent = nil;
     self.itemContentURL = nil;
-    audioFileSize = 10 << 20;
+    self.currentPlaybackTime = -1;
+    audioFileSize = 20 << 20;
     return self;
 }
 

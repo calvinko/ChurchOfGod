@@ -51,7 +51,6 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor" id="462871836">
 					<int key="NSColorSpace">3</int>
@@ -81,7 +80,6 @@
 							<string key="NSResourceName">microphone.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUITabBar" ref="795333663"/>
 					</object>
 					<array key="IBUIToolbarItems" id="0"/>
 					<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -106,13 +104,22 @@
 						<object class="IBUIViewController" id="410795894">
 							<reference key="IBUIToolbarItems" ref="0"/>
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="257925219">
-								<reference key="IBUINavigationBar"/>
 								<string key="IBUITitle">Sermon</string>
-								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="69763930">
+								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="69763930">
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
 									<reference key="IBUINavigationItem" ref="257925219"/>
 									<int key="IBUISystemItemIdentifier">13</int>
+								</object>
+								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="528614094">
+									<int key="IBUITag">5</int>
+									<object class="NSCustomResource" key="IBUIImage">
+										<string key="NSClassName">NSImage</string>
+										<string key="NSResourceName">blue-download.png</string>
+									</object>
+									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+									<int key="IBUIStyle">1</int>
+									<reference key="IBUINavigationItem" ref="257925219"/>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
@@ -139,7 +146,6 @@
 								<string key="NSResourceName">newspaper.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar" ref="795333663"/>
 						</object>
 						<reference key="IBUIToolbarItems" ref="0"/>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -185,7 +191,6 @@
 								<string key="NSResourceName">musicnote2.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar" ref="795333663"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
 						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
@@ -247,7 +252,6 @@
 								<string key="NSResourceName">wrench.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar" ref="795333663"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
 						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
@@ -286,7 +290,6 @@
 					<object class="IBUINavigationController" id="929397420">
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="680712438">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar" ref="795333663"/>
 							<int key="IBUISystemItemIdentifier">9</int>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -310,6 +313,7 @@
 							<object class="IBUIViewController" id="9463332">
 								<string key="IBUITitle">Download</string>
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="40586752">
+									<reference key="IBUINavigationBar"/>
 									<string key="IBUITitle">Download</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
@@ -332,7 +336,6 @@
 								<string key="NSResourceName">sliders.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar" ref="795333663"/>
 						</object>
 						<reference key="IBUIToolbarItems" ref="0"/>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
@@ -470,7 +473,6 @@
 						<object class="IBUITabBarItem" key="IBUITabBarItem" id="807309489">
 							<string key="IBUITitle">About</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar" ref="795333663"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="1034742383"/>
 						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
@@ -486,7 +488,6 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
@@ -494,16 +495,6 @@
 					</object>
 					<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-					<array class="NSMutableArray" key="IBUIItems">
-						<reference ref="35335648"/>
-						<reference ref="423008218"/>
-						<reference ref="180172162"/>
-						<reference ref="460250331"/>
-						<reference ref="680712438"/>
-						<reference ref="829313286"/>
-						<reference ref="807309489"/>
-					</array>
-					<reference key="IBUISelectedItem" ref="35335648"/>
 				</object>
 			</object>
 		</array>
@@ -871,6 +862,7 @@
 						<reference key="object" ref="257925219"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="69763930"/>
+							<reference ref="528614094"/>
 						</array>
 						<reference key="parent" ref="410795894"/>
 					</object>
@@ -953,6 +945,11 @@
 						<reference key="object" ref="69763930"/>
 						<reference key="parent" ref="257925219"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">220</int>
+						<reference key="object" ref="528614094"/>
+						<reference key="parent" ref="257925219"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -994,6 +991,7 @@
 				<string key="209.CustomClassName">DownloadViewController</string>
 				<string key="209.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="211.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="220.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">ChurchofGodAppDelegate</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -1001,348 +999,9 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">219</int>
+			<int key="maxID">220</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">ChurchofGodAppDelegate</string>
-					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">refreshSermonTapped:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">refreshSermonTapped:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">refreshSermonTapped:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="downloadNavController">UINavigationController</string>
-						<string key="downloadViewController">DownloadViewController</string>
-						<string key="mediaNavConntroller">UINavigationController</string>
-						<string key="mediaViewController">MediaViewController</string>
-						<string key="newsNavConntroller">UINavigationController</string>
-						<string key="newsViewController">NewsViewController</string>
-						<string key="sermonNavConntroller">UINavigationController</string>
-						<string key="sermonsViewController">SermonsViewController</string>
-						<string key="settingNavController">UINavigationController</string>
-						<string key="settingViewController">SettingViewController</string>
-						<string key="songNavController">UINavigationController</string>
-						<string key="songViewController">SongViewController</string>
-						<string key="tabBarController">RotatingTabBarController</string>
-						<string key="window">UIWindow</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="downloadNavController">
-							<string key="name">downloadNavController</string>
-							<string key="candidateClassName">UINavigationController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="downloadViewController">
-							<string key="name">downloadViewController</string>
-							<string key="candidateClassName">DownloadViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaNavConntroller">
-							<string key="name">mediaNavConntroller</string>
-							<string key="candidateClassName">UINavigationController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaViewController">
-							<string key="name">mediaViewController</string>
-							<string key="candidateClassName">MediaViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="newsNavConntroller">
-							<string key="name">newsNavConntroller</string>
-							<string key="candidateClassName">UINavigationController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="newsViewController">
-							<string key="name">newsViewController</string>
-							<string key="candidateClassName">NewsViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sermonNavConntroller">
-							<string key="name">sermonNavConntroller</string>
-							<string key="candidateClassName">UINavigationController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sermonsViewController">
-							<string key="name">sermonsViewController</string>
-							<string key="candidateClassName">SermonsViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="settingNavController">
-							<string key="name">settingNavController</string>
-							<string key="candidateClassName">UINavigationController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="settingViewController">
-							<string key="name">settingViewController</string>
-							<string key="candidateClassName">SettingViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="songNavController">
-							<string key="name">songNavController</string>
-							<string key="candidateClassName">UINavigationController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="songViewController">
-							<string key="name">songViewController</string>
-							<string key="candidateClassName">SongViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="tabBarController">
-							<string key="name">tabBarController</string>
-							<string key="candidateClassName">RotatingTabBarController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="window">
-							<string key="name">window</string>
-							<string key="candidateClassName">UIWindow</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ChurchofGodAppDelegate.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">DownloadViewController</string>
-					<string key="superclassName">UITableViewController</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">dlCell</string>
-						<string key="NS.object.0">UITableViewCell</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">dlCell</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">dlCell</string>
-							<string key="candidateClassName">UITableViewCell</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/DownloadViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">MediaDetailViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="downloadAudioTapped">id</string>
-						<string key="playAudioTapped">id</string>
-						<string key="playVideoTapped">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="downloadAudioTapped">
-							<string key="name">downloadAudioTapped</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="playAudioTapped">
-							<string key="name">playAudioTapped</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="playVideoTapped">
-							<string key="name">playVideoTapped</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="cancelButton">UIButton</string>
-						<string key="description">UITextView</string>
-						<string key="downloadAudioButton">UIButton</string>
-						<string key="icon">UIImageView</string>
-						<string key="mediaTitle">UILabel</string>
-						<string key="pView">UIProgressView</string>
-						<string key="playAudioButton">UIButton</string>
-						<string key="playVideoButton">UIButton</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="cancelButton">
-							<string key="name">cancelButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="description">
-							<string key="name">description</string>
-							<string key="candidateClassName">UITextView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="downloadAudioButton">
-							<string key="name">downloadAudioButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="icon">
-							<string key="name">icon</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaTitle">
-							<string key="name">mediaTitle</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="pView">
-							<string key="name">pView</string>
-							<string key="candidateClassName">UIProgressView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playAudioButton">
-							<string key="name">playAudioButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playVideoButton">
-							<string key="name">playVideoButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/MediaDetailViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">MediaRecord</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/MediaRecord.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">MediaViewController</string>
-					<string key="superclassName">UITableViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/MediaViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NewsDetailController</string>
-					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">refreshTapped</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">refreshTapped</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">refreshTapped</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="activityIndicator">UIActivityIndicatorView</string>
-						<string key="newsDescription">UIWebView</string>
-						<string key="record">MediaRecord</string>
-						<string key="refreshButton">UIBarButtonItem</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="activityIndicator">
-							<string key="name">activityIndicator</string>
-							<string key="candidateClassName">UIActivityIndicatorView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="newsDescription">
-							<string key="name">newsDescription</string>
-							<string key="candidateClassName">UIWebView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="record">
-							<string key="name">record</string>
-							<string key="candidateClassName">MediaRecord</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="refreshButton">
-							<string key="name">refreshButton</string>
-							<string key="candidateClassName">UIBarButtonItem</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NewsDetailController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NewsViewController</string>
-					<string key="superclassName">UITableViewController</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">newsDetailView</string>
-						<string key="NS.object.0">NewsDetailController</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">newsDetailView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">newsDetailView</string>
-							<string key="candidateClassName">NewsDetailController</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NewsViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">RotatingTabBarController</string>
-					<string key="superclassName">UITabBarController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/RotatingTabBarController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SermonsViewController</string>
-					<string key="superclassName">UITableViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">segmentControlTapped:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">segmentControlTapped:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">segmentControlTapped:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="headerCell">UIView</string>
-						<string key="mediaDetailView">MediaDetailViewController</string>
-						<string key="refleshItem">UIBarButtonItem</string>
-						<string key="selector">UISegmentedControl</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="headerCell">
-							<string key="name">headerCell</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="mediaDetailView">
-							<string key="name">mediaDetailView</string>
-							<string key="candidateClassName">MediaDetailViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="refleshItem">
-							<string key="name">refleshItem</string>
-							<string key="candidateClassName">UIBarButtonItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="selector">
-							<string key="name">selector</string>
-							<string key="candidateClassName">UISegmentedControl</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/SermonsViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SettingViewController</string>
-					<string key="superclassName">UITableViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/SettingViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SongViewController</string>
-					<string key="superclassName">UITableViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/SongViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">ToolTableViewController</string>
-					<string key="superclassName">UITableViewController</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ToolTableViewController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
@@ -1352,6 +1011,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="blue-download.png">{19, 24}</string>
 			<string key="microphone.png">{12, 24}</string>
 			<string key="musicnote2.png">{23, 23}</string>
 			<string key="newspaper.png">{28, 23}</string>

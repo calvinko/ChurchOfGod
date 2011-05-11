@@ -61,7 +61,7 @@ static NSString *kContentURL  = @"contenturl";
     {
         self.dataToParse = data;
         self.delegate = theDelegate;
-        self.elementsToParse = [NSArray arrayWithObjects:kContent, kContentURL, kLink, kType, kTitle, kImageStr, kDate, kDescription, kAudioLink, kCategory, nil];
+        self.elementsToParse = [NSArray arrayWithObjects:kContent, kContentURL, kLink, kType, kTitle, kImageStr, kDate, kDescription, kAudioLink, kCategory, kAudioSize, nil];
     }
     return self;
 }

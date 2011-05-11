@@ -32,6 +32,8 @@
     NSString *itemCategory;
     NSInteger audioFileSize;
     
+    NSTimeInterval currentPlaybackTime;
+    
     AudioDownloader *loader;
 }
 
@@ -51,6 +53,7 @@
 @property (nonatomic, retain) NSString *itemCategory;
 @property (nonatomic, retain) AudioDownloader *loader;
 @property (nonatomic) NSInteger audioFileSize;
+@property (nonatomic) NSTimeInterval currentPlaybackTime;
 
 -(NSString *)itemDateShortStyle;
 -(NSString *)itemDateLongStyle;

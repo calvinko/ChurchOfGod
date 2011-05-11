@@ -13,7 +13,7 @@
 #import "DownloadedMediaRecord.h"
 
 @implementation DownloadViewController
-@synthesize downloadedItemArray, dlCell;
+@synthesize downloadedItemArray, currentRecord, dlCell;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -102,7 +102,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
         //[[NSBundle mainBundle] loadNibNamed:@"DownloadCell" owner:self options:nil];
         //cell = dlCell;
         //self.dlCell = nil;
@@ -125,6 +125,9 @@
     cell.textLabel.text = rec.itemTitle;
     return cell;
 }
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -169,14 +172,64 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    
+    DownloadedMediaRecord *rec = [downloadedItemArray objectAtIndex:indexPath.row];
+    self.currentRecord = rec;
+    [self playMovieInRecord:rec];
+    
 }
+
+-(void) playMovieInRecord: (DownloadedMediaRecord *) record  {
+	
+	NSURL *theURL;
+    NSString *path = [[ConfigManager getDocumentPath] stringByAppendingPathComponent:record.fileName ];
+    theURL = [[[NSURL alloc] initFileURLWithPath:path] autorelease];
+    theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL: theURL];
+	MPMoviePlayerController* theMovie = [theMovieController moviePlayer];
+    
+	
+	NSError *setCategoryErr = nil;
+	NSError *activationErr  = nil;
+	[[AVAudioSession sharedInstance]
+	 setCategory: AVAudioSessionCategoryPlayback
+	 error: &setCategoryErr];
+	[[AVAudioSession sharedInstance]
+	 setActive: YES
+	 error: &activationErr];
+    //theMovie.scalingMode = MPMovieScalingModeAspectFill;
+    // theMovie.movieControlMode = MPMovieControlModeHidden;
+	
+    // Register for the playback finished notification
+    [[NSNotificationCenter defaultCenter]
+	 addObserver: self
+	 selector: @selector(myMovieFinishedCallback:)
+	 name: MPMoviePlayerPlaybackDidFinishNotification
+	 object: theMovie];
+	[theMovie prepareToPlay];
+    // Movie playback is asynchronous, so this method returns immediately.
+    //theMovie.initialPlaybackTime = record.currentPlaybackTime;
+    [[theMovieController moviePlayer] play];
+	
+	[self.navigationController presentMoviePlayerViewControllerAnimated:theMovieController];
+}
+
+// When the movie is done, release the controller.
+-(void) myMovieFinishedCallback: (NSNotification*) aNotification
+{
+    MPMoviePlayerController* theMovie = [aNotification object];
+	
+    [[NSNotificationCenter defaultCenter]
+	 removeObserver: self
+	 name: MPMoviePlayerPlaybackDidFinishNotification
+	 object: theMovie];
+	
+    NSTimeInterval tval = theMovie.currentPlaybackTime;
+    //self.currentRecord.currentPlaybackTime = tval;
+    // Release the movie instance created in playMovieAtURL:
+    [theMovieController release];
+	
+}
+
+
 
 @end

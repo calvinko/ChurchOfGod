@@ -7,11 +7,13 @@
 //
 
 #import <CFNetwork/CFNetwork.h>
+#import "ChurchofGodAppDelegate.h"
 #import "ConfigManager.h"
 #import "ChurchConfig.h"
 #import "ChurchConfigLoader.h"
 #import "MediaRecord.h"
 #import "DownloadedMediaRecord.h"
+#import "DownloadViewController.h"
 #import "PDBReader.h"
 
 
@@ -30,7 +32,7 @@ static NSString *kMNews = @"membernews";
 static NSString *kTool = @"tool";
 static NSString *kMTool = @"mtool";
 
-
+static ChurchofGodAppDelegate *delegate;
 static NSArray *readerArray;
 static NSMutableArray *churchArray;
 static NSDictionary *songBookList;
@@ -44,7 +46,7 @@ static NSMutableArray *downloadedMediaArray;
     churchArray = nil;
     songBookList = nil;
     booklist = nil;
-    downloadedMediaArray = [[NSMutableArray alloc] init];
+    downloadedMediaArray = nil;
     readerDict = [[[NSMutableDictionary alloc] initWithCapacity:5] retain];
     readerArray = [[NSArray arrayWithObjects:
                     [[[PDBReader alloc] init] retain], 
@@ -98,6 +100,11 @@ static NSMutableArray *downloadedMediaArray;
         [[NSUserDefaults standardUserDefaults] synchronize];
 
     }
+}
+
++ (void) setDelegate:(ChurchofGodAppDelegate *) del {
+    delegate = del;
+    return;
 }
 
 + (void) loadSongBookList {
@@ -246,31 +253,67 @@ static NSMutableArray *downloadedMediaArray;
     return documentsDirectory;
 }
 
+
++ (DownloadedMediaRecord *) findDownloadedMediaByName:(NSString *) name {
+    if (downloadedMediaArray == nil) {
+        [ConfigManager loadMediaList];
+    }
+    for (DownloadedMediaRecord *rec in downloadedMediaArray){
+        if ([rec.fileName isEqualToString:name]) {
+            return rec;
+        }
+    }
+    return nil;
+}
+
++(NSArray *) convertRecordArray:(NSArray *) array 
+{
+    NSMutableArray *parray = [[[NSMutableArray alloc] initWithCapacity:[array count]] autorelease];
+    for (DownloadedMediaRecord *rec in array) {
+        [parray addObject:[rec convertToPropertyList]];
+    }
+    return parray;
+}
+
 + (void) loadMediaList {
     
     NSString *pathStr = [self getDocumentPath];
     NSString *filePath = [pathStr stringByAppendingPathComponent:@"mediaList.plist"];
-    downloadedMediaArray = [NSArray arrayWithContentsOfFile:filePath];
-    if (downloadedMediaArray == nil) {
-        downloadedMediaArray = [[[NSArray alloc] init] retain];
+    NSArray *tarray = [NSArray arrayWithContentsOfFile:filePath];
+    if (tarray== nil) {
+        downloadedMediaArray = [[[NSMutableArray alloc] init] retain];
+    } else {
+        if (downloadedMediaArray != nil) {
+            [downloadedMediaArray release];
+        }
+        downloadedMediaArray = [[NSMutableArray alloc] init];
+        for (NSArray *arec in tarray) {
+            [downloadedMediaArray addObject:[[DownloadedMediaRecord alloc] initWithArray:arec]];
+        }
     }
-    
 }
 
-+ (void) saveMediaList {
+
++ (bool) saveMediaList {
     
     NSString *pathStr = [self getDocumentPath];
     NSString *filePath = [pathStr stringByAppendingPathComponent:@"mediaList.plist"];
-    [downloadedMediaArray writeToFile:filePath atomically:YES];    
+    NSArray *a = [ConfigManager convertRecordArray:downloadedMediaArray];
+    bool result = [a writeToFile:filePath atomically:YES];    
+    return result;
 }
 
 + (void) addSermonToStore:(MediaRecord *)rec withFileName:(NSString *)fname {
+    if (downloadedMediaArray == nil) {
+        [ConfigManager loadMediaList];
+    }
     DownloadedMediaRecord *drec = [[DownloadedMediaRecord alloc] init];
     drec.fileName = fname;
     drec.itemTitle = rec.itemTitle;
     drec.itemType = rec.itemType;
     drec.itemDescription = rec.itemDescription;
     [downloadedMediaArray addObject:drec];
+    [delegate.downloadViewController.tableView reloadData];
 }
 
 + (void) saveLibrary {

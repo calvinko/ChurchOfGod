@@ -17,6 +17,7 @@
     NSString *itemDescription;
     NSString *itemAudioURLString;
     NSString *itemCategory;
+    NSTimeInterval currentPlaybackTime;
    
 }
 
@@ -24,4 +25,8 @@
 @property (nonatomic, retain) NSString *itemType;
 @property (nonatomic, retain) NSString *fileName;
 @property (nonatomic, retain) NSString *itemDescription;
+@property (nonatomic) NSTimeInterval currentPlaybackTime;
+
+-(NSArray *) convertToPropertyList;
+-(id) initWithArray:(NSArray *) array;
 @end

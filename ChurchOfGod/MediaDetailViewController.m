@@ -20,7 +20,7 @@
 {
 	[super viewWillAppear:animated];
 	mediaTitle.text = self.record.itemTitle;
-	//icon. = record.imageURLString;
+	
 	description.text = self.record.itemDescription;
 	
 	if(self.record.itemAudioURLString == nil)
@@ -30,6 +30,10 @@
 	} else {
 		playAudioButton.hidden = NO;
         downloadAudioButton.hidden = NO;
+        if ([ConfigManager findDownloadedMediaByName:[self.record.itemAudioURLString lastPathComponent]] != nil) {
+            UIView *v1 = [self.view viewWithTag:11];
+            v1.hidden = NO;
+        }
 	}
 	
 	if (self.record.itemVideoURLString == nil) {
@@ -81,22 +85,25 @@
 
 -(IBAction) downloadAudioTapped
 {
-	NSString * storyLink = self.record.itemAudioURLString;
-	NSLog(@"audioLink: %@", storyLink);
-    AudioDownloader *loader = [[AudioDownloader alloc] init];
-    self.record.loader = loader;
-    loader.audioURL = self.record.itemAudioURLString;
-    loader.filePath = [[ConfigManager getDocumentPath] stringByAppendingPathComponent:@"file.mp3"];
-    loader.delegate = self;
-    loader.fileSize = self.record.audioFileSize;
-    loader.pview = self.pView;
-	[loader startDownload];
-    
-    self.pView.hidden = NO;
-    UIView *v1 = [self.view viewWithTag:9];
-    v1.hidden = NO;
-    self.cancelButton.hidden = NO;
-    [self.navigationController setNavigationBarHidden:YES animated:YES];  
+    if ([ConfigManager findDownloadedMediaByName:[self.record.itemAudioURLString lastPathComponent]] == nil) {
+        NSString * storyLink = self.record.itemAudioURLString;
+        NSLog(@"audioLink: %@", storyLink);
+        AudioDownloader *loader = [[AudioDownloader alloc] init];
+        self.record.loader = loader;
+        loader.audioURL = self.record.itemAudioURLString;
+        loader.fileName = [loader.audioURL lastPathComponent];
+        loader.filePath = [[ConfigManager getDocumentPath] stringByAppendingPathComponent:loader.fileName ];
+        loader.delegate = self;
+        loader.fileSize = self.record.audioFileSize;
+        loader.pview = self.pView;
+        [loader startDownload];
+        
+        self.pView.hidden = NO;
+        UIView *v1 = [self.view viewWithTag:9];
+        v1.hidden = NO;
+        self.cancelButton.hidden = NO;
+        [self.navigationController setNavigationBarHidden:YES animated:YES];  
+    }
     //DownloadViewController *dview = [[DownloadViewController alloc] init]; 
     //dview.downloadedItemArray = [ConfigManager getDownloadedMediaArray];
     //[dview.downloadedItemArray addObject:self.record];
@@ -104,12 +111,18 @@
     //[dview release];
 }
 
+-(void) playMovieFromFile: (NSString *) fpath 
+{
+    NSURL *theURL = [[NSURL alloc] initFileURLWithPath:fpath];
+    theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL:theURL];
+}
 
 -(void) playMovieAtURL: (NSURL*) theURL {
 	
 	
     theMovieController = [[MPMoviePlayerViewController alloc] initWithContentURL: theURL];
 	MPMoviePlayerController* theMovie = [theMovieController moviePlayer];
+    
 	
 	NSError *setCategoryErr = nil;
 	NSError *activationErr  = nil;
@@ -130,6 +143,7 @@
 	 object: theMovie];
 	[theMovie prepareToPlay];
     // Movie playback is asynchronous, so this method returns immediately.
+    theMovie.initialPlaybackTime = record.currentPlaybackTime;
     [[theMovieController moviePlayer] play];
 	
 	[self.navigationController presentMoviePlayerViewControllerAnimated:theMovieController];
@@ -145,6 +159,8 @@
 	 name: MPMoviePlayerPlaybackDidFinishNotification
 	 object: theMovie];
 	
+    NSTimeInterval tval = theMovie.currentPlaybackTime;
+    self.record.currentPlaybackTime = tval;
     // Release the movie instance created in playMovieAtURL:
     [theMovieController release];
 	
@@ -168,8 +184,12 @@
     self.pView.hidden = NO;
     UIView *v1 = [self.view viewWithTag:9];
     v1.hidden = YES;
+    v1 = [self.view viewWithTag:11];
+    v1.hidden = NO;
     self.cancelButton.hidden = YES;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];  
+    [self.navigationController setNavigationBarHidden:NO animated:YES]; 
+    [ConfigManager  addSermonToStore:self.record withFileName:self.record.loader.fileName];
+    [ConfigManager  saveMediaList];
     return;
 }
 

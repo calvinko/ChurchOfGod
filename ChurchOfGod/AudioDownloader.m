@@ -13,7 +13,7 @@
 
 @implementation AudioDownloader
 
-@synthesize dataStore, netConnection, filePath, fileSize, audioURL;
+@synthesize dataStore, netConnection, filePath, fileName, fileSize, audioURL;
 @synthesize delegate, pview;
 
 - (id) init {

@@ -47,6 +47,8 @@ static NSString *const CreativeMediaFeed = @"http://www.sugarcreek.tv/ip_creativ
     
     // Add the tab bar controller's view to the window and display.
     
+    [ConfigManager setDelegate:self];
+    
     songViewController.iViewController = [[SongIndexViewController alloc] init ];
       
     [self.window addSubview:tabBarController.view];
