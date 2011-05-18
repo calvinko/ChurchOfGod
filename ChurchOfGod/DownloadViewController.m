@@ -50,7 +50,7 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.downloadedItemArray = [ConfigManager getDownloadedMediaArray];
     
-	self.tableView.backgroundColor = [UIColor lightGrayColor];
+	//self.tableView.backgroundColor = [UIColor lightGrayColor];
 
 }
 
@@ -99,6 +99,8 @@
     return [self.downloadedItemArray count];
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DLCell";
@@ -114,12 +116,31 @@
     
     DownloadedMediaRecord *rec = [self.downloadedItemArray objectAtIndex:indexPath.row];
     UILabel *label;
-    label = (UILabel *)[cell viewWithTag:1];
+    label = (UILabel *)[cell viewWithTag:2];
     label.text = rec.itemTitle;
     
     UILabel *label1;
-    label1 = (UILabel *)[cell viewWithTag:2];
-    label1.text = @"Apr 12, 2011";
+    label1 = (UILabel *)[cell viewWithTag:3];
+    label1.text = rec.itemAuthor;
+    
+    UILabel *label2;
+    label2 = (UILabel *)[cell viewWithTag:4];
+    label2.text = rec.itemDate;
+    
+    
+    label2 = (UILabel *)[cell viewWithTag:6];
+    int sec = (int) rec.duration;
+    label2.text = [NSString stringWithFormat:@"%d:%02d", sec / 60, sec % 60];
+    
+    label2 = (UILabel *)[cell viewWithTag:5];
+    sec = (int) rec.currentPlaybackTime;
+    if (sec == -1) {
+        sec = 0;
+    }
+    label2.text = [NSString stringWithFormat:@"%d:%02d", sec / 60, sec % 60];
+
+    UIProgressView *pview = (UIProgressView *) [cell viewWithTag:1];
+    pview.progress = rec.currentPlaybackTime / rec.duration;
     
     cell.imageView.image = nil;
     //cell.textLabel.text = rec.itemTitle;
@@ -138,19 +159,21 @@
 }
 */
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [downloadedItemArray removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [ConfigManager saveMediaList];
+       
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -226,6 +249,7 @@
     NSTimeInterval tval = theMovie.currentPlaybackTime;
     self.currentRecord.currentPlaybackTime = tval;
     [theMovieController release];
+    [self.tableView reloadData];
 	
 }
 

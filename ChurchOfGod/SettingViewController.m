@@ -68,7 +68,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;  // no of sections
+    return 1;  // no of sections
 }
 
 

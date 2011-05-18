@@ -17,7 +17,7 @@ static NSString *kSermonSeries = @"Sermon Series";
 @implementation MediaRecord
 
 @synthesize itemIcon, itemDate, itemTag, itemThumbIcon, itemDescription, itemType, itemCategory, itemContent, itemContentURL;
-@synthesize itemTitle, imageURLString, itemLink;
+@synthesize itemTitle, itemAuthor, imageURLString, itemLink;
 @synthesize itemAudioURLString, itemVideoURLString, audioFileSize;
 @synthesize loader, currentPlaybackTime;
 

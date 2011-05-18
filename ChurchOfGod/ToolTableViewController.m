@@ -8,6 +8,7 @@
 
 #import "ToolTableViewController.h"
 #import "GospelOneViewController.h"
+#import "RomanRoadTableViewController.h"
 
 
 @implementation ToolTableViewController
@@ -103,7 +104,7 @@
     if (indexPath.row == 0) {
         cell.textLabel.text = @"Wordless Gospel Book";
     } else {
-        cell.textLabel.text = @"Text Gospel";
+        cell.textLabel.text = @"Romans Road";
     }
     return cell;
 }
@@ -152,13 +153,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
+    if (indexPath.row == 0) {
     
-    GospelOneViewController *gViewController = [[GospelOneViewController alloc] init];
-                                                
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:gViewController animated:YES];
-    [gViewController release];
+        GospelOneViewController *gViewController = [[GospelOneViewController alloc] init];
+            
+        [self.navigationController pushViewController:gViewController animated:YES];
+        [gViewController release];
+    } else if (indexPath.row == 1) {
+        RomanRoadTableViewController *rViewController = [[RomanRoadTableViewController alloc] init];
+        [self.navigationController pushViewController:rViewController animated:YES];
+        [rViewController release];
+        
+    }
 }
 
 @end

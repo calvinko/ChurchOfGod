@@ -14,18 +14,21 @@
     NSString *itemType;
     NSString *fileName;
     NSString *itemDate;
-    NSString *itemDescription;
+    NSString *itemAuthor;
     NSString *itemAudioURLString;
     NSString *itemCategory;
     NSTimeInterval currentPlaybackTime;
+    NSInteger duration;
    
 }
 
 @property (nonatomic, retain) NSString *itemTitle;
 @property (nonatomic, retain) NSString *itemType;
+@property (nonatomic, retain) NSString *itemDate;
 @property (nonatomic, retain) NSString *fileName;
-@property (nonatomic, retain) NSString *itemDescription;
+@property (nonatomic, retain) NSString *itemAuthor;
 @property (nonatomic) NSTimeInterval currentPlaybackTime;
+@property (nonatomic) NSInteger duration;
 
 -(NSArray *) convertToPropertyList;
 -(id) initWithArray:(NSArray *) array;

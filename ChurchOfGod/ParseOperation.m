@@ -28,6 +28,7 @@
 static NSString *kLink      = @"link";
 static NSString *kAudioLink = @"audioLink";
 static NSString *kAudioSize = @"audioFileSize";
+static NSString *kAuthor    = @"itunes:author";
 static NSString *kVideoLink = @"videoLink";
 static NSString *kType      = @"type";
 static NSString *kCategory  = @"category";
@@ -61,7 +62,7 @@ static NSString *kContentURL  = @"contenturl";
     {
         self.dataToParse = data;
         self.delegate = theDelegate;
-        self.elementsToParse = [NSArray arrayWithObjects:kContent, kContentURL, kLink, kType, kTitle, kImageStr, kDate, kDescription, kAudioLink, kCategory, kAudioSize, nil];
+        self.elementsToParse = [NSArray arrayWithObjects:kContent, kContentURL, kLink, kType, kTitle, kImageStr, kDate, kDescription, kAudioLink, kCategory, kAudioSize, kAuthor, nil];
     }
     return self;
 }
@@ -160,6 +161,10 @@ static NSString *kContentURL  = @"contenturl";
                 else if ([elementName isEqualToString:kTitle])
                 {        
                     self.workingEntry.itemTitle = trimmedString;
+                }
+                else if ([elementName isEqualToString:kAuthor])
+                {        
+                    self.workingEntry.itemAuthor = trimmedString;
                 }
                 else if ([elementName isEqualToString:kCategory]) {
                     self.workingEntry.itemCategory = trimmedString;

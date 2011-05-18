@@ -63,14 +63,6 @@ static NSMutableArray *downloadedMediaArray;
     NSString *testValue = [[NSUserDefaults standardUserDefaults] stringForKey:kChurchName];
 	if (testValue == nil)
 	{
-		// no default values have been set, create them here based on what's in our Settings bundle info
-		//NSString *pathStr = [[NSBundle mainBundle] bundlePath];
-		//NSString *settingsBundlePath = [pathStr stringByAppendingPathComponent:@"Settings.bundle"];
-		//NSString *finalPath = [settingsBundlePath stringByAppendingPathComponent:@"Root.plist"];
-        
-		//NSDictionary *settingsDict = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-		//NSArray *prefSpecifierArray = [settingsDict objectForKey:@"PreferenceSpecifiers"];
-        
 		NSString *churchNameDefault = @"Church of God in Oakland";
         NSString *churchURL = @"http://www.bachurch.org";
 		NSString *sermonurl = @"http://bachurch.org/iphone/sermonlist.xml";
@@ -296,12 +288,30 @@ static NSMutableArray *downloadedMediaArray;
 
 + (bool) saveMediaList {
     
-    NSString *pathStr = [self getDocumentPath];
+    NSString *pathStr = [ConfigManager getDocumentPath];
     NSString *filePath = [pathStr stringByAppendingPathComponent:@"mediaList.plist"];
     NSArray *a = [ConfigManager convertRecordArray:downloadedMediaArray];
     bool result = [a writeToFile:filePath atomically:YES];    
     return result;
 }
+
++ (NSInteger) getDurationOfFile:(NSString *) filePath {
+    
+    NSURL *afUrl = [NSURL fileURLWithPath:filePath];
+    AudioFileID fileID;
+    OSStatus result = AudioFileOpenURL((CFURLRef)afUrl, kAudioFileReadPermission, 0, &fileID);
+    UInt32 bitRate = 0;
+    UInt32 thePropSize = sizeof(UInt32);
+    UInt64 byteCount = 0;
+    
+    result = AudioFileGetProperty(fileID, kAudioFilePropertyBitRate, &thePropSize, &bitRate);
+    thePropSize = sizeof(UInt64);
+    result = AudioFileGetProperty(fileID, kAudioFilePropertyAudioDataByteCount, &thePropSize, &byteCount);
+    
+    AudioFileClose(fileID);
+    return (byteCount * 8) / bitRate;
+}
+
 
 + (void) addSermonToStore:(MediaRecord *)rec withFileName:(NSString *)fname {
     if (downloadedMediaArray == nil) {
@@ -310,11 +320,14 @@ static NSMutableArray *downloadedMediaArray;
     DownloadedMediaRecord *drec = [[DownloadedMediaRecord alloc] init];
     drec.fileName = fname;
     drec.itemTitle = rec.itemTitle;
+    drec.itemAuthor = rec.itemAuthor;
+    drec.itemDate = rec.itemDate;
     drec.itemType = rec.itemType;
-    drec.itemDescription = rec.itemDescription;
+    drec.duration = [ConfigManager getDurationOfFile:[[ConfigManager getDocumentPath] stringByAppendingPathComponent:fname]];
     [downloadedMediaArray addObject:drec];
     [delegate.downloadViewController.tableView reloadData];
 }
+
 
 /*
 + (void) saveLibrary {

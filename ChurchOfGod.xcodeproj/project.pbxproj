@@ -106,11 +106,23 @@
 		CBC1C3DD13711DDC00A04527 /* DownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC1C3DC13711DDC00A04527 /* DownloadCell.xib */; };
 		CBC23D291372358500D1EDFB /* DownloadedMediaRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC23D281372358500D1EDFB /* DownloadedMediaRecord.m */; };
 		CBC49AA113689FB100051324 /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC49AA013689FB100051324 /* icon114x114.png */; };
+		CBCDE853137C85DF00FC96BE /* dl22.png in Resources */ = {isa = PBXBuildFile; fileRef = CBCDE852137C85DF00FC96BE /* dl22.png */; };
+		CBDE36DF13833C9600D7D65A /* RomanRoadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36DE13833C9600D7D65A /* RomanRoadTableViewController.m */; };
+		CBDE36E313833D2700D7D65A /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36E213833D2700D7D65A /* SectionHeaderView.m */; };
+		CBDE36E613837F8200D7D65A /* SectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36E413837F8200D7D65A /* SectionInfo.m */; };
+		CBDE36E913837FF100D7D65A /* HighlightingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36E713837FF100D7D65A /* HighlightingTextView.m */; };
+		CBDE36ED138380CD00D7D65A /* QuoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE36EA138380CD00D7D65A /* QuoteCell.xib */; };
+		CBDE36EE138380CD00D7D65A /* QuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36EB138380CD00D7D65A /* QuoteCell.m */; };
+		CBDE36F1138381A300D7D65A /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36EF138381A200D7D65A /* Play.m */; };
+		CBDE36F41383825300D7D65A /* Quotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36F21383825200D7D65A /* Quotation.m */; };
+		CBDE36F8138384AB00D7D65A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDE36F7138384AB00D7D65A /* QuartzCore.framework */; };
+		CBDE36FA13838B5F00D7D65A /* RomanRoadText.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBDE36F913838B5F00D7D65A /* RomanRoadText.plist */; };
 		CBE5C597132C96470091B26F /* oakchurch.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE5C596132C96470091B26F /* oakchurch.png */; };
 		CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF974D134E6741004F3D06 /* PDBReader.m */; };
 		CBEF9751134E73EA004F3D06 /* Family6.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9750134E73EA004F3D06 /* Family6.pdb */; };
 		CBF39477134D547E000769D6 /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF39475134D547E000769D6 /* SongViewController.m */; };
 		CBF39478134D547E000769D6 /* SongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF39476134D547E000769D6 /* SongViewController.xib */; };
+		CBFD1A5B137B4BFF007B746B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFD1A5A137B4BFF007B746B /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +257,25 @@
 		CBC23D271372358500D1EDFB /* DownloadedMediaRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadedMediaRecord.h; sourceTree = "<group>"; };
 		CBC23D281372358500D1EDFB /* DownloadedMediaRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadedMediaRecord.m; sourceTree = "<group>"; };
 		CBC49AA013689FB100051324 /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
+		CBCDE852137C85DF00FC96BE /* dl22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dl22.png; sourceTree = "<group>"; };
+		CBDE36DD13833C9600D7D65A /* RomanRoadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanRoadTableViewController.h; sourceTree = "<group>"; };
+		CBDE36DE13833C9600D7D65A /* RomanRoadTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanRoadTableViewController.m; sourceTree = "<group>"; };
+		CBDE36E113833D2600D7D65A /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
+		CBDE36E213833D2700D7D65A /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
+		CBDE36E413837F8200D7D65A /* SectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionInfo.m; sourceTree = "<group>"; };
+		CBDE36E513837F8200D7D65A /* SectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionInfo.h; sourceTree = "<group>"; };
+		CBDE36E713837FF100D7D65A /* HighlightingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighlightingTextView.m; sourceTree = "<group>"; };
+		CBDE36E813837FF100D7D65A /* HighlightingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightingTextView.h; sourceTree = "<group>"; };
+		CBDE36EA138380CD00D7D65A /* QuoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteCell.xib; sourceTree = "<group>"; };
+		CBDE36EB138380CD00D7D65A /* QuoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteCell.m; sourceTree = "<group>"; };
+		CBDE36EC138380CD00D7D65A /* QuoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteCell.h; sourceTree = "<group>"; };
+		CBDE36EF138381A200D7D65A /* Play.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Play.m; sourceTree = "<group>"; };
+		CBDE36F0138381A200D7D65A /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Play.h; sourceTree = "<group>"; };
+		CBDE36F21383825200D7D65A /* Quotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quotation.m; sourceTree = "<group>"; };
+		CBDE36F31383825200D7D65A /* Quotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quotation.h; sourceTree = "<group>"; };
+		CBDE36F51383849700D7D65A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CBDE36F7138384AB00D7D65A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CBDE36F913838B5F00D7D65A /* RomanRoadText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RomanRoadText.plist; sourceTree = "<group>"; };
 		CBE5C596132C96470091B26F /* oakchurch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oakchurch.png; path = "../../ChurchofGod-old/oakchurch.png"; sourceTree = "<group>"; };
 		CBEF974C134E6741004F3D06 /* PDBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBReader.h; sourceTree = "<group>"; };
 		CBEF974D134E6741004F3D06 /* PDBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBReader.m; sourceTree = "<group>"; };
@@ -252,6 +283,8 @@
 		CBF39474134D547E000769D6 /* SongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
 		CBF39475134D547E000769D6 /* SongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
 		CBF39476134D547E000769D6 /* SongViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongViewController.xib; sourceTree = "<group>"; };
+		CBFD1A58137B4BBA007B746B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		CBFD1A5A137B4BFF007B746B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,12 +292,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFD1A5B137B4BFF007B746B /* AudioToolbox.framework in Frameworks */,
 				CBA3B994132B5BD9007ED9FD /* AVFoundation.framework in Frameworks */,
 				CBA3B992132B5BD3007ED9FD /* MediaPlayer.framework in Frameworks */,
 				CBA3B98A132B5B27007ED9FD /* SystemConfiguration.framework in Frameworks */,
 				CBA3B928132B5724007ED9FD /* UIKit.framework in Frameworks */,
 				CBA3B92A132B5724007ED9FD /* Foundation.framework in Frameworks */,
 				CBA3B92C132B5724007ED9FD /* CoreGraphics.framework in Frameworks */,
+				CBDE36F8138384AB00D7D65A /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +309,7 @@
 		CBA3B918132B5724007ED9FD = {
 			isa = PBXGroup;
 			children = (
+				CBDE36F51383849700D7D65A /* QuartzCore.framework */,
 				CBA3B92D132B5724007ED9FD /* ChurchOfGod */,
 				CBA3B926132B5724007ED9FD /* Frameworks */,
 				CBA3B924132B5724007ED9FD /* Products */,
@@ -291,6 +327,9 @@
 		CBA3B926132B5724007ED9FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBDE36F7138384AB00D7D65A /* QuartzCore.framework */,
+				CBFD1A5A137B4BFF007B746B /* AudioToolbox.framework */,
+				CBFD1A58137B4BBA007B746B /* CoreAudio.framework */,
 				CBA3B993132B5BD9007ED9FD /* AVFoundation.framework */,
 				CBA3B991132B5BD3007ED9FD /* MediaPlayer.framework */,
 				CBA3B989132B5B27007ED9FD /* SystemConfiguration.framework */,
@@ -432,6 +471,7 @@
 		CBA3B99A132C8DA4007ED9FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CBCDE852137C85DF00FC96BE /* dl22.png */,
 				CB9D06491368DA6900CC59C2 /* Placeholder.png */,
 				CB9D06471368D63D00CC59C2 /* Placeholder1.png */,
 				CBC49AA013689FB100051324 /* icon114x114.png */,
@@ -467,6 +507,18 @@
 		CBB217511354D54000FF8360 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CBDE36F913838B5F00D7D65A /* RomanRoadText.plist */,
+				CBDE36F21383825200D7D65A /* Quotation.m */,
+				CBDE36F31383825200D7D65A /* Quotation.h */,
+				CBDE36EF138381A200D7D65A /* Play.m */,
+				CBDE36F0138381A200D7D65A /* Play.h */,
+				CBDE36EA138380CD00D7D65A /* QuoteCell.xib */,
+				CBDE36EB138380CD00D7D65A /* QuoteCell.m */,
+				CBDE36EC138380CD00D7D65A /* QuoteCell.h */,
+				CBDE36E713837FF100D7D65A /* HighlightingTextView.m */,
+				CBDE36E813837FF100D7D65A /* HighlightingTextView.h */,
+				CBDE36E413837F8200D7D65A /* SectionInfo.m */,
+				CBDE36E513837F8200D7D65A /* SectionInfo.h */,
 				CBB217611354FB3E00FF8360 /* MyView.xib */,
 				CBB2175E1354FADD00FF8360 /* MyViewController.h */,
 				CBB2175F1354FADD00FF8360 /* MyViewController.m */,
@@ -476,6 +528,10 @@
 				CBB217521354D57800FF8360 /* GospelOneViewController.h */,
 				CBB217531354D57800FF8360 /* GospelOneViewController.m */,
 				CBB217541354D57800FF8360 /* GospelOneViewController.xib */,
+				CBDE36DD13833C9600D7D65A /* RomanRoadTableViewController.h */,
+				CBDE36DE13833C9600D7D65A /* RomanRoadTableViewController.m */,
+				CBDE36E113833D2600D7D65A /* SectionHeaderView.h */,
+				CBDE36E213833D2700D7D65A /* SectionHeaderView.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -624,6 +680,9 @@
 				CBC1C3D5136FC1A000A04527 /* LoveCircle.pdb in Resources */,
 				CBC1C3DB137117E500A04527 /* DownloadViewController.xib in Resources */,
 				CBC1C3DD13711DDC00A04527 /* DownloadCell.xib in Resources */,
+				CBCDE853137C85DF00FC96BE /* dl22.png in Resources */,
+				CBDE36ED138380CD00D7D65A /* QuoteCell.xib in Resources */,
+				CBDE36FA13838B5F00D7D65A /* RomanRoadText.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +725,13 @@
 				CBC1C3D0136A09E900A04527 /* AudioDownloader.m in Sources */,
 				CBC1C3DA137117E500A04527 /* DownloadViewController.m in Sources */,
 				CBC23D291372358500D1EDFB /* DownloadedMediaRecord.m in Sources */,
+				CBDE36DF13833C9600D7D65A /* RomanRoadTableViewController.m in Sources */,
+				CBDE36E313833D2700D7D65A /* SectionHeaderView.m in Sources */,
+				CBDE36E613837F8200D7D65A /* SectionInfo.m in Sources */,
+				CBDE36E913837FF100D7D65A /* HighlightingTextView.m in Sources */,
+				CBDE36EE138380CD00D7D65A /* QuoteCell.m in Sources */,
+				CBDE36F1138381A300D7D65A /* Play.m in Sources */,
+				CBDE36F41383825300D7D65A /* Quotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

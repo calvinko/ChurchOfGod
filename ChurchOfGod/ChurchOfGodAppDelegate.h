@@ -60,5 +60,6 @@
 -(Boolean)hasNetworkConnection;
 
 -(IBAction) refreshSermonTapped:(id)sender;
+-(IBAction) downloadTapped:(id)sender;
 
 @end

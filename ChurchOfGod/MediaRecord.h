@@ -17,6 +17,7 @@
 @interface MediaRecord : NSObject {
     
     NSString *itemTitle;
+    NSString *itemAuthor;
     NSString *itemTag;
     NSString *itemLink;
     UIImage  *itemIcon;
@@ -38,6 +39,7 @@
 }
 
 @property (nonatomic, retain) NSString *itemTitle;
+@property (nonatomic, retain) NSString *itemAuthor;
 @property (nonatomic, retain) NSString *itemTag;
 @property (nonatomic, retain) NSString *itemLink;
 @property (nonatomic, retain) UIImage  *itemIcon;

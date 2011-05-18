@@ -18,7 +18,6 @@
     NSString *filePath;
     NSString *fileName;
     NSString *audioURL;
-    NSMutableData *dataStore;
     NSURLConnection *netConnection;
     id <AudioDownloaderDelegate> delegate;
     UIProgressView *pview;
@@ -26,7 +25,6 @@
     int nbytes;
 }
 
-@property (nonatomic, retain) NSMutableData *dataStore;
 @property (nonatomic, retain) NSString *fileName;
 @property (nonatomic, retain) NSString *filePath;
 @property (nonatomic, retain) NSURLConnection *netConnection;
@@ -36,6 +34,7 @@
 @property (nonatomic) NSInteger fileSize;
 
 - (void) startDownload;
+- (void) stopDownload;
 @end
 
 @protocol AudioDownloaderDelegate 

@@ -13,7 +13,7 @@
 
 @implementation AudioDownloader
 
-@synthesize dataStore, netConnection, filePath, fileName, fileSize, audioURL;
+@synthesize netConnection, filePath, fileName, fileSize, audioURL;
 @synthesize delegate, pview;
 
 - (id) init {
@@ -39,6 +39,13 @@
         self.netConnection = conn;
         [conn release];
     }
+}
+
+- (void) stopDownload
+{
+    [self.netConnection cancel];
+    self.netConnection = nil;
+    return;
 }
 
 #pragma mark -

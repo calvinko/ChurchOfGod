@@ -172,6 +172,10 @@
     [sermonsViewController.tableView reloadData];
 }
 
+-(IBAction) downloadTapped:(id)sender
+{
+    tabBarController.selectedIndex = 4;
+}
 
 #pragma mark -
 #pragma mark Memory management

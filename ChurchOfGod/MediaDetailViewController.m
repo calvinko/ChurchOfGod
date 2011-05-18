@@ -118,6 +118,18 @@
     //[dview release];
 }
 
+-(IBAction) cancelTapped
+{
+    [self.record.loader stopDownload];
+    self.record.loader = nil;
+    sleep(1);
+    [self.navigationController setNavigationBarHidden:NO animated:YES]; 
+    self.pView.hidden = YES;
+    UIView *v1 = [self.view viewWithTag:9];
+    v1.hidden = YES;
+    self.cancelButton.hidden = YES;
+}
+
 -(void) playMovieInRecord: (DownloadedMediaRecord *) drec  {
 	
 	NSURL *theURL;
@@ -220,7 +232,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES]; 
     [ConfigManager  addSermonToStore:self.record withFileName:self.record.loader.fileName];
     [ConfigManager  saveMediaList];
-    self.record.loader = nil;
+    record.loader = nil;
     return;
 }
 

@@ -60,6 +60,7 @@
 -(IBAction) playVideoTapped;
 -(IBAction) playAudioTapped;
 -(IBAction) downloadAudioTapped;
+-(IBAction) cancelTapped;
 
 - (void)playMovieAtURL:(NSURL *)theURL;
 - (void)playMovieInRecord: (DownloadedMediaRecord *) drec;

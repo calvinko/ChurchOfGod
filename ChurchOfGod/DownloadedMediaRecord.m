@@ -10,8 +10,8 @@
 
 
 @implementation DownloadedMediaRecord
-@synthesize itemTitle, itemType, fileName, itemDescription;
-@synthesize currentPlaybackTime;
+@synthesize itemTitle, itemType, itemDate, fileName, itemAuthor;
+@synthesize currentPlaybackTime, duration;
 
 -(id) init
 {
@@ -23,15 +23,19 @@
 
 -(NSArray *) convertToPropertyList {
     NSNumber *n = [NSNumber numberWithDouble:currentPlaybackTime];
-    return [NSArray arrayWithObjects:itemTitle, itemType, fileName, itemDescription, n, nil];
+    NSNumber *d = [NSNumber numberWithInteger:duration];
+    return [NSArray arrayWithObjects:itemTitle, itemType, itemAuthor, itemDate, fileName, d, n, nil];
 }
 
 -(id) initWithArray:(NSArray *) array {
     self.itemTitle = [array objectAtIndex:0];
     self.itemType = [array objectAtIndex:1];
-    self.fileName = [array objectAtIndex:2];
-    self.itemDescription = [array objectAtIndex:3];
-    NSNumber *n = [array objectAtIndex:4];
+    self.itemAuthor = [array objectAtIndex:2];
+    self.itemDate = [array objectAtIndex:3];
+    self.fileName = [array objectAtIndex:4];
+    NSNumber *d = [array objectAtIndex:5];
+    self.duration = [d integerValue];
+    NSNumber *n = [array objectAtIndex:6];
     self.currentPlaybackTime = [n doubleValue];
     return self;
 }
