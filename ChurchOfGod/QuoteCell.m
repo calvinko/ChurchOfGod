@@ -64,7 +64,8 @@
         quotation = [newQuotation retain];
         
         characterLabel.text = quotation.character;
-        actAndSceneLabel.text = [NSString stringWithFormat:@"Act %d, Scene %d", quotation.act, quotation.scene];
+        //actAndSceneLabel.text = [NSString stringWithFormat:@"Act %d, Scene %d", quotation.act, quotation.scene];
+        actAndSceneLabel.text = nil;
         quotationTextView.text = quotation.quotation;
     }
 }

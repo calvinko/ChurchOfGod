@@ -30,6 +30,7 @@
 + (NSString *) getSongBookNameAtIndex:(int)index; 
 + (PDBReader *) getReaderAtIndex:(NSUInteger) index;
 + (NSMutableArray *) getDownloadedMediaArray;
++ (NSArray *) getPlaysArray;
 
 
 + (void) addSermonToStore:(MediaRecord *)rec withFileName:(NSString *)fname;

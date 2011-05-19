@@ -15,6 +15,8 @@
 #import "DownloadedMediaRecord.h"
 #import "DownloadViewController.h"
 #import "PDBReader.h"
+#import "Play.h"
+#import "Quotation.h"
 
 
 @implementation ConfigManager
@@ -39,6 +41,7 @@ static NSDictionary *songBookList;
 static NSMutableDictionary *readerDict;
 static NSArray *booklist;
 static NSMutableArray *downloadedMediaArray;
+static NSMutableArray *playsArray;
 
 
 + (void)initialize 
@@ -47,6 +50,7 @@ static NSMutableArray *downloadedMediaArray;
     songBookList = nil;
     booklist = nil;
     downloadedMediaArray = nil;
+    playsArray = nil;
     readerDict = [[[NSMutableDictionary alloc] initWithCapacity:5] retain];
     readerArray = [[NSArray arrayWithObjects:
                     [[[PDBReader alloc] init] retain], 
@@ -288,11 +292,15 @@ static NSMutableArray *downloadedMediaArray;
 
 + (bool) saveMediaList {
     
-    NSString *pathStr = [ConfigManager getDocumentPath];
-    NSString *filePath = [pathStr stringByAppendingPathComponent:@"mediaList.plist"];
-    NSArray *a = [ConfigManager convertRecordArray:downloadedMediaArray];
-    bool result = [a writeToFile:filePath atomically:YES];    
-    return result;
+    if (downloadedMediaArray != nil) {
+        NSString *pathStr = [ConfigManager getDocumentPath];
+        NSString *filePath = [pathStr stringByAppendingPathComponent:@"mediaList.plist"];
+        NSArray *a = [ConfigManager convertRecordArray:downloadedMediaArray];
+        bool result = [a writeToFile:filePath atomically:YES];    
+        return result;
+    } else {
+        return TRUE;
+    }
 }
 
 + (NSInteger) getDurationOfFile:(NSString *) filePath {
@@ -326,6 +334,45 @@ static NSMutableArray *downloadedMediaArray;
     drec.duration = [ConfigManager getDurationOfFile:[[ConfigManager getDocumentPath] stringByAppendingPathComponent:fname]];
     [downloadedMediaArray addObject:drec];
     [delegate.downloadViewController.tableView reloadData];
+}
+
+
++ (void) setUpPlaysArray {
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"RomanRoadText" withExtension:@"plist"];
+    NSArray *playDictionariesArray = [[NSArray alloc ] initWithContentsOfURL:url];
+    playsArray = [[NSMutableArray alloc] initWithCapacity:[playDictionariesArray count]];
+    
+    
+    for (NSDictionary *playDictionary in playDictionariesArray) {
+        
+        Play *play = [[Play alloc] init];
+        play.name = [playDictionary objectForKey:@"playName"];
+        
+        NSArray *quotationDictionaries = [playDictionary objectForKey:@"quotations"];
+        NSMutableArray *quotations = [NSMutableArray arrayWithCapacity:[quotationDictionaries count]];
+        
+        for (NSDictionary *quotationDictionary in quotationDictionaries) {
+            
+            Quotation *quotation = [[Quotation alloc] init];
+            [quotation setValuesForKeysWithDictionary:quotationDictionary];
+            
+            [quotations addObject:quotation];
+            [quotation release];
+        }
+        play.quotations = quotations;
+        
+        [playsArray addObject:play];
+        [play release];
+    }
+    [playDictionariesArray release];
+}
+
++ (NSArray *) getPlaysArray {
+    if (playsArray == nil) {
+        [ConfigManager setUpPlaysArray];
+    }
+    return playsArray;
 }
 
 

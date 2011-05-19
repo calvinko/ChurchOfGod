@@ -52,7 +52,7 @@
 
 @implementation Quotation
 
-@synthesize character, act, scene, quotation;
+@synthesize character, nrows, scene, quotation;
 
 - (void)dealloc {
     [character release];

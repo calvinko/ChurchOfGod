@@ -55,7 +55,7 @@
 }
 
 @property (nonatomic, retain) NSString *character;
-@property (nonatomic, assign) NSInteger act;
+@property (nonatomic, assign) NSInteger nrows;
 @property (nonatomic, assign) NSInteger scene;
 @property (nonatomic, retain) NSString *quotation;
 

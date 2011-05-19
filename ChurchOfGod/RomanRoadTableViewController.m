@@ -9,6 +9,7 @@
 #import "RomanRoadTableViewController.h"
 #import "HighlightingTextView.h"
 #import "QuoteCell.h"
+#import "Quotation.h"
 #import "SectionInfo.h"
 #import "SectionHeaderView.h"
 
@@ -54,13 +55,14 @@
 
 
 
-#define DEFAULT_ROW_HEIGHT 78
+#define DEFAULT_ROW_HEIGHT 100
 #define HEADER_HEIGHT 45
 
 
 @implementation RomanRoadTableViewController
 
-@synthesize plays=plays_, sectionInfoArray=sectionInfoArray_, quoteCell=newsCell_, pinchedIndexPath=pinchedIndexPath_, uniformRowHeight=rowHeight_, openSectionIndex=openSectionIndex_, initialPinchHeight=initialPinchHeight_;
+@synthesize plays=plays_, sectionInfoArray=sectionInfoArray_,  quoteCell=newsCell_;
+@synthesize pinchedIndexPath=pinchedIndexPath_, uniformRowHeight=rowHeight_, openSectionIndex=openSectionIndex_, initialPinchHeight=initialPinchHeight_;
 
 #pragma mark Initialization and configuration
 
@@ -108,10 +110,11 @@
 			sectionInfo.play = play;
 			sectionInfo.open = NO;
 			
-            NSNumber *defaultRowHeight = [NSNumber numberWithInteger:DEFAULT_ROW_HEIGHT];
 			NSInteger countOfQuotations = [[sectionInfo.play quotations] count];
 			for (NSInteger i = 0; i < countOfQuotations; i++) {
-				[sectionInfo insertObject:defaultRowHeight inRowHeightsAtIndex:i];
+                Quotation *q = [play.quotations objectAtIndex:i];
+                NSNumber *rowHeight = [NSNumber numberWithInteger:(q.nrows * 24 + 36)];
+				[sectionInfo insertObject:rowHeight inRowHeightsAtIndex:i];
 			}
 			
 			[infoArray addObject:sectionInfo];
@@ -169,7 +172,7 @@
     
     Play *play = (Play *)[[self.sectionInfoArray objectAtIndex:indexPath.section] play];
     
-    cell.quotation = @"Quotation";
+    cell.quotation = [play.quotations objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -214,7 +217,7 @@
     /*
      Create an array containing the index paths of the rows to insert: These correspond to the rows for each quotation in the current section.
      */
-    NSInteger countOfRowsToInsert = 3; //[sectionInfo.play.quotations count];
+    NSInteger countOfRowsToInsert = [sectionInfo.play.quotations count];
     NSMutableArray *indexPathsToInsert = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < countOfRowsToInsert; i++) {
         [indexPathsToInsert addObject:[NSIndexPath indexPathForRow:i inSection:sectionOpened]];
@@ -231,7 +234,7 @@
 		SectionInfo *previousOpenSection = [self.sectionInfoArray objectAtIndex:previousOpenSectionIndex];
         previousOpenSection.open = NO;
         [previousOpenSection.headerView toggleOpenWithUserAction:NO];
-        NSInteger countOfRowsToDelete = 3;//[previousOpenSection.play.quotations count];
+        NSInteger countOfRowsToDelete = [previousOpenSection.play.quotations count];
         for (NSInteger i = 0; i < countOfRowsToDelete; i++) {
             [indexPathsToDelete addObject:[NSIndexPath indexPathForRow:i inSection:previousOpenSectionIndex]];
         }

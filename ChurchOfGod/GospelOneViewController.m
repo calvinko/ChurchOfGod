@@ -45,7 +45,7 @@ static NSString *ImageKey = @"imageKey";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"content_iPhone" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"WordlessBook" ofType:@"plist"];
     self.contentList = [NSArray arrayWithContentsOfFile:path];
     
     // view controllers are created lazily

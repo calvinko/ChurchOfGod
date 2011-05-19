@@ -20,6 +20,7 @@
 		CB10E11213512D610040F31B /* Family7.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CB10E10B13512D610040F31B /* Family7.pdb */; };
 		CB10E11313512D610040F31B /* Family8.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CB10E10C13512D610040F31B /* Family8.pdb */; };
 		CB10E11413512D610040F31B /* Family9.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CB10E10D13512D610040F31B /* Family9.pdb */; };
+		CB18640B13849489007D2C6F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB18640A13849489007D2C6F /* Default.png */; };
 		CB3E06B6134F7D470019BA22 /* Family1.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CB3E06B5134F7D470019BA22 /* Family1.pdb */; };
 		CB3E06B9134FAB740019BA22 /* songbooklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3E06B8134FAB740019BA22 /* songbooklist.plist */; };
 		CB5CDBFA134D01620076E771 /* SongTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5CDBF8134D01620076E771 /* SongTextViewController.m */; };
@@ -35,7 +36,6 @@
 		CB7777AD1339AC76001EA20B /* LearnLead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB7777A91339AC76001EA20B /* LearnLead.jpg */; };
 		CB7777AE1339AC76001EA20B /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7777AA1339AC76001EA20B /* refresh.png */; };
 		CB7777B01339B102001EA20B /* download1.gif in Resources */ = {isa = PBXBuildFile; fileRef = CB7777AF1339B101001EA20B /* download1.gif */; };
-		CB8C56C613576E820026807A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8C56C513576E820026807A /* Default.png */; };
 		CB8C56CA1357C5590026807A /* SermonSeriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C56C81357C5590026807A /* SermonSeriesViewController.m */; };
 		CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */; };
 		CB9D06421368C73400CC59C2 /* SermonFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D06401368C73400CC59C2 /* SermonFolderViewController.m */; };
@@ -91,7 +91,7 @@
 		CBB217561354D57800FF8360 /* GospelOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB217541354D57800FF8360 /* GospelOneViewController.xib */; };
 		CBB217601354FADD00FF8360 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB2175F1354FADD00FF8360 /* MyViewController.m */; };
 		CBB217621354FB3E00FF8360 /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB217611354FB3E00FF8360 /* MyView.xib */; };
-		CBB21764135559D600FF8360 /* content_iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBB21763135559D600FF8360 /* content_iPhone.plist */; };
+		CBB21764135559D600FF8360 /* WordlessBook.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBB21763135559D600FF8360 /* WordlessBook.plist */; };
 		CBB217691355668500FF8360 /* wordless-gold.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217651355667F00FF8360 /* wordless-gold.png */; };
 		CBB2176A1355668500FF8360 /* wordless-white.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217661355668000FF8360 /* wordless-white.png */; };
 		CBB2176B1355668500FF8360 /* wordless-red.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB217671355668200FF8360 /* wordless-red.png */; };
@@ -117,6 +117,15 @@
 		CBDE36F41383825300D7D65A /* Quotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE36F21383825200D7D65A /* Quotation.m */; };
 		CBDE36F8138384AB00D7D65A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDE36F7138384AB00D7D65A /* QuartzCore.framework */; };
 		CBDE36FA13838B5F00D7D65A /* RomanRoadText.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBDE36F913838B5F00D7D65A /* RomanRoadText.plist */; };
+		CBDE37011384467100D7D65A /* carat.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE36FF1384467100D7D65A /* carat.png */; };
+		CBDE37021384467100D7D65A /* carat-open.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE37001384467100D7D65A /* carat-open.png */; };
+		CBDE370413847AD300D7D65A /* cog-320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE370313847AD300D7D65A /* cog-320x480.png */; };
+		CBDE370613847B2F00D7D65A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE370513847B2E00D7D65A /* Default.png */; };
+		CBDE370813847BD700D7D65A /* icon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE370713847BD600D7D65A /* icon57x57.png */; };
+		CBDE370A13847BF100D7D65A /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE370913847BF100D7D65A /* icon114x114.png */; };
+		CBDE370C13847F2200D7D65A /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE370B13847F2200D7D65A /* 111-user.png */; };
+		CBDE370E1384817C00D7D65A /* cog-320x395.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE370D1384817C00D7D65A /* cog-320x395.png */; };
+		CBDE37101384887600D7D65A /* wordless.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE370F1384887600D7D65A /* wordless.png */; };
 		CBE5C597132C96470091B26F /* oakchurch.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE5C596132C96470091B26F /* oakchurch.png */; };
 		CBEF974E134E6741004F3D06 /* PDBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF974D134E6741004F3D06 /* PDBReader.m */; };
 		CBEF9751134E73EA004F3D06 /* Family6.pdb in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9750134E73EA004F3D06 /* Family6.pdb */; };
@@ -141,6 +150,7 @@
 		CB10E10B13512D610040F31B /* Family7.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family7.pdb; sourceTree = "<group>"; };
 		CB10E10C13512D610040F31B /* Family8.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family8.pdb; sourceTree = "<group>"; };
 		CB10E10D13512D610040F31B /* Family9.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family9.pdb; sourceTree = "<group>"; };
+		CB18640A13849489007D2C6F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CB3E06B5134F7D470019BA22 /* Family1.pdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Family1.pdb; sourceTree = "<group>"; };
 		CB3E06B8134FAB740019BA22 /* songbooklist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = songbooklist.plist; sourceTree = "<group>"; };
 		CB5CDBF7134D01620076E771 /* SongTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongTextViewController.h; sourceTree = "<group>"; };
@@ -160,7 +170,6 @@
 		CB7777A91339AC76001EA20B /* LearnLead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LearnLead.jpg; sourceTree = "<group>"; };
 		CB7777AA1339AC76001EA20B /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		CB7777AF1339B101001EA20B /* download1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = download1.gif; sourceTree = "<group>"; };
-		CB8C56C513576E820026807A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CB8C56C71357C5580026807A /* SermonSeriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SermonSeriesViewController.h; sourceTree = "<group>"; };
 		CB8C56C81357C5590026807A /* SermonSeriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SermonSeriesViewController.m; sourceTree = "<group>"; };
 		CB8C56C91357C5590026807A /* SermonSeriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SermonSeriesViewController.xib; sourceTree = "<group>"; };
@@ -239,7 +248,7 @@
 		CBB2175E1354FADD00FF8360 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		CBB2175F1354FADD00FF8360 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		CBB217611354FB3E00FF8360 /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
-		CBB21763135559D600FF8360 /* content_iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = content_iPhone.plist; sourceTree = "<group>"; };
+		CBB21763135559D600FF8360 /* WordlessBook.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WordlessBook.plist; sourceTree = "<group>"; };
 		CBB217651355667F00FF8360 /* wordless-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-gold.png"; sourceTree = "<group>"; };
 		CBB217661355668000FF8360 /* wordless-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-white.png"; sourceTree = "<group>"; };
 		CBB217671355668200FF8360 /* wordless-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wordless-red.png"; sourceTree = "<group>"; };
@@ -273,9 +282,17 @@
 		CBDE36F0138381A200D7D65A /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Play.h; sourceTree = "<group>"; };
 		CBDE36F21383825200D7D65A /* Quotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quotation.m; sourceTree = "<group>"; };
 		CBDE36F31383825200D7D65A /* Quotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quotation.h; sourceTree = "<group>"; };
-		CBDE36F51383849700D7D65A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CBDE36F7138384AB00D7D65A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CBDE36F913838B5F00D7D65A /* RomanRoadText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RomanRoadText.plist; sourceTree = "<group>"; };
+		CBDE36FF1384467100D7D65A /* carat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carat.png; sourceTree = "<group>"; };
+		CBDE37001384467100D7D65A /* carat-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carat-open.png"; sourceTree = "<group>"; };
+		CBDE370313847AD300D7D65A /* cog-320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog-320x480.png"; sourceTree = "<group>"; };
+		CBDE370513847B2E00D7D65A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		CBDE370713847BD600D7D65A /* icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon57x57.png; path = ../icon57x57.png; sourceTree = "<group>"; };
+		CBDE370913847BF100D7D65A /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon114x114.png; path = ../icon114x114.png; sourceTree = "<group>"; };
+		CBDE370B13847F2200D7D65A /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
+		CBDE370D1384817C00D7D65A /* cog-320x395.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cog-320x395.png"; sourceTree = "<group>"; };
+		CBDE370F1384887600D7D65A /* wordless.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordless.png; sourceTree = "<group>"; };
 		CBE5C596132C96470091B26F /* oakchurch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oakchurch.png; path = "../../ChurchofGod-old/oakchurch.png"; sourceTree = "<group>"; };
 		CBEF974C134E6741004F3D06 /* PDBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDBReader.h; sourceTree = "<group>"; };
 		CBEF974D134E6741004F3D06 /* PDBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDBReader.m; sourceTree = "<group>"; };
@@ -309,7 +326,6 @@
 		CBA3B918132B5724007ED9FD = {
 			isa = PBXGroup;
 			children = (
-				CBDE36F51383849700D7D65A /* QuartzCore.framework */,
 				CBA3B92D132B5724007ED9FD /* ChurchOfGod */,
 				CBA3B926132B5724007ED9FD /* Frameworks */,
 				CBA3B924132B5724007ED9FD /* Products */,
@@ -359,7 +375,7 @@
 		CBA3B92E132B5724007ED9FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBB21763135559D600FF8360 /* content_iPhone.plist */,
+				CBB21763135559D600FF8360 /* WordlessBook.plist */,
 				CBC1C3D4136FC19F00A04527 /* LoveCircle.pdb */,
 				CB3E06B5134F7D470019BA22 /* Family1.pdb */,
 				CB10E10713512D610040F31B /* Family2.pdb */,
@@ -373,6 +389,7 @@
 				CBB2176F13565F2500FF8360 /* Family10.pdb */,
 				CBC1C3D2136CB53100A04527 /* Oakland3.pdb */,
 				CBA3B92F132B5724007ED9FD /* ChurchOfGod-Info.plist */,
+				CBDE36F913838B5F00D7D65A /* RomanRoadText.plist */,
 				CBA3B930132B5724007ED9FD /* InfoPlist.strings */,
 				CBA3B933132B5724007ED9FD /* ChurchOfGod-Prefix.pch */,
 				CBA3B934132B5724007ED9FD /* main.m */,
@@ -386,7 +403,6 @@
 		CBA3B974132B591E007ED9FD /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
-				CB8C56C513576E820026807A /* Default.png */,
 				CBA3B94A132B5918007ED9FD /* ChurchofGodAppDelegate.h */,
 				CBA3B94B132B5918007ED9FD /* ChurchofGodAppDelegate.m */,
 				CBA3B95B132B5918007ED9FD /* RotatingTabBarController.h */,
@@ -471,6 +487,16 @@
 		CBA3B99A132C8DA4007ED9FD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CBDE370913847BF100D7D65A /* icon114x114.png */,
+				CBDE370713847BD600D7D65A /* icon57x57.png */,
+				CBDE370513847B2E00D7D65A /* Default.png */,
+				CB18640A13849489007D2C6F /* Default.png */,
+				CBDE370F1384887600D7D65A /* wordless.png */,
+				CBDE370D1384817C00D7D65A /* cog-320x395.png */,
+				CBDE370B13847F2200D7D65A /* 111-user.png */,
+				CBDE370313847AD300D7D65A /* cog-320x480.png */,
+				CBDE36FF1384467100D7D65A /* carat.png */,
+				CBDE37001384467100D7D65A /* carat-open.png */,
 				CBCDE852137C85DF00FC96BE /* dl22.png */,
 				CB9D06491368DA6900CC59C2 /* Placeholder.png */,
 				CB9D06471368D63D00CC59C2 /* Placeholder1.png */,
@@ -507,7 +533,6 @@
 		CBB217511354D54000FF8360 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				CBDE36F913838B5F00D7D65A /* RomanRoadText.plist */,
 				CBDE36F21383825200D7D65A /* Quotation.m */,
 				CBDE36F31383825200D7D65A /* Quotation.h */,
 				CBDE36EF138381A200D7D65A /* Play.m */,
@@ -663,14 +688,13 @@
 				CBB2174F1354D3EC00FF8360 /* ToolTableViewController.xib in Resources */,
 				CBB217561354D57800FF8360 /* GospelOneViewController.xib in Resources */,
 				CBB217621354FB3E00FF8360 /* MyView.xib in Resources */,
-				CBB21764135559D600FF8360 /* content_iPhone.plist in Resources */,
+				CBB21764135559D600FF8360 /* WordlessBook.plist in Resources */,
 				CBB217691355668500FF8360 /* wordless-gold.png in Resources */,
 				CBB2176A1355668500FF8360 /* wordless-white.png in Resources */,
 				CBB2176B1355668500FF8360 /* wordless-red.png in Resources */,
 				CBB2176C1355668500FF8360 /* wordless-black.png in Resources */,
 				CBB2176E13565DF400FF8360 /* wordless-cover.jpg in Resources */,
 				CBB2177013565F2500FF8360 /* Family10.pdb in Resources */,
-				CB8C56C613576E820026807A /* Default.png in Resources */,
 				CB8C56CB1357C5590026807A /* SermonSeriesViewController.xib in Resources */,
 				CBC49AA113689FB100051324 /* icon114x114.png in Resources */,
 				CB9D06431368C73400CC59C2 /* SermonFolderViewController.xib in Resources */,
@@ -683,6 +707,16 @@
 				CBCDE853137C85DF00FC96BE /* dl22.png in Resources */,
 				CBDE36ED138380CD00D7D65A /* QuoteCell.xib in Resources */,
 				CBDE36FA13838B5F00D7D65A /* RomanRoadText.plist in Resources */,
+				CBDE37011384467100D7D65A /* carat.png in Resources */,
+				CBDE37021384467100D7D65A /* carat-open.png in Resources */,
+				CBDE370413847AD300D7D65A /* cog-320x480.png in Resources */,
+				CBDE370613847B2F00D7D65A /* Default.png in Resources */,
+				CBDE370813847BD700D7D65A /* icon57x57.png in Resources */,
+				CBDE370A13847BF100D7D65A /* icon114x114.png in Resources */,
+				CBDE370C13847F2200D7D65A /* 111-user.png in Resources */,
+				CBDE370E1384817C00D7D65A /* cog-320x395.png in Resources */,
+				CBDE37101384887600D7D65A /* wordless.png in Resources */,
+				CB18640B13849489007D2C6F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,7 +788,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Cheuk Ko (BGG475DN26)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Cheuk Ko (BGG475DN26)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -762,8 +796,9 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PROVISIONING_PROFILE = "76959452-2A73-4AC6-BC48-FE63BD74F1A2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "76959452-2A73-4AC6-BC48-FE63BD74F1A2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -778,7 +813,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "76959452-2A73-4AC6-BC48-FE63BD74F1A2";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "76959452-2A73-4AC6-BC48-FE63BD74F1A2";
@@ -795,7 +830,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -810,7 +845,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChurchOfGod/ChurchOfGod-Prefix.pch";
 				INFOPLIST_FILE = "ChurchOfGod/ChurchOfGod-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

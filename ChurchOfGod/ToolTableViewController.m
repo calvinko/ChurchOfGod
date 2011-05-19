@@ -6,6 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import "ConfigManager.h"
 #import "ToolTableViewController.h"
 #import "GospelOneViewController.h"
 #import "RomanRoadTableViewController.h"
@@ -161,6 +162,8 @@
         [gViewController release];
     } else if (indexPath.row == 1) {
         RomanRoadTableViewController *rViewController = [[RomanRoadTableViewController alloc] init];
+        rViewController.title = @"Romans Road";
+        rViewController.plays = [ConfigManager getPlaysArray];
         [self.navigationController pushViewController:rViewController animated:YES];
         [rViewController release];
         

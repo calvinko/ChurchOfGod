@@ -54,10 +54,8 @@
 // load the view nib and initialize the pageNumber ivar
 - (id)initWithPageNumber:(int)page
 {
-    if (self = [super initWithNibName:@"MyView" bundle:nil])
-    {
-        pageNumber = page;
-    }
+    self = [super initWithNibName:@"MyView" bundle:nil];
+    pageNumber = page;
     return self;
 }
 

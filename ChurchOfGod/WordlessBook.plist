@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>imageKey</key>
+		<string>wordless.png</string>
+		<key>nameKey</key>
+		<string>Number One</string>
+	</dict>
+	<dict>
+		<key>imageKey</key>
+		<string>wordless-black.png</string>
+		<key>nameKey</key>
+		<string>Number Two</string>
+	</dict>
+	<dict>
+		<key>imageKey</key>
+		<string>wordless-red.png</string>
+		<key>nameKey</key>
+		<string>Number Three</string>
+	</dict>
+	<dict>
+		<key>imageKey</key>
+		<string>wordless-white.png</string>
+		<key>nameKey</key>
+		<string>Number Four</string>
+	</dict>
+	<dict>
+		<key>imageKey</key>
+		<string>wordless-gold.png</string>
+		<key>nameKey</key>
+		<string>Number Five</string>
+	</dict>
+	<dict>
+		<key>imageKey</key>
+		<string>small_six.png</string>
+		<key>nameKey</key>
+		<string>Number Six</string>
+	</dict>
+</array>
+</plist>
