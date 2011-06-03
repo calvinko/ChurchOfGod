@@ -55,7 +55,7 @@
     
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.tableView.rowHeight = kCustomRowHeight;
-	//self.tableView.backgroundColor = [UIColor clearColor];
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -141,7 +141,6 @@
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
 									   reuseIdentifier:PlaceholderCellIdentifier] autorelease]; 
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		cell.backgroundColor = [UIColor redColor];
         NSString *backgroundImagePath = [[NSBundle mainBundle] pathForResource:@"news_cell_bg" ofType:@"png"];
         UIImage *backgroundImage = [UIImage imageWithContentsOfFile:backgroundImagePath];
         cell.backgroundView = [[[UIImageView alloc] initWithImage:backgroundImage] autorelease];

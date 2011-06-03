@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface RotatingTabBarController : UITabBarController {
+@interface RotatingTabBarController : UITabBarController  {
 
 }
 

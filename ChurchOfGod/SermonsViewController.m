@@ -24,6 +24,7 @@
 #import "SermonSeriesViewController.h"
 #import "SermonFolderViewController.h"
 #import "MediaRecord.h"
+#import "ConfigManager.h"
 
 #define kCustomRowHeight    48.0
 #define kCustomRowCount     6
@@ -284,7 +285,6 @@
         }
 	}
 }
-
 
 #pragma mark -
 #pragma mark Deferred image loading (UIScrollViewDelegate)

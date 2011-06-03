@@ -11,6 +11,7 @@
 #import "AudioDownloader.h"
 #import "DownloadViewController.h"
 #import "DownloadedMediaRecord.h"
+#import "Reachability.h"
 
 @implementation MediaDetailViewController
 
@@ -90,32 +91,46 @@
     }
 }
 
+- (void)noDownloadAlert
+{
+   
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Download over Cellular Network"
+														message:@"Supported only in WiFi Mode"
+													   delegate:nil
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+    [alertView show];
+    [alertView release];
+}
+
+
 -(IBAction) downloadAudioTapped
 {
-    if ([ConfigManager findDownloadedMediaByName:[self.record.itemAudioURLString lastPathComponent]] == nil) {
-        NSString * storyLink = self.record.itemAudioURLString;
-        NSLog(@"audioLink: %@", storyLink);
-        AudioDownloader *loader = [[[AudioDownloader alloc] init] autorelease];
-        self.record.loader = loader;
-        loader.audioURL = self.record.itemAudioURLString;
-        loader.fileName = [loader.audioURL lastPathComponent];
-        loader.filePath = [[ConfigManager getDocumentPath] stringByAppendingPathComponent:loader.fileName ];
-        loader.delegate = self;
-        loader.fileSize = self.record.audioFileSize;
-        loader.pview = self.pView;
-        [loader startDownload];
-        
-        self.pView.hidden = NO;
-        UIView *v1 = [self.view viewWithTag:9];
-        v1.hidden = NO;
-        self.cancelButton.hidden = NO;
-        [self.navigationController setNavigationBarHidden:YES animated:YES];  
+    Reachability *reach = [Reachability reachabilityWithHostName:@"bachurch.org"];
+    if ([reach currentReachabilityStatus] == ReachableViaWiFi) {
+        NSString *mp3Name = [self.record.itemAudioURLString stringByReplacingOccurrencesOfString:@"m3u8" withString:@"mp3"];
+        if ([ConfigManager findDownloadedMediaByName:[mp3Name lastPathComponent]] == nil) {
+            
+            AudioDownloader *loader = [[[AudioDownloader alloc] init] autorelease];
+            self.record.loader = loader;
+            loader.audioURL = mp3Name;
+            loader.fileName = [loader.audioURL lastPathComponent];
+            loader.filePath = [[ConfigManager getDocumentPath] stringByAppendingPathComponent:loader.fileName ];
+            loader.delegate = self;
+            loader.fileSize = self.record.audioFileSize;
+            loader.pview = self.pView;
+            [loader startDownload];
+            
+            self.pView.hidden = NO;
+            UIView *v1 = [self.view viewWithTag:9];
+            v1.hidden = NO;
+            self.cancelButton.hidden = NO;
+            [self.navigationController setNavigationBarHidden:YES animated:YES];  
+        }
+    } else {
+        [self noDownloadAlert];
     }
-    //DownloadViewController *dview = [[DownloadViewController alloc] init]; 
-    //dview.downloadedItemArray = [ConfigManager getDownloadedMediaArray];
-    //[dview.downloadedItemArray addObject:self.record];
-    //[self.navigationController pushViewController:dview animated:YES];
-    //[dview release];
+    
 }
 
 -(IBAction) cancelTapped
@@ -170,7 +185,7 @@
 	[[AVAudioSession sharedInstance]
 	 setActive: YES
 	 error: &activationErr];
-		//theMovie.scalingMode = MPMovieScalingModeAspectFill;
+    theMovie.scalingMode = MPMovieScalingModeAspectFill;
     // theMovie.movieControlMode = MPMovieControlModeHidden;
 	
     // Register for the playback finished notification

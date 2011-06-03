@@ -247,7 +247,7 @@
                     churchDetailController = [[ChurchDetailController alloc] init];
                 }
                 
-                churchDetailController.churchArray = [ConfigManager loadConfig];
+                churchDetailController.churchArray = [ConfigManager getChurchArray];
 
                 [self.navigationController pushViewController:churchDetailController animated:YES];
                 

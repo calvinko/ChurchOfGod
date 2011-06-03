@@ -26,16 +26,9 @@
 }
 
 - (void)viewDidLoad {
-    
-    
+        
     [super viewDidLoad];
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Church";
-
-    //[self.tableView selectRowAtIndexPath:([NSIndexPath indexPathForRow:(1) inSection:(0)]) animated:(FALSE) scrollPosition:(UITableViewScrollPositionMiddle)];
- 
- 
 }
 
 

@@ -31,6 +31,10 @@
 + (PDBReader *) getReaderAtIndex:(NSUInteger) index;
 + (NSMutableArray *) getDownloadedMediaArray;
 + (NSArray *) getPlaysArray;
++ (NSMutableArray *) getChurchArray;
++ (bool) getUserChangeStatus;
+
++ (void) releaseChurchArray;
 
 
 + (void) addSermonToStore:(MediaRecord *)rec withFileName:(NSString *)fname;
@@ -40,7 +44,7 @@
 + (void) setDefaultIndex:(NSUInteger)index;
 + (void) setUser:(NSString *)user;
 + (NSInteger) getDefaultIndex;
-+ (NSMutableArray *) loadConfig;
+
 + (NSString *) getDocumentPath;
 
 + (DownloadedMediaRecord *) findDownloadedMediaByName:(NSString *) name;

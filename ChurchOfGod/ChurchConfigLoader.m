@@ -22,7 +22,6 @@ static NSString *tagNew = @"news";
 static NSString *tagMSermon = @"msermon";
 static NSString *tagMNew = @"mnews";
 static NSString *tagTool = @"tool";
-static NSString *tagMTool = @"mtool";
 static NSString *tagSermon = @"sermon";
 static NSString *tagUser = @"user";
 static NSMutableString *parseErrorDescription;

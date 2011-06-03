@@ -14,7 +14,7 @@
 @class DownloadedMediaRecord;
 
 
-@interface DownloadViewController : UITableViewController {
+@interface DownloadViewController : UITableViewController <UIScrollViewDelegate> {
     NSMutableArray *downloadedItemArray;
     DownloadedMediaRecord *currentRecord;
     UITableViewCell *dlCell;

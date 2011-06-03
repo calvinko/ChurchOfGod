@@ -42,10 +42,12 @@ static NSMutableDictionary *readerDict;
 static NSArray *booklist;
 static NSMutableArray *downloadedMediaArray;
 static NSMutableArray *playsArray;
+static bool churchUserHasChanged;
 
 
 + (void)initialize 
 {
+    churchUserHasChanged = false;
     churchArray = nil;
     songBookList = nil;
     booklist = nil;
@@ -69,12 +71,11 @@ static NSMutableArray *playsArray;
 	{
 		NSString *churchNameDefault = @"Church of God in Oakland";
         NSString *churchURL = @"http://www.bachurch.org";
-		NSString *sermonurl = @"http://bachurch.org/iphone/sermonlist.xml";
+		NSString *sermonurl = @"http://bachurch.org/iphone/psermonlist.xml";
         NSString *msermonurl = @"http://bachurch.org/iphone/sermonlist.xml";
-		NSString *newsurl = @"http://bachurch.org/iphone/news.xml";
+		NSString *newsurl = @"http://bachurch.org/iphone/pnews.xml";
         NSString *mnewsurl = @"http://bachurch.org/iphone/news.xml";
         NSString *toolurl = @"http://bachurch.org/iphone/tool.xml";
-        //NSArray  *userlist = [NSArray arrayWithObjects:@"oakbs", @"oakadmin", nil]; 
         NSArray *userlist = [[NSArray alloc] init];
 		NSString *username = @"guest";
         
@@ -103,12 +104,16 @@ static NSMutableArray *playsArray;
     return;
 }
 
++ (DownloadViewController *) getDownloadController {
+    return delegate.downloadViewController;
+}
+
 + (void) loadSongBookList {
     NSString *songlistPath = [[NSBundle mainBundle] pathForResource:@"songbooklist" ofType:@"plist"];
     songBookList = [[NSDictionary dictionaryWithContentsOfFile:songlistPath] retain];
 }
 
-+ (NSMutableArray*)loadConfig
++ (NSMutableArray*)getChurchArray
 {
     if (churchArray == nil) {
         NSURL *url = [NSURL URLWithString:(@"http://bachurch.org/iphone/churchdata.xml")];
@@ -129,6 +134,12 @@ static NSMutableArray *playsArray;
         [loader release];
     } 
     return churchArray;
+}
+
++ (void) releaseChurchArray
+{
+    [churchArray release];
+    churchArray = nil;
 }
 
 + (NSString*) getUsername {
@@ -219,7 +230,14 @@ static NSMutableArray *playsArray;
 
 + (void) setUser:(NSString*)username
 {
-    [[NSUserDefaults standardUserDefaults] setValue:username forKey:kUserName];
+    NSString *uname = [[[NSString alloc] initWithString:[username lowercaseString]] autorelease];
+    [[NSUserDefaults standardUserDefaults] setValue:uname forKey:kUserName];
+    churchUserHasChanged = TRUE;
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (bool) getUserChangeStatus {
+    return churchUserHasChanged;
 }
 
 + (PDBReader *) getReaderAtIndex:(NSUInteger) index 

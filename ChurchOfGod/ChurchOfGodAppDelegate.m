@@ -12,6 +12,7 @@
 #import "NewsViewController.h"
 #import "SongViewController.h"
 #import "SongIndexViewController.h"
+#import "DownloadViewController.h"
 #import "ParseOperation.h"
 #import "FeedLoader.h"
 #import "ChurchConfigLoader.h"
@@ -32,13 +33,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    /*if (![[ConfigManager getUsername] isEqualToString:@"oakbs"]) {
-         NSMutableArray* newArray = [NSMutableArray arrayWithArray:songNavController.tabBarController.viewControllers];
+    if (![[ConfigManager getUsername] isEqualToString :@"oakbs"] && 
+        ![[ConfigManager getUsername] isEqualToString :@"baybs"]) {
+         NSMutableArray* newArray = [NSMutableArray arrayWithArray:tabBarController.viewControllers];
          [newArray removeObject:songNavController];
          tabBarController.viewControllers = newArray;
-    }*/
+    }
     
-       
+    tabBarController.delegate = tabBarController;
     [ConfigManager setDelegate:self];
     songViewController.iViewController = [[SongIndexViewController alloc] init ];
     
@@ -46,6 +48,9 @@
 
     [self.window addSubview:tabBarController.view];
     [self.window makeKeyAndVisible];
+    
+    self.downloadViewController = [[[DownloadViewController alloc] init] autorelease];
+    self.downloadViewController.title = @"Downloaded";
 
 	if([self hasNetworkConnection])
 	{
@@ -79,7 +84,7 @@
 		// show in the status bar that network activity is starting
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	} else {
-		tabBarController.selectedIndex = 3;
+		tabBarController.selectedIndex = 2;
 	}
     return YES;
 }
@@ -96,7 +101,11 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
+    [ConfigManager releaseChurchArray];
     [ConfigManager saveMediaList];
+    if ([ConfigManager getUserChangeStatus]) {
+        exit(0);
+    }
 }
 
 
@@ -174,7 +183,9 @@
 
 -(IBAction) downloadTapped:(id)sender
 {
-    tabBarController.selectedIndex = 4;
+    //tabBarController.selectedIndex = 4;
+    [sermonsViewController.navigationController pushViewController:downloadViewController animated:YES];
+
 }
 
 #pragma mark -
@@ -184,6 +195,8 @@
     /*
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
+    [ConfigManager releaseChurchArray];
+    [ConfigManager saveMediaList];
 }
 
 

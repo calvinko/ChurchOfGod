@@ -35,6 +35,7 @@
 	NewsViewController		*newsViewController;
 	SettingViewController	*settingViewController;
     SongViewController      *songViewController;
+    DownloadViewController *downloadViewController;
 	
 	FeedLoader *mediaFeedLoader;
 	FeedLoader *newsFeedLoader;
