@@ -14,4 +14,5 @@
 	ChurchDetailController *churchDetailController;
 }
 
+@property IBOutlet UITableViewCell* storageCell;
 @end

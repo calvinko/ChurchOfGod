@@ -12,6 +12,7 @@
 
 @implementation SettingViewController
 
+@synthesize storageCell;
 
 #pragma mark -
 -(id)init
@@ -68,7 +69,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;  // no of sections
+    return 2;  // no of sections
 }
 
 
@@ -100,7 +101,7 @@
 	// The header for the section is the region name -- get this from the region at the section index.
 	switch (section) {
         case 0: return @"Church";
-        case 1: return @"Performance";
+        case 1: return @"Storage";
         default:
                 return @"";
     }
@@ -143,7 +144,7 @@
         } else {
             mainLabel = (UILabel *)[cell.contentView viewWithTag:1];
         }
-        mainLabel.text = @"UserType";  
+        mainLabel.text = @"Username";  
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
@@ -178,11 +179,7 @@
             break;
         case 1:
 			if (indexPath.row==0) {
-				cell.textLabel.text = @"Download Items";
-                UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-                [button setTitle: @"Click" forState: UIControlStateNormal ];
-                [button addTarget: self action: @selector(edit:) forControlEvents: UIControlEventTouchUpInside ];
-                [cell.contentView addSubview:button];
+				return storageCell;
 			} else {
 				cell.textLabel.text = @"Memory Used";
 			}
