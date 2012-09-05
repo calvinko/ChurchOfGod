@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ChurchConfig.h" 
+#import "SongReader.h"
 
-@class PDBReader;
 @class MediaRecord;
 @class ChurchofGodAppDelegate;
 @class DownloadedMediaRecord;
@@ -25,10 +25,12 @@
 + (NSArray *) getValidUserList;
 + (NSArray *) getSongBookList;
 
-+ (NSInteger) getNumberofSongBook; 
++ (NSInteger) getNumberofSongBook;
++ (NSString *) getSongBookTypeAtIndex:(int)index;
 + (NSString *) getSongBookFilenameAtIndex:(int)index;
-+ (NSString *) getSongBookNameAtIndex:(int)index; 
-+ (PDBReader *) getReaderAtIndex:(NSUInteger) index;
++ (NSString *) getSongBookNameAtIndex:(int)index;
++ (NSString *) getSongBookIndexFilenameAtIndex:(NSUInteger) index;
++ (id <SongReader>) getReaderAtIndex:(NSUInteger) index;
 + (NSMutableArray *) getDownloadedMediaArray;
 + (NSArray *) getPlaysArray;
 + (NSMutableArray *) getChurchArray;

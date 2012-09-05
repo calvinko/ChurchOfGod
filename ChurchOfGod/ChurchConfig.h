@@ -29,6 +29,6 @@
 @property (nonatomic, retain) NSString *mtools;
 @property (nonatomic, retain) NSMutableArray  *userArray;
 @property (nonatomic, retain) NSString *cert;
-
+@property (nonatomic) BOOL supportUserAccount;
 
 @end

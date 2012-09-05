@@ -16,12 +16,13 @@
 @synthesize tools, mtools;
 @synthesize sermon, msermon;
 @synthesize userArray;
-@synthesize website, cert;
+@synthesize website, cert, supportUserAccount;
 
 
 - (id)init {
     self.name = nil;
-    self.userArray = [NSMutableArray array]; 
+    self.userArray = [NSMutableArray array];
+    self.supportUserAccount = FALSE;
     return self;
 }
 

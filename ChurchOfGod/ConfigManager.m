@@ -3,7 +3,7 @@
 //  ChurchOfGod
 //
 //  Created by Calvin Ko on 3/16/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 KoSolution.NET All rights reserved.
 //
 
 #import <CFNetwork/CFNetwork.h>
@@ -15,6 +15,7 @@
 #import "DownloadedMediaRecord.h"
 #import "DownloadViewController.h"
 #import "PDBReader.h"
+#import "IDXReader.h"
 #import "Play.h"
 #import "Quotation.h"
 
@@ -30,12 +31,15 @@ static NSString *kSermon = @"sermon";
 static NSString *kMSermon = @"membersermon";
 static NSString *kNews = @"news";
 static NSString *kMNews = @"membernews";
-//static NSString *kCert = @"cert";
+static bool kChurchSupportUserAccount = FALSE;
+
+
 static NSString *kTool = @"tool";
 static NSString *kMTool = @"mtool";
 
+//static NSString *kCert = @"cert";
+
 static ChurchofGodAppDelegate *delegate;
-static NSArray *readerArray;
 static NSMutableArray *churchArray;
 static NSDictionary *songBookList;
 static NSMutableDictionary *readerDict;
@@ -44,6 +48,7 @@ static NSMutableArray *downloadedMediaArray;
 static NSMutableArray *playsArray;
 static bool churchUserHasChanged;
 
+// We use the NSUserDefault database to store all the default
 
 + (void)initialize 
 {
@@ -53,19 +58,8 @@ static bool churchUserHasChanged;
     booklist = nil;
     downloadedMediaArray = nil;
     playsArray = nil;
-    readerDict = [[[NSMutableDictionary alloc] initWithCapacity:5] retain];
-    readerArray = [[NSArray arrayWithObjects:
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], 
-                    [[[PDBReader alloc] init] retain], nil] retain];
-    
+    readerDict = [[[NSMutableDictionary alloc] initWithCapacity:15] retain];
+        
     NSString *testValue = [[NSUserDefaults standardUserDefaults] stringForKey:kChurchName];
 	if (testValue == nil)
 	{
@@ -83,6 +77,7 @@ static bool churchUserHasChanged;
 		NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                      churchNameDefault, kChurchName,
                                      churchURL,         kChurchURL,
+                                     FALSE,             kChurchSupportUserAccount,
                                      sermonurl,         kSermon,
                                      msermonurl,        kMSermon,
                                      newsurl,           kNews,
@@ -176,7 +171,6 @@ static bool churchUserHasChanged;
 
 + (NSArray *) getSongBookList {
     if (songBookList == nil) [self loadSongBookList];
-    //return [[NSUserDefaults standardUserDefaults] arrayForKey:kSongBookList];
     return [songBookList objectForKey:@"songbooks"];
 }
 
@@ -186,16 +180,29 @@ static bool churchUserHasChanged;
     return [a count];
 }
 
-+ (NSString *) getSongBookFilenameAtIndex:(int)index {
++ (NSString *) getSongBookTypeAtIndex:(int)index {
     if (songBookList == nil) [self loadSongBookList];
     NSArray *bookArray = [songBookList objectForKey:@"songbooks"];
-    return [[bookArray objectAtIndex:index] objectAtIndex:1];
+    return [[bookArray objectAtIndex:index] objectAtIndex:0];
 }
 
 + (NSString *) getSongBookNameAtIndex:(int)index {
     if (songBookList == nil) [self loadSongBookList];
     NSArray *bookArray = [songBookList objectForKey:@"songbooks"];
-    return [[bookArray objectAtIndex:index] objectAtIndex:0];
+    return [[bookArray objectAtIndex:index] objectAtIndex:1];
+}
+
++ (NSString *) getSongBookFilenameAtIndex:(int)index {
+    if (songBookList == nil) [self loadSongBookList];
+    NSArray *bookArray = [songBookList objectForKey:@"songbooks"];
+    return [[bookArray objectAtIndex:index] objectAtIndex:2];
+}
+
++ (NSString *) getSongBookIndexFilenameAtIndex:(NSUInteger) index
+{
+    if (songBookList == nil) [self loadSongBookList];
+    NSArray *bookArray = [songBookList objectForKey:@"songbooks"];
+    return [[bookArray objectAtIndex:index] objectAtIndex:3];
 }
 
 + (NSArray*) getValidUserList
@@ -240,19 +247,32 @@ static bool churchUserHasChanged;
     return churchUserHasChanged;
 }
 
-+ (PDBReader *) getReaderAtIndex:(NSUInteger) index 
++ (id <SongReader>) getReaderAtIndex:(NSUInteger) index
 {
-    NSString *bookName = [ConfigManager getSongBookNameAtIndex:index];
-    PDBReader *r = [readerDict objectForKey:bookName];
-    if (r == nil) {
-        r = [[PDBReader alloc] init];
-        [r readFile:[ConfigManager getSongBookFilenameAtIndex:index]];
-        [readerDict setObject:r forKey:bookName];
+    NSString *type = [ConfigManager getSongBookTypeAtIndex:index];
+    if ([type isEqualToString:@"pdb"]) {
+        NSString *bookName = [ConfigManager getSongBookNameAtIndex:index];
+        PDBReader *r = [readerDict objectForKey:bookName];
+        if (r == nil) {
+            r = [[PDBReader alloc] init];
+            [r readFile:[ConfigManager getSongBookFilenameAtIndex:index]];
+            [readerDict setObject:r forKey:bookName];
+        }
+        return r;
+    } else {
+        NSString *bookName = [ConfigManager getSongBookNameAtIndex:index];
+        IDXReader *r = [readerDict objectForKey:bookName];
+        if (r == nil) {
+            r = [[IDXReader alloc] init];
+            [r readINXFile:[ConfigManager getSongBookIndexFilenameAtIndex:index]];
+            [r openSongTextFile:[ConfigManager getSongBookFilenameAtIndex:index]];
+        }
+        return r;
     }
-    return r;
 }
 
-+ (NSMutableArray *) getDownloadedMediaArray 
+
++ (NSMutableArray *) getDownloadedMediaArray
 {
     if (downloadedMediaArray == nil) {
         [ConfigManager loadMediaList];
