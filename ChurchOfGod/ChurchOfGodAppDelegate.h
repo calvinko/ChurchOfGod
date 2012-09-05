@@ -21,9 +21,11 @@
 @class ToolTableViewController;
 @class DownloadViewController;
 
-@interface ChurchofGodAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
-    UIWindow *window;
+@interface ChurchofGodAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
+    
 	RotatingTabBarController *tabBarController;
+    
+    
 	UINavigationController *sermonNavConntroller;	
 	UINavigationController *newsNavConntroller;
 	UINavigationController *mediaNavConntroller;
@@ -42,8 +44,13 @@
 	FeedLoader *sermonsFeedLoader;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+
+@property (strong, nonatomic) UIWindow *window;
+
+
 @property (nonatomic, retain) IBOutlet RotatingTabBarController *tabBarController;
+
+@property (nonatomic, retain) IBOutlet UITabBarController *ipadTabBarController;
 @property (nonatomic, retain) IBOutlet UINavigationController *sermonNavConntroller;
 @property (nonatomic, retain) IBOutlet UINavigationController *newsNavConntroller;
 @property (nonatomic, retain) IBOutlet UINavigationController *mediaNavConntroller;
