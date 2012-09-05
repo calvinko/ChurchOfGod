@@ -11,25 +11,10 @@
 #include <stdio.h>
 #include <math.h>
 #include <MacTypes.h>
+#import "SongReader.h"
 
 
-
-@interface SongRecord : NSObject {
-    NSString    *title;
-    NSInteger   pos;
-    NSInteger   adjustPos;
-    NSUInteger  sizeInBytes;
-}
-
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic) NSInteger pos;
-@property (nonatomic) NSInteger adjustpos;
-@property (nonatomic) NSUInteger sizeInBytes;
-
-@end
-
-
-@interface PDBReader : NSObject {
+@interface PDBReader : NSObject <SongReader> {
     FILE *fp;
     int textOffset;
     int numRecords;
@@ -45,10 +30,11 @@
 - (id) init;
 - (bool) readFile:(NSString *) fileName ;
 - (bool) readPDBHeader;
-- (NSInteger) getNumOfBookmark;
+- (NSInteger) getNumOfSong;
 - (NSString *) getMainText;
 - (NSString *) getSongText:(NSInteger) index; 
-- (NSString *)getBookmarkStringAtIndex:(int) index;
+
+- (NSString *) getSongNameAtIndex:(NSInteger) index;
 - (int) getBookmarkPositionAtIndex:(int) index ;
 - (NSString *)readMainText;
 - (NSArray *) readBookmarkRecords;

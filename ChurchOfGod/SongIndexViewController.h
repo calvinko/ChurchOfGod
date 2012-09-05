@@ -7,17 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SongReader.h"
 
 @class SongTextViewController;
-@class PDBReader;
+
 @interface SongIndexViewController : UITableViewController {
-    PDBReader *reader;
+    id <SongReader> reader;
     NSUInteger songBookID;
 
 }
 
-@property (nonatomic, retain) PDBReader *reader;
+@property (nonatomic, retain) id <SongReader> reader;
 @property (nonatomic) NSUInteger songBookID;
 
 

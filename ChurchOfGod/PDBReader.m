@@ -6,6 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import "SongRecord.h"
 #import "PDBReader.h"
 
 
@@ -126,16 +127,9 @@ NSString *readPDBFile(const char *filename)
     }
 };
 
-@implementation SongRecord 
-@synthesize title, pos, adjustpos, sizeInBytes;
 
--(id) initWithName:(NSString *) name 
-{
-    self.title = name;
-    return self;
-}
-                        
-@end
+
+
 
 @implementation PDBReader
 
@@ -194,7 +188,7 @@ NSString *readPDBFile(const char *filename)
     return TRUE;
 }
 
-NSString *convertText(unsigned char *buf, int length) 
+static NSString *convertText(unsigned char *buf, int length)
 {
     int j=0;
     NSMutableString *mText = [[NSMutableString alloc] init] ;
@@ -260,7 +254,7 @@ NSString *convertText(unsigned char *buf, int length)
     return bookmarkArray;
 } 
 
-- (NSString *)getBookmarkStringAtIndex:(int) index {
+- (NSString *) getSongNameAtIndex:(NSInteger) index {
     if (bookmarkArray == NULL) 
         [self readBookmarkRecords];
     if (bookmarkArray != NULL) {
@@ -282,7 +276,7 @@ NSString *convertText(unsigned char *buf, int length)
 }
       
 
-- (NSInteger) getNumOfBookmark
+- (NSInteger) getNumOfSong
 {
     return numBookmarkRecords;
 }

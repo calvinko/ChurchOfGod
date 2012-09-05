@@ -95,7 +95,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (reader != NULL) {
-        return [reader getNumOfBookmark];
+        return [reader getNumOfSong];
     } else {
         return 1; 
     }
@@ -111,7 +111,7 @@
     }
     
     if (reader != NULL) {
-        cell.textLabel.text = [reader getBookmarkStringAtIndex:indexPath.row];
+        cell.textLabel.text = [reader  getSongNameAtIndex:indexPath.row];
     } else {
         cell.textLabel.text = @"Loading...";
     }
