@@ -16,11 +16,9 @@
 			<string>IBUINavigationBar</string>
 			<string>IBUINavigationController</string>
 			<string>IBUINavigationItem</string>
-			<string>IBUISplitViewController</string>
 			<string>IBUITabBar</string>
 			<string>IBUITabBarController</string>
 			<string>IBUITabBarItem</string>
-			<string>IBUITableViewController</string>
 			<string>IBUIViewController</string>
 			<string>IBUIWindow</string>
 		</array>
@@ -61,68 +59,6 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 				<bool key="IBUIResizesToFullScreen">YES</bool>
-			</object>
-			<object class="IBUISplitViewController" id="356198749">
-				<array key="IBUIToolbarItems" id="0"/>
-				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
-					<int key="IBUIStatusBarStyle">2</int>
-				</object>
-				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-					<int key="IBUIInterfaceOrientation">3</int>
-					<int key="interfaceOrientation">3</int>
-				</object>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-				<bool key="IBUIHorizontal">YES</bool>
-				<object class="IBUINavigationController" key="IBUIMasterViewController" id="127395552">
-					<reference key="IBUIParentViewController" ref="356198749"/>
-					<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
-						<int key="IBUIStatusBarStyle">2</int>
-					</object>
-					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-						<int key="IBUIInterfaceOrientation">1</int>
-						<int key="interfaceOrientation">1</int>
-					</object>
-					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="825589854">
-						<nil key="NSNextResponder"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrameSize">{0, 0}</string>
-						<string key="NSReuseIdentifierKey">_NS:20</string>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-					</object>
-					<array class="NSMutableArray" key="IBUIViewControllers">
-						<object class="IBUITableViewController" id="595287166">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="388096481">
-								<string key="IBUITitle">Root View Controller</string>
-								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-							</object>
-							<reference key="IBUIParentViewController" ref="127395552"/>
-							<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
-								<int key="IBUIStatusBarStyle">2</int>
-							</object>
-							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-								<int key="IBUIInterfaceOrientation">1</int>
-								<int key="interfaceOrientation">1</int>
-							</object>
-							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-							<bool key="IBUIHorizontal">NO</bool>
-							<bool key="IBUIClearsSelectionOnViewWillAppear">NO</bool>
-						</object>
-					</array>
-				</object>
-				<object class="IBUIViewController" key="IBUIDetailViewController" id="957540424">
-					<reference key="IBUIToolbarItems" ref="0"/>
-					<reference key="IBUIParentViewController" ref="356198749"/>
-					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-						<int key="IBUIInterfaceOrientation">1</int>
-						<int key="interfaceOrientation">1</int>
-					</object>
-					<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-					<bool key="IBUIHorizontal">NO</bool>
-				</object>
 			</object>
 			<object class="IBUITabBarController" id="262240594">
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
@@ -167,7 +103,7 @@
 						<object class="IBUIViewController" id="292585389">
 							<string key="IBUITitle">Sermon</string>
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="157527766">
-								<string key="IBUITitle">Root View Controller</string>
+								<string key="IBUITitle">Sermon</string>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="148564970"/>
@@ -253,9 +189,9 @@
 							<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
-							<object class="IBUIViewController" id="467890945">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="523880269">
-									<string key="IBUITitle">Root View Controller</string>
+							<object class="IBUIViewController" id="133199010">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="281904773">
+									<string key="IBUITitle">Song</string>
 									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="489841119"/>
@@ -297,11 +233,13 @@
 						</object>
 						<array class="NSMutableArray" key="IBUIViewControllers">
 							<object class="IBUIViewController" id="309473544">
+								<string key="IBUITitle">Setting</string>
 								<object class="IBUINavigationItem" key="IBUINavigationItem" id="491914401">
-									<string key="IBUITitle">Root View Controller</string>
+									<string key="IBUITitle">Setting</string>
 									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								</object>
 								<reference key="IBUIParentViewController" ref="74758434"/>
+								<string key="IBUINibName">SettingViewController</string>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -330,6 +268,14 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="875649759"/>
+					</object>
+					<int key="connectionID">56</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">rootViewController</string>
 						<reference key="source" ref="380026005"/>
 						<reference key="destination" ref="262240594"/>
@@ -344,12 +290,84 @@
 					</object>
 					<int key="connectionID">14</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">settingViewController</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="309473544"/>
+					</object>
+					<int key="connectionID">51</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">settingNavController</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="74758434"/>
+					</object>
+					<int key="connectionID">52</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">songNavController</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="489841119"/>
+					</object>
+					<int key="connectionID">53</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">songViewController</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="133199010"/>
+					</object>
+					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">newsNavConntroller</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="573464134"/>
+					</object>
+					<int key="connectionID">57</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">newsViewController</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="12398461"/>
+					</object>
+					<int key="connectionID">58</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">sermonNavConntroller</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="148564970"/>
+					</object>
+					<int key="connectionID">59</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">sermonsViewController</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="292585389"/>
+					</object>
+					<int key="connectionID">60</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">tabBarController</string>
+						<reference key="source" ref="875649759"/>
+						<reference key="destination" ref="262240594"/>
+					</object>
+					<int key="connectionID">61</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
 					<object class="IBObjectRecord">
 						<int key="objectID">0</int>
-						<reference key="object" ref="0"/>
+						<array key="object" id="0"/>
 						<reference key="children" ref="1000"/>
 						<nil key="parent"/>
 					</object>
@@ -463,8 +481,8 @@
 						<reference key="object" ref="489841119"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="16721971"/>
-							<reference ref="467890945"/>
 							<reference ref="1046714291"/>
+							<reference ref="133199010"/>
 						</array>
 						<reference key="parent" ref="262240594"/>
 					</object>
@@ -472,19 +490,6 @@
 						<int key="objectID">27</int>
 						<reference key="object" ref="16721971"/>
 						<reference key="parent" ref="489841119"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">28</int>
-						<reference key="object" ref="467890945"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="523880269"/>
-						</array>
-						<reference key="parent" ref="489841119"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">29</int>
-						<reference key="object" ref="523880269"/>
-						<reference key="parent" ref="467890945"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">30</int>
@@ -525,55 +530,28 @@
 						<reference key="parent" ref="74758434"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">36</int>
-						<reference key="object" ref="356198749"/>
+						<int key="objectID">48</int>
+						<reference key="object" ref="133199010"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="957540424"/>
-							<reference ref="127395552"/>
+							<reference ref="281904773"/>
 						</array>
-						<reference key="parent" ref="0"/>
+						<reference key="parent" ref="489841119"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">37</int>
-						<reference key="object" ref="957540424"/>
-						<reference key="parent" ref="356198749"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">38</int>
-						<reference key="object" ref="127395552"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="825589854"/>
-							<reference ref="595287166"/>
-						</array>
-						<reference key="parent" ref="356198749"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">39</int>
-						<reference key="object" ref="825589854"/>
-						<reference key="parent" ref="127395552"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">40</int>
-						<reference key="object" ref="595287166"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="388096481"/>
-						</array>
-						<reference key="parent" ref="127395552"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">41</int>
-						<reference key="object" ref="388096481"/>
-						<reference key="parent" ref="595287166"/>
+						<int key="objectID">49</int>
+						<reference key="object" ref="281904773"/>
+						<reference key="parent" ref="133199010"/>
 					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.CustomClassName">UIApplication</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="18.CustomClassName">UISplitViewController</string>
+				<string key="18.CustomClassName">SermonsViewController</string>
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<dictionary class="NSMutableDictionary" key="2.IBAttributePlaceholdersKey"/>
@@ -581,27 +559,24 @@
 				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="23.CustomClassName">NewsViewController</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="27.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">ChurchofGodAppDelegate</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="31.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="33.CustomClassName">SettingViewController</string>
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="39.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="40.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="41.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="48.CustomClassName">SongViewController</string>
+				<string key="48.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="49.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -609,7 +584,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">41</int>
+			<int key="maxID">61</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

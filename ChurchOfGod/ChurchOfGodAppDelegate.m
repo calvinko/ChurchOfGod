@@ -17,57 +17,84 @@
 #import "FeedLoader.h"
 #import "ChurchConfigLoader.h"
 #import "ConfigManager.h"
+#import "LTableViewController.h"
 #import <CFNetwork/CFNetwork.h>
 
 
 @implementation ChurchofGodAppDelegate
 
 @synthesize window;
-@synthesize ipadTabBarController;
+@synthesize ipadTabBarController, splitViewController;
 @synthesize tabBarController;
 @synthesize sermonNavConntroller, newsNavConntroller, mediaNavConntroller, settingNavController, songNavController;
 @synthesize mediaViewController, newsViewController, sermonsViewController, settingViewController, songViewController;
 @synthesize downloadNavController, downloadViewController;
 
+- (void) loadData {
+    if([self hasNetworkConnection])
+    {
+        NSURLRequest *urlRequest;
+        sermonsFeedLoader = [[FeedLoader alloc] init];
+        sermonsFeedLoader.delegate = sermonsViewController;
+        NSString *surl = [ConfigManager getSermonURL];
+        urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:surl]];
+        sermonsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonsFeedLoader] autorelease];
+        
+        // Test the validity of the connection object. The most likely reason for the connection object
+        // to be nil is a malformed URL, which is a programmatic error easily detected during development
+        // If the URL is more dynamic, then you should implement a more flexible validation technique, and
+        // be able to both recover from errors and communicate problems to the user in an unobtrusive manner.
+        //
+        NSAssert(sermonsFeedLoader.listFeedConnection != nil, @"Failure to create URL connection.");
+        
+        newsFeedLoader = [[FeedLoader alloc] init];
+        newsFeedLoader.delegate = newsViewController;
+        
+        urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[ConfigManager getNewsURL]]];
+        newsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:newsFeedLoader] autorelease];
+        
+        // Test the validity of the connection object. The most likely reason for the connection object
+        // to be nil is a malformed URL, which is a programmatic error easily detected during development
+        // If the URL is more dynamic, then you should implement a more flexible validation technique, and
+        // be able to both recover from errors and communicate problems to the user in an unobtrusive manner.
+        //
+        //NSAssert(sermonsViewController.sermonsListFeedConnection != nil, @"Failure to create URL connection.");
+        
+        // show in the status bar that network activity is starting
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    } else {
+        tabBarController.selectedIndex = 2;
+    }
+}
+
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    
-//    if (![[ConfigManager getUsername] isEqualToString :@"oakbs"] &&
-//        ![[ConfigManager getUsername] isEqualToString :@"baybs"]) {
-//         NSMutableArray* newArray = [NSMutableArray arrayWithArray:tabBarController.viewControllers];
-//         [newArray removeObject:songNavController];
-//         tabBarController.viewControllers = newArray;
-//    }
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+        
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
-       
+        [ConfigManager setDelegate:self];
+        [ConfigManager setDeviceiPad];
+        //self.window.rootViewController = ipadTabBarController;
         
-        self.window.rootViewController = ipadTabBarController;
         
+        [window addSubview:splitViewController.view];
+        [window makeKeyAndVisible];
+        
+        return YES;
+/*
         [self.window addSubview:ipadTabBarController.view];
-
-        
-        //  code to configure the view controller would go here
-        
-        
-        
         [self.window makeKeyAndVisible];        
-         
-         return YES;
+        [self loadData];
+         return YES; */
         
     }
     
     else {
         
-        
-        
-        
-    
-        //tabBarController.delegate = (UITabBarController *) tabBarController;
         [ConfigManager setDelegate:self];
+        [ConfigManager setDeviceiPhone];
         songViewController.iViewController = [[SongIndexViewController alloc] init ];
         
         // Add the tab bar controller's view to the window and display.
@@ -78,42 +105,8 @@
         
         self.downloadViewController = [[[DownloadViewController alloc] init] autorelease];
         self.downloadViewController.title = @"Downloaded";
-        
-        if([self hasNetworkConnection])
-        {
-            NSURLRequest *urlRequest;
-            sermonsFeedLoader = [[FeedLoader alloc] init];
-            sermonsFeedLoader.delegate = sermonsViewController;
-            
-            urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[ConfigManager getSermonURL]]];
-            sermonsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:sermonsFeedLoader] autorelease];
-            
-            // Test the validity of the connection object. The most likely reason for the connection object
-            // to be nil is a malformed URL, which is a programmatic error easily detected during development
-            // If the URL is more dynamic, then you should implement a more flexible validation technique, and
-            // be able to both recover from errors and communicate problems to the user in an unobtrusive manner.
-            //
-            NSAssert(sermonsFeedLoader.listFeedConnection != nil, @"Failure to create URL connection.");
-            
-            newsFeedLoader = [[FeedLoader alloc] init];
-            newsFeedLoader.delegate = newsViewController;
-            
-            urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:[ConfigManager getNewsURL]]];
-            newsFeedLoader.listFeedConnection = [[[NSURLConnection alloc] initWithRequest:urlRequest delegate:newsFeedLoader] autorelease];
-            
-            // Test the validity of the connection object. The most likely reason for the connection object
-            // to be nil is a malformed URL, which is a programmatic error easily detected during development
-            // If the URL is more dynamic, then you should implement a more flexible validation technique, and
-            // be able to both recover from errors and communicate problems to the user in an unobtrusive manner.
-            //
-            //NSAssert(sermonsViewController.sermonsListFeedConnection != nil, @"Failure to create URL connection.");
-            
-            // show in the status bar that network activity is starting
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        } else {
-            tabBarController.selectedIndex = 2;
-        }
-    return YES;
+        [self loadData];
+            return YES;
     }
 }
 

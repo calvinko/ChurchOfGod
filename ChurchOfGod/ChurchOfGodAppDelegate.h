@@ -23,8 +23,11 @@
 
 @interface ChurchofGodAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     
-	RotatingTabBarController *tabBarController;
-    
+	
+    UIWindow *window;
+    RotatingTabBarController *tabBarController;
+    UISplitViewController   *splitViewController;
+        
     
 	UINavigationController *sermonNavConntroller;	
 	UINavigationController *newsNavConntroller;
@@ -45,7 +48,7 @@
 }
 
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 
 
 @property (nonatomic, retain) IBOutlet RotatingTabBarController *tabBarController;
@@ -57,6 +60,8 @@
 @property (nonatomic, retain) IBOutlet UINavigationController *settingNavController;
 @property (nonatomic, retain) IBOutlet UINavigationController *songNavController;
 @property (nonatomic, retain) IBOutlet UINavigationController *downloadNavController;
+
+@property (nonatomic, retain) IBOutlet UISplitViewController   *splitViewController;
 
 @property (nonatomic, retain) IBOutlet MediaViewController *mediaViewController;
 @property (nonatomic, retain) IBOutlet SermonsViewController *sermonsViewController;
