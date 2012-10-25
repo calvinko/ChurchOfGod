@@ -25,7 +25,6 @@
 
 @implementation NewsDetailController
 
-
 @synthesize newsDescription, record, activityIndicator, refreshButton;
 
 /*
